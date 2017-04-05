@@ -163,6 +163,9 @@ set autoread
 " upon detecting change
 au CursorHold * checktime
 
+" add an autocmd after vim started to execute checktime for *.js files on write
+au VimEnter *.js au BufWritePost *.js checktime
+
 " Reload vim config
 nmap <leader>ww :so ~/.vimrc<cr>
 
@@ -295,6 +298,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']
+" execute eslint with --fix flag
+let g:syntastic_javascript_eslint_args = ['--fix']
 let g:syntastic_error_symbol = '❌'
 let g:syntastic_style_error_symbol = '⁉️'
 let g:syntastic_warning_symbol = '⚠️'
