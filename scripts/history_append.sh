@@ -1,4 +1,5 @@
 #!/bin/bash
+
 shopt -s histappend # Append to history, don't overwrite it
 shopt -s histreedit # Re-edit a history substitution line if it failed
 shopt -s histverify # # Edit a recalled history line before executing

@@ -6,7 +6,7 @@ export EDITOR='vim'
 
 set -o vi
 
-source ~/dotfiles/scripts/history_append.sh
+# source ~/dotfiles/scripts/history_append.sh
 source ~/dotfiles/scripts/npm_completion.sh
 source ~/dotfiles/scripts/aliases.sh
 source ~/dotfiles/scripts/ps1.sh
