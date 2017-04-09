@@ -1,2 +1,7 @@
 # dotfiles
-Helpful dotfiles and script
+Helpful dotfiles and scripts
++ vim
++ tmux
++ bash scripts
++ tern
++ ack
