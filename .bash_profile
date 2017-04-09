@@ -7,10 +7,10 @@ export EDITOR='vim'
 set -o vi
 
 # source ~/dotfiles/scripts/history_append.sh
-source ~/dotfiles/scripts/npm_completion.sh
-source ~/dotfiles/scripts/aliases.sh
-source ~/dotfiles/scripts/ps1.sh
-source ~/dotfiles/scripts/bash_completion.sh
+source ~/dotfiles/scripts/npm_completion
+source ~/dotfiles/scripts/aliases
+source ~/dotfiles/scripts/ps1
+source ~/dotfiles/scripts/bash_completion
 source ~/.profile
 
 # Android SDK
