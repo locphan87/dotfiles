@@ -3,14 +3,16 @@ export GREP_COLOR=33
 export LSCOLORS=ExFxBxDxCxegedabagacad
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home
 export EDITOR='vim'
+export CDPATH=$HOME
 
 set -o vi
 
-# source ~/dotfiles/scripts/history_append.sh
+# source ~/dotfiles/scripts/history_append
 source ~/dotfiles/scripts/npm_completion
 source ~/dotfiles/scripts/aliases
 source ~/dotfiles/scripts/ps1
 source ~/dotfiles/scripts/bash_completion
+source ~/dotfiles/scripts/others
 source ~/.profile
 
 # Android SDK
