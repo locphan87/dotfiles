@@ -17,10 +17,24 @@ source ~/dotfiles/scripts/others
 source ~/dotfiles/scripts/git_completion
 source ~/.profile
 
-# Android SDK
+# android SDK
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-# Update PATH
-export PATH=$PATH:/usr/local/sbin:/usr/local/Cellar:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin:$HOME/apps/maven/bin:$HOME:$HOME/.rvm/bin:/Library/PostgreSQL/9.5/bin:$HOME/.yarn/bin
-export PATH="$HOME/.fastlane/bin:$PATH"
+# system PATH
+export PATH=$PATH:/bin
+export PATH=$PATH:/sbin
+# user PATH
+export PATH=$PATH:/usr/local/Cellar
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:/usr/bin
+export PATH=$PATH:/usr/sbin
+# home PATH
+export PATH=$HOME:$PATH
+export PATH=$HOME/bin:$PATH
+export PATH=$HOME/apps/maven/bin:$PATH
+export PATH=$HOME/.fastlane/bin:$PATH
+export PATH=$HOME/.yarn/bin:$PATH
+export PATH=$HOME/.rvm/bin:$PATH
+export PATH=$HOME/Library/PostgreSQL/9.5/bin:$PATH

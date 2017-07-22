@@ -1,7 +1,7 @@
 #!/bin/bash
 
 alias ls='ls -larth'
-alias grep='grep --color'
+alias grep='grep --color -rin'
 alias ..="cd .."
 alias ..2="cd ../.."
 alias ..3="cd ../../.."
