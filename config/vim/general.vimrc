@@ -1,4 +1,5 @@
 set nocompatible
+colorscheme distinguished
 set t_Co=256
 syntax on
 
@@ -6,6 +7,7 @@ syntax on
 filetype plugin on
 filetype indent on
 
+set number
 set relativenumber
 set background=dark
 
@@ -29,10 +31,8 @@ set tabstop=2
 " Set working directory to the current file
 " autocmd BufEnter * silent! lcd %:p:h
 
-colorscheme distinguished
 set pastetoggle=<f5>
 "set mouse=a
-map <F7> mzgg=G`z
 set encoding=utf-8
 
 " Folding
@@ -102,3 +102,34 @@ set dictionary+=/usr/share/dict/words
 " vim online thesaurus
 let g:online_thesaurus_map_keys = 0
 nnoremap <leader>xk :OnlineThesaurusCurrentWord<CR>
+
+" set clipboard=unnamed
+set list!
+set listchars=tab:>·,trail:~,extends:>,precedes:<
+
+" treat all numerals as decimal, regardless of whether they are padded with zeros.
+set nrformats=
+
+" Return to last edit position when opening files (You want this!)
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" Add a bit extra margin to the left
+set foldcolumn=1
+
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc
+if has("win16") || has("win32")
+  set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+else
+  set wildignore+=.git\*,.hg\*,.svn\*
+endif
+
+" Automatically removing all trailing whitespace
+autocmd BufWritePre * %s/\s\+$//e
+
+set wildmode=longest,list
+
+" populate the argument list with each of the files named in the quickfix list
+command! -nargs=0 -bar Qargs execute 'args' QuickfixFilenames()
+" automatically execute ctags each time a file is saved
+" :autocmd BufWritePost * call system("ctags -R")

@@ -101,3 +101,32 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_user_command = 'find %s -type f'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
+" vim-jsx config
+let g:jsx_ext_required = 0
+
+" scss-syntax-vim config
+autocmd FileType css,scss set iskeyword+=-
+
+" indentline config
+" :IndentLinesToggle toggles lines on and off.
+let g:indentLine_enabled = 0
+map <F10> :IndentLinesToggle<CR>
+
+" nerdtree config
+let NERDTreeShowHidden=1
+autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+nnoremap <leader>nn :NERDTreeToggle<CR>
+nnoremap <leader>nb :NERDTreeFromBookmark
+nnoremap <leader>nf :NERDTreeFind<CR>
+
+" Ag configs
+let g:ag_working_path_mode="r"
+
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<leader>np"
+let g:UltiSnipsJumpForwardTrigger="<c-k>"
+let g:UltiSnipsJumpBackwardTrigger="<c-j>"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
