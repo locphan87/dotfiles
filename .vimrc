@@ -1,7 +1,7 @@
 set nocompatible
 
-so ~/config/vim/init.vimrc
-so ~/config/vim/functions.vimrc
-so ~/config/vim/general.vimrc
-so ~/config/vim/plugins.vimrc
-so ~/config/vim/keys.vimrc
+so ~/config/vim/init.vim
+so ~/config/vim/functions.vim
+so ~/config/vim/general.vim
+so ~/config/vim/plugins.vim
+so ~/config/vim/keys.vim

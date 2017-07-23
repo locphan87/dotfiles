@@ -10,6 +10,16 @@ syntax on
 filetype plugin on
 filetype indent on
 
+" GENERAL
+set pastetoggle=<f5>
+set encoding=utf-8
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+" navigate away from a modified file without first saving it
+set hidden
+" Return to last edit position when opening files
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
 " INDENTATION & TAB
 set ai " Auto indent
 set si " Smart indent
@@ -23,18 +33,6 @@ set tabstop=2
 " LINE NUMBER
 set number
 set relativenumber
-
-" navigate away from a modified file without first saving it
-set hidden
-
-" Set working directory to the current file
-" autocmd BufEnter * silent! lcd %:p:h
-
-set pastetoggle=<f5>
-"set mouse=a
-set encoding=utf-8
-" Use Unix as the standard file type
-set ffs=unix,dos,mac
 
 " FOLDING
 set foldlevel=99
@@ -50,7 +48,7 @@ let sh_fold_enabled=1         " sh
 let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
 
-" Turn backup off, since most stuff is in SVN, git et.c anyway...
+" Turn backup off
 set nobackup
 set nowb
 set noswapfile
@@ -82,26 +80,9 @@ au CursorHold * checktime
 " add an autocmd after vim started to execute checktime for *.js files on write
 au VimEnter *.js au BufWritePost *.js checktime
 
-" avaoid adding extra space when joining with a special character
-set nojoinspaces
-
-" change window title
-set title titlestring=%<%F%=%l/%L-%P titlelen=70
-
 " GRAMMAR
 " set the dictionary
 set dictionary+=/usr/share/dict/words
-
-" set clipboard=unnamed
-
-set list!
-set listchars=tab:>·,trail:~,extends:>,precedes:<
-
-" treat all numerals as decimal, regardless of whether they are padded with zeros.
-set nrformats=
-
-" Return to last edit position when opening files (You want this!)
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
@@ -111,12 +92,18 @@ else
   set wildignore+=.git\*,.hg\*,.svn\*
 endif
 
-" Automatically removing all trailing whitespace
-autocmd BufWritePre * %s/\s\+$//e
-
-set wildmode=longest,list
-
 " populate the argument list with each of the files named in the quickfix list
 command! -nargs=0 -bar Qargs execute 'args' QuickfixFilenames()
-" automatically execute ctags each time a file is saved
-" :autocmd BufWritePost * call system("ctags -R")
+
+" OTHERS
+" avaoid adding extra space when joining with a special character
+set nojoinspaces
+" change window title
+set title titlestring=%<%F%=%l/%L-%P titlelen=70
+set list!
+set listchars=tab:>·,trail:~,extends:>,precedes:<
+" Automatically removing all trailing whitespace
+autocmd BufWritePre * %s/\s\+$//e
+set wildmode=longest,list
+" treat all numerals as decimal, regardless of whether they are padded with zeros.
+set nrformats=
