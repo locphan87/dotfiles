@@ -11,3 +11,13 @@
 " set novisualbell
 " set t_vb=
 " set tm=500
+" map \ ,
+" search for the current selection
+" xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
+" xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
+"
+" Elm
+" nnoremap <leader>el :ElmEvalLine<CR>
+" vnoremap <leader>es :<C-u>ElmEvalSelection<CR>
+" nnoremap <leader>em :ElmMakeCurrentFile<CR>
+" :au BufWritePost *.elm ElmMakeCurrentFile

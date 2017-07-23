@@ -9,12 +9,6 @@ let g:tern_map_keys=1
 " show argument hints
 let g:tern_show_argument_hints='on_hold'
 
-" Elm
-nnoremap <leader>el :ElmEvalLine<CR>
-vnoremap <leader>es :<C-u>ElmEvalSelection<CR>
-nnoremap <leader>em :ElmMakeCurrentFile<CR>
-:au BufWritePost *.elm ElmMakeCurrentFile
-
 " ElmCast
 let g:elm_jump_to_error = 0
 let g:elm_make_output_file = "elm.js"
@@ -26,37 +20,11 @@ let g:elm_format_autosave = 1
 let g:elm_format_fail_silently = 0
 let g:elm_setup_keybindings = 1
 
-" tmux
-" let g:tmux_navigator_no_mappings = 1
-" nnoremap <silent> <c-w-h> :tmuxnavigateleft<cr>
-" nnoremap <silent> <c-w-j> :tmuxnavigatedown<cr>
-" nnoremap <silent> <c-w-k> :tmuxnavigateup<cr>
-" nnoremap <silent> <c-w-l> :tmuxnavigateright<cr>
-" nnoremap <silent> <c-w-\\> :tmuxnavigateprevious<cr>
-
-" Tagbar
-nmap <F8> :TagbarToggle<CR>
-
-" vim-javascript config
+" vim-javascript
 let g:javascript_enable_domhtmlcss = 1
 let g:javascript_ignore_javaScriptdoc = 1
-" let g:javascript_conceal_function       = "ƒ"
-" let g:javascript_conceal_null           = "ø"
-" let g:javascript_conceal_this           = "@"
-" let g:javascript_conceal_return         = "⇚"
-" let g:javascript_conceal_undefined      = "¿"
-" let g:javascript_conceal_NaN            = "ℕ"
-" let g:javascript_conceal_prototype      = "¶"
-" let g:javascript_conceal_static         = "•"
-" let g:javascript_conceal_super          = "Ω"
-" let g:javascript_conceal_arrow_function = "⇒"
 
-" emmet-vim config
-let g:user_emmet_leader_key=','
-let g:user_emmet_install_global = 0
-autocmd FileType html,css,scss,js EmmetInstall
-
-" youcompleteme config
+" youcompleteme
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
 let g:ycm_add_preview_to_completeopt=0
@@ -68,7 +36,7 @@ let g:ycm_semantic_triggers = {
    \}
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-" syntastic config
+" syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -101,18 +69,17 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_user_command = 'find %s -type f'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
-" vim-jsx config
+" vim-jsx
 let g:jsx_ext_required = 0
 
-" scss-syntax-vim config
+" scss-syntax-vim
 autocmd FileType css,scss set iskeyword+=-
 
-" indentline config
-" :IndentLinesToggle toggles lines on and off.
+" indentline
 let g:indentLine_enabled = 0
 map <F10> :IndentLinesToggle<CR>
 
-" nerdtree config
+" nerdtree
 let NERDTreeShowHidden=1
 autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -120,17 +87,13 @@ nnoremap <leader>nn :NERDTreeToggle<CR>
 nnoremap <leader>nb :NERDTreeFromBookmark
 nnoremap <leader>nf :NERDTreeFind<CR>
 
-" Ag configs
-let g:ag_working_path_mode="r"
-
-" Trigger configuration. Do not use <tab> if you use
-" https://github.com/Valloric/YouCompleteMe.
+" Do not use <tab> if you use YouCompleteMe
 let g:UltiSnipsExpandTrigger="<leader>np"
 let g:UltiSnipsJumpForwardTrigger="<c-k>"
 let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-" vim online thesaurus
+" vim-online-thesaurus
 let g:online_thesaurus_map_keys = 0
 nnoremap <leader>xk :OnlineThesaurusCurrentWord<CR>
