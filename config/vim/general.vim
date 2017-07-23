@@ -26,7 +26,6 @@ set si " Smart indent
 set wrap " Wrap lines
 set expandtab " Use spaces instead of tabs
 set smarttab
-" 1 tab == 2 spaces
 set shiftwidth=2
 set tabstop=2
 
@@ -53,16 +52,9 @@ set nobackup
 set nowb
 set noswapfile
 
-" No annoying sound on errors
-set noerrorbells
-set novisualbell
-set t_vb=
-set tm=500
-
 " SEARCH
-"
 " Makes search act like search in modern browsers
-" set incsearch
+set incsearch
 " Highlight search results
 set hls
 " Ignore case when searching
@@ -71,11 +63,9 @@ set ignorecase
 set smartcase
 
 " CHECKTIME
-"
 " Set to auto read when a file is changed from the outside
 set autoread
-" check file change every 4 seconds ('CursorHold') and reload the buffer
-" upon detecting change
+" check file change every 4 seconds ('CursorHold') and reload the buffer upon detecting change
 au CursorHold * checktime
 " add an autocmd after vim started to execute checktime for *.js files on write
 au VimEnter *.js au BufWritePost *.js checktime
