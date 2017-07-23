@@ -2,7 +2,6 @@ call plug#begin()
 
 " general
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-abolish'
 Plug 'Raimondi/delimitMate'
 Plug 'kshenoy/vim-signature'
@@ -13,6 +12,9 @@ Plug 'yggdroot/indentline'
 Plug 'tpope/vim-commentary'
 Plug 'beloglazov/vim-online-thesaurus'
 Plug 'easymotion/vim-easymotion'
+
+" mapping
+Plug 'tpope/vim-unimpaired'
 
 " interface
 Plug 'ctrlpvim/ctrlp.vim'
