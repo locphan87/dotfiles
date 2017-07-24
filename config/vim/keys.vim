@@ -1,6 +1,8 @@
 let maplocalleader="\\"
 let mapleader=","
 
+inoremap jk <esc>
+
 " select the current word
 nnoremap <space> viw
 

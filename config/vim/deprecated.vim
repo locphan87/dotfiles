@@ -21,3 +21,6 @@
 " vnoremap <leader>es :<C-u>ElmEvalSelection<CR>
 " nnoremap <leader>em :ElmMakeCurrentFile<CR>
 " :au BufWritePost *.elm ElmMakeCurrentFile
+
+" populate the argument list with each of the files named in the quickfix list
+" command! -nargs=0 -bar Qargs execute 'args' QuickfixFilenames()

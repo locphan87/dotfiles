@@ -11,9 +11,6 @@ else
   set wildignore+=.git\*,.hg\*,.svn\*
 endif
 
-" populate the argument list with each of the files named in the quickfix list
-command! -nargs=0 -bar Qargs execute 'args' QuickfixFilenames()
-
 " avoid adding extra space when joining with a special character
 set nojoinspaces
 
