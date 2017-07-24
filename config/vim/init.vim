@@ -2,28 +2,33 @@ call plug#begin()
 
 " general
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-abolish'
-Plug 'Raimondi/delimitMate'
 Plug 'kshenoy/vim-signature'
-Plug 'moll/vim-node'
 Plug 'mhinz/vim-signify'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'yggdroot/indentline'
-Plug 'tpope/vim-commentary'
 Plug 'beloglazov/vim-online-thesaurus'
-Plug 'easymotion/vim-easymotion'
+
+" editing
+Plug 'tpope/vim-commentary'
 
 " mapping
 Plug 'tpope/vim-unimpaired'
 
-" interface
+" search and replace
+Plug 'tpope/vim-abolish'
+
+" navigation
+Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'easymotion/vim-easymotion'
+
+" interface
 Plug 'majutsushi/tagbar'
 Plug 'bling/vim-airline'
-Plug 'scrooloose/nerdtree'
+Plug 'yggdroot/indentline'
 
 " language
 Plug 'elzr/vim-json'
+Plug 'moll/vim-node'
 
 " template
 Plug 'lumiliet/vim-twig'
@@ -57,5 +62,8 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'valloric/youcompleteme'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
+
+" others
+Plug 'Raimondi/delimitMate'
 
 call plug#end()

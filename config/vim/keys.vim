@@ -36,7 +36,8 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Reload vim config
-nnoremap <leader>ww :so ~/.vimrc<cr>
+nnoremap <leader>ww :so $MYVIMRC<cr>
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " Fast saving of a buffer
 nnoremap <leader>w :up!<cr>
 
