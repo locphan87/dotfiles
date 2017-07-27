@@ -1,7 +1,7 @@
-set foldlevel=99
-set foldmethod=syntax
+" set foldlevel=99
+set foldmethod=indent
 set foldcolumn=1
-" set foldlevelstart=3
+set foldlevelstart=1
 let javaScript_fold=1         " JavaScript
 let perl_fold=1               " Perl
 let php_folding=1             " PHP

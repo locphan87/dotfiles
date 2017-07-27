@@ -24,3 +24,9 @@ augroup filetype_markdown
   autocmd BufNewFile,BufRead *.md setlocal spell
   autocmd filetype markdown nnoremap <buffer> <localleader>h I#<space>
 augroup END
+
+" SAVE VIEW
+" augroup saveView
+"   autocmd BufWinLeave * mkview
+"   autocmd BufWinEnter * silent loadview
+" augroup END

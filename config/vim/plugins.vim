@@ -1,10 +1,14 @@
 " jsdoc
 let g:jsdoc_enable_es6=1
 let g:jsdoc_allow_input_prompt=1
+let g:jsdoc_input_description=1
+let g:jsdoc_param_description_separator=' - '
+nnoremap <leader>js :JsDoc<cr>
 
 " vim-javascript
 let g:javascript_enable_domhtmlcss = 1
-let g:javascript_ignore_javaScriptdoc = 1
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
 
 " vim-jsx
 let g:jsx_ext_required = 0

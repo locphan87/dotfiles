@@ -6,10 +6,6 @@ inoremap jk <esc>
 " select the current word
 nnoremap <space> viw
 
-" move a line down/up
-nnoremap - ddp
-nnoremap _ ddkP
-
 " uppercase the current word
 inoremap <c-u> <esc>viwUea
 nnoremap <c-u> viwU
