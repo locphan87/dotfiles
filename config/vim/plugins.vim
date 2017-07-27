@@ -24,6 +24,9 @@ map <F10> :IndentLinesToggle<CR>
 let g:online_thesaurus_map_keys = 0
 nnoremap <leader>xk :OnlineThesaurusCurrentWord<CR>
 
+" tagbar
+nnoremap <f8> :TagbarToggle<cr>
+
 so ~/config/vim/plugins/ctrlp.vim
 so ~/config/vim/plugins/elmcast.vim
 so ~/config/vim/plugins/nerdtree.vim

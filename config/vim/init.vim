@@ -2,13 +2,11 @@ call plug#begin()
 
 " general
 Plug 'tpope/vim-sensible'
-Plug 'kshenoy/vim-signature'
-Plug 'mhinz/vim-signify'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'beloglazov/vim-online-thesaurus'
 
 " editing
 Plug 'tpope/vim-commentary'
+Plug 'editorconfig/editorconfig-vim'
 
 " mapping
 Plug 'tpope/vim-unimpaired'
@@ -20,6 +18,7 @@ Plug 'tpope/vim-abolish'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'kshenoy/vim-signature'
 
 " interface
 Plug 'majutsushi/tagbar'
@@ -29,6 +28,7 @@ Plug 'yggdroot/indentline'
 " language
 Plug 'elzr/vim-json'
 Plug 'moll/vim-node'
+Plug 'elmcast/elm-vim'
 
 " template
 Plug 'lumiliet/vim-twig'
@@ -40,16 +40,16 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'heavenshell/vim-jsdoc'
 
-" elm
-Plug 'elmcast/elm-vim'
-
 " commands
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 
+" source code
+Plug 'tpope/vim-fugitive'
+Plug 'mhinz/vim-signify'
+
 " integration
 Plug 'scrooloose/syntastic'
-Plug 'tpope/vim-fugitive'
 Plug 'mileszs/ack.vim'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'rizzatti/dash.vim'
