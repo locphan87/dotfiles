@@ -1,7 +1,6 @@
 set nocompatible
-set runtimepath+=~/dotfiles/config/vim
 
-runtime init.vim
-runtime general.vim
-runtime keys.vim
-runtime plugins.vim
+so ~/config/vim/init.vim
+so ~/config/vim/general.vim
+so ~/config/vim/keys.vim
+so ~/config/vim/plugins.vim
