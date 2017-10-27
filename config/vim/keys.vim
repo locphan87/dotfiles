@@ -10,15 +10,6 @@ nnoremap <space> viw
 inoremap <c-u> <esc>viwUea
 nnoremap <c-u> viwU
 
-" disable arrow keys - hard mode
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 " avoid the cursor keys when recalling commands from history
 cnoremap <c-p> <up>
 cnoremap <c-n> <down>

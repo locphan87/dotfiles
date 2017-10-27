@@ -24,3 +24,6 @@ set wildmode=longest,list
 
 " treat all numerals as decimal, regardless of whether they are padded with zeros.
 set nrformats=
+
+" Disable beep and flash
+set noerrorbells visualbell t_vb=

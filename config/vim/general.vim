@@ -22,7 +22,6 @@ set autoread
 
 " LINE NUMBER
 set number
-set relativenumber
 
 so ~/config/vim/general/indentation.vim
 so ~/config/vim/general/folding.vim

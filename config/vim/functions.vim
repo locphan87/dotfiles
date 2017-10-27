@@ -13,3 +13,17 @@ function! QuickfixFilenames()
   return join(map(values(buffer_numbers), 'fnameescape(v:val)'))
 endfunction
 
+function! Meow()
+  echom "Meow!!!"
+endfunction
+
+function! Hello(name)
+  echom 'Hello, ' . a:name
+endfunction
+
+function! Vargs(foo,...)
+  echom a:foo
+  echom a:0
+  echom a:1
+  echo a:000
+endfunction

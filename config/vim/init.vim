@@ -7,6 +7,7 @@ Plug 'beloglazov/vim-online-thesaurus'
 " editing
 Plug 'tpope/vim-commentary'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'godlygeek/tabular' " TODO
 
 " mapping
 Plug 'tpope/vim-unimpaired'
@@ -19,6 +20,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'kshenoy/vim-signature'
+Plug 'wellle/targets.vim' " TODO
+Plug 'wikitopian/hardmode'
 
 " interface
 Plug 'majutsushi/tagbar'
@@ -47,9 +50,17 @@ Plug 'tpope/vim-repeat'
 " source code
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
+Plug 'ruanyl/vim-gh-line'
+
+" Syntax checking
+" Plug 'flowtype/vim-flow'
+" Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
 
 " integration
-Plug 'scrooloose/syntastic'
 Plug 'mileszs/ack.vim'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'rizzatti/dash.vim'

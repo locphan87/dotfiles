@@ -33,8 +33,11 @@ export PATH=$PATH:/usr/sbin
 # home PATH
 export PATH=$HOME:$PATH
 export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/apps/maven/bin:$PATH
 export PATH=$HOME/.fastlane/bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
 export PATH=$HOME/.rvm/bin:$PATH
 export PATH=$HOME/Library/PostgreSQL/9.5/bin:$PATH
+
+alias j2-gql-extend="graphql-faker --extend http://appapisit02.dev.corp.btpn.co.id:8084/graphql --header \"BTPN-ApiKey: e454e39d-25a1-4cbc-8a8c-41036e201748\""

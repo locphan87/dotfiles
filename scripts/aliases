@@ -7,3 +7,6 @@ alias ..2="cd ../.."
 alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
+alias gql-extend="graphql-faker --extend http://appapisit02.dev.corp.btpn.co.id:8084/graphql --header 'BTPN-ApiKey: e454e39d-25a1-4cbc-8a8c-41036e201748' \
+  --header 'Authorization: Bearer $(j2 token --access-token --expiry 1440 4004UK)' \
+  --header 'X-ID-Token: $(j2 token --id-token --expiry 1440 4004UK)'"
