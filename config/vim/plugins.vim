@@ -35,3 +35,6 @@ nnoremap <f8> :TagbarToggle<cr>
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 
+" vim-emmet
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,elm EmmetInstall

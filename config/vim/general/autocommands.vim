@@ -8,6 +8,11 @@ augroup editting
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 augroup END
 
+augroup javascript
+  autocmd!
+  autocmd BufEnter *.js set ft=javascript
+augroup END
+
 " CHECKTIME
 augroup checktime
   autocmd!

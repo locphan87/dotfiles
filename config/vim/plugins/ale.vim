@@ -1,10 +1,10 @@
 " Asynchronous Lint Engine (ALE)
 " Limit linters used for JavaScript.
 let g:ale_linters = {
-\  'javascript': ['eslint', 'flow']
+\  'javascript': ['eslint', 'flow', 'standard'],
 \}
 let g:ale_fixers = {
-\  'javascript': ['eslint']
+\  'javascript': ['eslint', 'standard'],
 \}
 highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
 highlight clear ALEWarningSign " otherwise uses error bg color (typically red)
@@ -19,4 +19,6 @@ let g:ale_fix_on_save = 1
 " Map keys to navigate between lines with errors and warnings.
 nnoremap <leader>an :ALENextWrap<cr>
 nnoremap <leader>ap :ALEPreviousWrap<cr>
+" Enable completion where available.
+let g:ale_completion_enabled = 1
 nmap <F8> <Plug>(ale_fix)

@@ -3,11 +3,13 @@ call plug#begin()
 " general
 Plug 'tpope/vim-sensible'
 Plug 'beloglazov/vim-online-thesaurus'
+Plug 'flazz/vim-colorschemes'
 
 " editing
 Plug 'tpope/vim-commentary'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular' " TODO
+Plug 'styled-components/vim-styled-components'
 
 " mapping
 Plug 'tpope/vim-unimpaired'
@@ -32,6 +34,10 @@ Plug 'yggdroot/indentline'
 Plug 'elzr/vim-json'
 Plug 'moll/vim-node'
 Plug 'elmcast/elm-vim'
+Plug 'Quramy/tsuquyomi' " TODO
+Plug 'leafgarland/typescript-vim' " TODO
+Plug 'HerringtonDarkholme/yats.vim' " TODO
+Plug 'reasonml-editor/vim-reason'
 
 " template
 Plug 'lumiliet/vim-twig'
@@ -73,6 +79,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'valloric/youcompleteme'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
+Plug 'mattn/emmet-vim'
 
 " others
 Plug 'Raimondi/delimitMate'

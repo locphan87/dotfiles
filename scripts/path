@@ -13,9 +13,10 @@ export PATH=$PATH:/bin
 export PATH=$PATH:/sbin
 
 # user PATH
-export PATH=$PATH:/usr/local/Cellar
+# export PATH=$PATH:/usr/local/Cellar
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:/usr/local/Cellar/python/2.7.14/bin
 export PATH=$PATH:/usr/bin
 export PATH=$PATH:/usr/sbin
 

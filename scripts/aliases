@@ -2,6 +2,7 @@
 
 alias ls='ls -larth'
 alias grep='grep --color -rin'
+alias mux='tmuxinator'
 alias ..="cd .."
 alias ..2="cd ../.."
 alias ..3="cd ../../.."

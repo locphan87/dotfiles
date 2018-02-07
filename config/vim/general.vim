@@ -1,5 +1,6 @@
 " INTERFACE
-colorscheme distinguished
+" colorscheme distinguished
+colorscheme termschool
 set background=dark
 set t_Co=256
 
