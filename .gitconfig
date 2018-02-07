@@ -1,5 +1,5 @@
 [core]
-  excludesfile = /Volumes/DATA/Users/loc.phan/.gitignore_global
+  excludesfile = ~/.gitignore_global
   editor = /usr/local/bin/vim
 
 [user]
@@ -36,6 +36,8 @@
   br = branch
   r = reset
   cp = cherry-pick
+  fo = fetch origin
+  po = push origin
   gr = grep -Ii
 
   # tweak defaults
@@ -146,21 +148,17 @@
   # undo from here http://megakemp.com/2016/08/25/git-undo/
   undo = "!f() { git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}}; }; f"
 
-  fe = fetch origin
-  ps = push origin
-  pu = pull origin --rebase
-
 # push/pull/diff/options
 [push]
   default = current
 [pull]
-    default = current
+  default = current
 [diff]
-    mnemonicprefix = true
+  mnemonicprefix = true
 [branch]
-    autosetuprebase = always
+  autosetuprebase = always
 [apply]
-    whitespace = nowarn
+  whitespace = nowarn
 
 [filter "lfs"]
   clean = git-lfs clean %f
@@ -169,11 +167,3 @@
 
 [help]
   autocorrect = 1
-
-# SOURCETREE
-[difftool "sourcetree"]
-  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-  path =
-[mergetool "sourcetree"]
-  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-  trustExitCode = true
