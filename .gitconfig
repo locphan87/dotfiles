@@ -43,8 +43,6 @@
 
   # tweak defaults
   diff = diff --word-diff
-  ; branch = branch -ra
-  ; bra = branch -ra
   grep = grep -Ii
   ai = add --interactive
 
@@ -175,4 +173,4 @@
 [help]
   autocorrect = 1
 [http]
-	sslVerify = false
+  sslVerify = false

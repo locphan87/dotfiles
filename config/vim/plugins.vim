@@ -1,7 +1,6 @@
 so ~/config/vim/plugins/easymotion.vim
 so ~/config/vim/plugins/javascript.vim
 so ~/config/vim/plugins/jsdoc.vim
-" so ~/config/vim/plugins/prettier.vim
 so ~/config/vim/plugins/ctrlp.vim
 so ~/config/vim/plugins/elmcast.vim
 so ~/config/vim/plugins/nerdtree.vim
