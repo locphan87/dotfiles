@@ -1,7 +1,7 @@
 so ~/config/vim/plugins/easymotion.vim
 so ~/config/vim/plugins/javascript.vim
 so ~/config/vim/plugins/jsdoc.vim
-so ~/config/vim/plugins/prettier.vim
+" so ~/config/vim/plugins/prettier.vim
 so ~/config/vim/plugins/ctrlp.vim
 so ~/config/vim/plugins/elmcast.vim
 so ~/config/vim/plugins/nerdtree.vim
@@ -16,6 +16,7 @@ autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " vim-jsx
 let g:jsx_ext_required = 0
+highlight link xmlEndTag xmlTag
 
 " scss-syntax-vim
 autocmd FileType css,scss set iskeyword+=-
@@ -37,4 +38,9 @@ let g:airline#extensions#ale#enabled = 1
 
 " vim-emmet
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,elm EmmetInstall
+autocmd FileType html,css,scss,javascript.jsx EmmetInstall
+let g:user_emmet_settings = {
+\  'javascript.jsx' : {
+\      'extends' : 'jsx',
+\  },
+\}

@@ -9,7 +9,9 @@ Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-commentary'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular' " TODO
-Plug 'styled-components/vim-styled-components'
+" Plug 'metalelf0/supertab'
+Plug 'AndrewRadev/splitjoin.vim'
+" Plug 'metakirby5/codi.vim'
 
 " mapping
 Plug 'tpope/vim-unimpaired'
@@ -38,6 +40,8 @@ Plug 'Quramy/tsuquyomi' " TODO
 Plug 'leafgarland/typescript-vim' " TODO
 Plug 'HerringtonDarkholme/yats.vim' " TODO
 Plug 'reasonml-editor/vim-reason'
+Plug 'elixir-editors/vim-elixir'
+Plug 'jparise/vim-graphql'
 
 " template
 Plug 'lumiliet/vim-twig'
@@ -59,17 +63,14 @@ Plug 'mhinz/vim-signify'
 Plug 'ruanyl/vim-gh-line'
 
 " Syntax checking
-" Plug 'flowtype/vim-flow'
-" Plug 'scrooloose/syntastic'
 Plug 'w0rp/ale'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
+" Plug 'prettier/vim-prettier', {
+"   \ 'do': 'yarn install',
+"   \ 'for': ['javascript', 'json'] }
 
 " integration
 Plug 'mileszs/ack.vim'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
-Plug 'rizzatti/dash.vim'
 
 " css
 Plug 'cakebaker/scss-syntax.vim'

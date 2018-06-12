@@ -29,7 +29,7 @@
 # ALIASES
 [alias]
   # basic
-  st = status -s
+  st = status -sb
   cl = clone
   ci = commit
   co = checkout
@@ -39,18 +39,25 @@
   fo = fetch origin
   po = push origin
   gr = grep -Ii
+  py = "!git pull && yarn"
 
   # tweak defaults
   diff = diff --word-diff
-  branch = branch -ra
+  ; branch = branch -ra
+  ; bra = branch -ra
   grep = grep -Ii
-  bra = branch -ra
   ai = add --interactive
 
   # grep on filename
   f = "!git ls-files | grep -i"
 
+  # Show verbose output about tags, branches or remotes
+  tags = tag -l
+  branches = branch -a
+  remotes = remote -v
+
   # commit
+  ac = "!git add --all && git commit"
   cm = commit -m
   cma = commit -a -m
   ca = commit --amend
@@ -155,8 +162,8 @@
   default = current
 [diff]
   mnemonicprefix = true
-[branch]
-  autosetuprebase = always
+; [branch]
+;   autosetuprebase = always
 [apply]
   whitespace = nowarn
 
@@ -167,3 +174,5 @@
 
 [help]
   autocorrect = 1
+[http]
+	sslVerify = false

@@ -1,4 +1,4 @@
-let g:prettier#config#print_width = 80
+let g:prettier#config#print_width = 50
 let g:prettier#config#semi = 'true'
 let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#single_quote = 'true'
