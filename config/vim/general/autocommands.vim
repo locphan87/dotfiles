@@ -8,6 +8,12 @@ augroup editting
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 augroup END
 
+augroup typescript
+  autocmd!
+  autocmd BufNewFile,BufRead *.ts set filetype=typescript
+  autocmd BufNewFile,BufEnter *.tsx set filetype=typescript
+augroup END
+
 augroup javascript
   autocmd!
   autocmd BufEnter *.js set ft=javascript

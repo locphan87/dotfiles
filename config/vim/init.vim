@@ -9,9 +9,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-commentary'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular' " TODO
-" Plug 'metalelf0/supertab'
 Plug 'AndrewRadev/splitjoin.vim'
-" Plug 'metakirby5/codi.vim'
 
 " mapping
 Plug 'tpope/vim-unimpaired'
@@ -36,9 +34,9 @@ Plug 'yggdroot/indentline'
 Plug 'elzr/vim-json'
 Plug 'moll/vim-node'
 Plug 'elmcast/elm-vim'
-Plug 'Quramy/tsuquyomi' " TODO
-Plug 'leafgarland/typescript-vim' " TODO
-Plug 'HerringtonDarkholme/yats.vim' " TODO
+Plug 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'reasonml-editor/vim-reason'
 Plug 'elixir-editors/vim-elixir'
 Plug 'jparise/vim-graphql'
@@ -51,7 +49,7 @@ Plug 'statianzo/vim-jade'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'heavenshell/vim-jsdoc'
+" Plug 'heavenshell/vim-jsdoc'
 
 " commands
 Plug 'tpope/vim-surround'
@@ -64,9 +62,9 @@ Plug 'ruanyl/vim-gh-line'
 
 " Syntax checking
 Plug 'w0rp/ale'
-" Plug 'prettier/vim-prettier', {
-"   \ 'do': 'yarn install',
-"   \ 'for': ['javascript', 'json'] }
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'json', 'typescript'] }
 
 " integration
 Plug 'mileszs/ack.vim'
@@ -77,9 +75,7 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'hail2u/vim-css3-syntax'
 
 " completion
-Plug 'valloric/youcompleteme'
-Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
+Plug 'Valloric/YouCompleteMe'
 Plug 'mattn/emmet-vim'
 
 " others

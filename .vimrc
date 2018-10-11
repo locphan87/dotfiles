@@ -1,3 +1,7 @@
+if has('python3')
+  silent! python3 1
+endif
+
 set nocompatible
 
 so ~/config/vim/init.vim

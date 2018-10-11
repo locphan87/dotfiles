@@ -5,9 +5,9 @@ so ~/config/vim/plugins/ctrlp.vim
 so ~/config/vim/plugins/elmcast.vim
 so ~/config/vim/plugins/nerdtree.vim
 so ~/config/vim/plugins/tern.vim
-so ~/config/vim/plugins/utilsnip.vim
-so ~/config/vim/plugins/youcompleteme.vim
 so ~/config/vim/plugins/ale.vim
+so ~/config/vim/plugins/youcompleteme.vim
+so ~/config/vim/plugins/tsuquyomi.vim
 
 " enable hard mode by default
 let g:HardMode_level = 'wannabe'
@@ -37,7 +37,7 @@ let g:airline#extensions#ale#enabled = 1
 
 " vim-emmet
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,scss,javascript.jsx EmmetInstall
+autocmd FileType html,css,scss,javascript.jsx,typescript EmmetInstall
 let g:user_emmet_settings = {
 \  'javascript.jsx' : {
 \      'extends' : 'jsx',

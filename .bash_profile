@@ -15,3 +15,5 @@ source ~/dotfiles/scripts/bash_completion
 source ~/dotfiles/scripts/others
 source ~/dotfiles/scripts/git_completion
 source ~/.profile
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
