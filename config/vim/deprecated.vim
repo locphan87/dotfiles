@@ -15,12 +15,6 @@
 " search for the current selection
 " xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
 " xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
-"
-" Elm
-" nnoremap <leader>el :ElmEvalLine<CR>
-" vnoremap <leader>es :<C-u>ElmEvalSelection<CR>
-" nnoremap <leader>em :ElmMakeCurrentFile<CR>
-" :au BufWritePost *.elm ElmMakeCurrentFile
 
 " populate the argument list with each of the files named in the quickfix list
 " command! -nargs=0 -bar Qargs execute 'args' QuickfixFilenames()

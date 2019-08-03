@@ -12,6 +12,7 @@ source ~/dotfiles/scripts/aliases
 source ~/dotfiles/scripts/ps1
 source ~/dotfiles/scripts/ps4
 source ~/dotfiles/scripts/bash_completion
+source ~/dotfiles/scripts/tmuxinator.bash
 source ~/dotfiles/scripts/others
 source ~/dotfiles/scripts/git_completion
 source ~/.profile

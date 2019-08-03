@@ -24,9 +24,9 @@ set autoread
 " LINE NUMBER
 set number
 
-so ~/config/vim/general/indentation.vim
-so ~/config/vim/general/folding.vim
-so ~/config/vim/general/search.vim
-so ~/config/vim/general/autocommands.vim
-so ~/config/vim/general/abbreviations.vim
-so ~/config/vim/general/others.vim
+so ~/dotfiles/config/vim/general/indentation.vim
+so ~/dotfiles/config/vim/general/folding.vim
+so ~/dotfiles/config/vim/general/search.vim
+so ~/dotfiles/config/vim/general/autocommands.vim
+so ~/dotfiles/config/vim/general/abbreviations.vim
+so ~/dotfiles/config/vim/general/others.vim

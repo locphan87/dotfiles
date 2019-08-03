@@ -2,10 +2,16 @@
 
 alias ls='ls -larth'
 alias grep='grep --color -rin'
-alias mux='tmuxinator'
 alias git=hub
 alias ..="cd .."
 alias ..2="cd ../.."
 alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
+alias chrome-unsafe="open /Applications/Google\ Chrome.app --args --disable-web-security"
+# temporary aliases for projects
+alias pr-dma-bo="open https://bitbucket.org/tcb-mep/dma-back-office/pull-requests/new"
+alias pr-dma-customer="open https://bitbucket.org/tcb-mep/dma-customer/pull-requests/new"
+alias pr-dma-ui="open https://bitbucket.org/tcb-mep/dma-ui/pull-requests/new"
+alias pr-dma-types="open https://bitbucket.org/tcb-mep/dma-types/pull-requests/new"
+alias pr-dma-server="open https://bitbucket.org/tcb-mep/dma-server/pull-requests/new"

@@ -1,0 +1,44 @@
+#!/usr/bin/env node
+const opn = require('opn')
+const match = require('match-values').default
+
+const usage = () => {
+  const usageText = `
+  Open a new pull request.
+
+  usage:
+    open-pr <command>
+
+    commands can be:
+
+    <repo-name>:      any predefined repo name
+    help:             used to print the usage guide
+  `
+
+  console.log(usageText)
+}
+
+const getDMAProject = (repo) =>
+  `https://bitbucket.org/tcb-mep/${repo}/pull-requests/new`
+const project = match(process.argv[2], {
+  'dma-bo': getDMAProject('dma-back-office'),
+  'dma-ui': getDMAProject('dma-ui'),
+  'dma-types': getDMAProject('dma-types'),
+  'dma-server': getDMAProject('dma-server'),
+  'dma-customer': getDMAProject('dma-customer'),
+  'help': 'help',
+  _: ''
+})
+
+if (!project) {
+  process.exit(-1)
+}
+
+if (project === 'help') {
+  usage()
+  process.exit(-1)
+}
+
+console.log('Open a new PR...')
+opn(project)
+process.exit(0)

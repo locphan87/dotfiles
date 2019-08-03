@@ -1,12 +1,13 @@
 call plug#begin()
 
 " general
-Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sensible' " MUST HAVE
 Plug 'beloglazov/vim-online-thesaurus'
 Plug 'flazz/vim-colorschemes'
+Plug 'tpope/vim-apathy'
 
 " editing
-Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary' " MUST HAVE
 Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular' " TODO
 Plug 'AndrewRadev/splitjoin.vim'
@@ -19,7 +20,7 @@ Plug 'tpope/vim-abolish'
 
 " navigation
 Plug 'scrooloose/nerdtree'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim' " MUST HAVE
 Plug 'easymotion/vim-easymotion'
 Plug 'kshenoy/vim-signature'
 Plug 'wellle/targets.vim' " TODO
@@ -34,12 +35,18 @@ Plug 'yggdroot/indentline'
 Plug 'elzr/vim-json'
 Plug 'moll/vim-node'
 Plug 'elmcast/elm-vim'
-Plug 'Quramy/tsuquyomi'
-Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'reasonml-editor/vim-reason'
 Plug 'elixir-editors/vim-elixir'
 Plug 'jparise/vim-graphql'
+" typescript
+Plug 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
+" clojure
+Plug 'tpope/vim-fireplace'
+Plug 'guns/vim-clojure-static'
+" Plug 'guns/vim-sexp'
+Plug 'tpope/vim-classpath'
+Plug 'vim-scripts/paredit.vim'
 
 " template
 Plug 'lumiliet/vim-twig'
@@ -62,6 +69,8 @@ Plug 'ruanyl/vim-gh-line'
 
 " Syntax checking
 Plug 'w0rp/ale'
+Plug 'venantius/vim-cljfmt'
+Plug 'chiel92/vim-autoformat'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'json', 'typescript'] }

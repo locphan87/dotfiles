@@ -1,13 +1,15 @@
-so ~/config/vim/plugins/easymotion.vim
-so ~/config/vim/plugins/javascript.vim
-so ~/config/vim/plugins/jsdoc.vim
-so ~/config/vim/plugins/ctrlp.vim
-so ~/config/vim/plugins/elmcast.vim
-so ~/config/vim/plugins/nerdtree.vim
-so ~/config/vim/plugins/tern.vim
-so ~/config/vim/plugins/ale.vim
-so ~/config/vim/plugins/youcompleteme.vim
-so ~/config/vim/plugins/tsuquyomi.vim
+so ~/dotfiles/config/vim/plugins/easymotion.vim
+so ~/dotfiles/config/vim/plugins/javascript.vim
+so ~/dotfiles/config/vim/plugins/jsdoc.vim
+so ~/dotfiles/config/vim/plugins/ctrlp.vim
+so ~/dotfiles/config/vim/plugins/elmcast.vim
+so ~/dotfiles/config/vim/plugins/nerdtree.vim
+so ~/dotfiles/config/vim/plugins/tern.vim
+so ~/dotfiles/config/vim/plugins/ale.vim
+so ~/dotfiles/config/vim/plugins/youcompleteme.vim
+so ~/dotfiles/config/vim/plugins/tsuquyomi.vim
+
+let g:clj_fmt_autosave = 1
 
 " enable hard mode by default
 let g:HardMode_level = 'wannabe'

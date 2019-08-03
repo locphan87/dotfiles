@@ -5,8 +5,8 @@ let g:ycm_add_preview_to_completeopt=0
 let g:ycm_confirm_extra_conf=0
 set completeopt-=preview
 let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_semantic_triggers = {
-   \ 'elm' : ['.'],
-   \ 'typescript' : ['.'],
-   \}
+" let g:ycm_semantic_triggers = {
+"    \ 'elm' : ['.'],
+"    \ 'typescript' : ['.'],
+"    \}
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
