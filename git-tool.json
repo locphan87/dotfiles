@@ -1,0 +1,14 @@
+{
+  "default": {
+    "server": "github",
+    "action": "open"
+  },
+  "github": {
+    "host": "https://github.com",
+    "user": "me"
+  },
+  "bitbucket": {
+    "host": "https://bitbucket.org",
+    "user": "me"
+  }
+}

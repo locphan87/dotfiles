@@ -1,0 +1,44 @@
+#!/usr/bin/env node
+
+// Git tools
+// + Open a repository
+// + View issues, commits, branches,...
+// + Create a new pull request
+// ...
+
+const opn = require('opn')
+const argv = require('yargs').argv
+const match = require('match-values').default
+const config = require('../../git-tool.json')
+
+const action = argv.a || config.default.action  // alias a
+const server = argv.s || config.default.server // alias s
+const repoName = argv.r || config.repo // alias r
+
+const actionLink = match(action, {
+  'new-pr': () => match(server, {
+    github: 'compare',
+    bitbucket: 'pull-requests/new',
+  }),
+  prs: () => match(server, {
+    github: 'pulls',
+    bitbucket: 'pull-requests',
+  }),
+  settings: () => match(server, {
+    github: 'settings',
+    bitbucket: 'admin',
+  }),
+  open: () => '',
+  _: () => action
+})
+const finalAction = actionLink()
+
+const serverConfig = match(server, {
+  github: config.github,
+  _: config.bitbucket
+})
+const user = argv.u || serverConfig.user // alias u
+const project = `${serverConfig.host}/${user}/${repoName}/${finalAction}`
+
+opn(project)
+process.exit(0)
