@@ -1,12 +1,8 @@
 #!/usr/bin/env node
 
 // Git tools
-// + Open a repository
-// + View issues, commits, branches,...
-// + Create a new pull request
-// ...
 
-const opn = require('opn')
+const open = require('open')
 const argv = require('yargs').argv
 const match = require('match-values').default
 const config = require('../../git-tool.json')
@@ -40,5 +36,5 @@ const serverConfig = match(server, {
 const user = argv.u || serverConfig.user // alias u
 const project = `${serverConfig.host}/${user}/${repoName}/${finalAction}`
 
-opn(project)
+open(project)
 process.exit(0)
