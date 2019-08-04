@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# Need to do this because symlink won't work
-# It complains about some .plist files
-/Applications/LibreOffice.app/Contents/MacOS/soffice "$@"

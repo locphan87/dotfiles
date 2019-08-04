@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "match-values": "1.1.0",
-    "open": "6.4.0",
-    "yargs": "13.3.0"
-  }
-}

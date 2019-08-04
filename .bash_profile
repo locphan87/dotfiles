@@ -6,7 +6,6 @@ export CDPATH=.
 
 set -o vi
 
-source ~/dotfiles/scripts/path
 source ~/dotfiles/scripts/npm_completion
 source ~/dotfiles/scripts/aliases
 source ~/dotfiles/scripts/ps1
