@@ -2,6 +2,7 @@
 
 # vim
 ln -s ~/dotfiles/.vimrc ~
+mkdir .vim
 ln -s ~/dotfiles/config/vim/autoload ~/.vim
 ln -s ~/dotfiles/config/vim/colors ~/.vim
 # emacs
