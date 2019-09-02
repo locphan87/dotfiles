@@ -1,3 +1,5 @@
+echo '.profile_linux'
+
 setxkbmap -layout us -option
 setxkbmap -layout us -option caps:escape,ctrl:swap_rwin_rctl
 
