@@ -5,6 +5,7 @@ export GREP_COLOR=33
 export LSCOLORS=ExFxBxDxCxegedabagacad
 export EDITOR='vim'
 export CDPATH=.
+export NODE_OPTIONS=--max_old_space_size=8192 # 8GB
 
 set -o vi
 
@@ -21,3 +22,5 @@ source ~/dotfiles/scripts/tmuxinator.bash
 source ~/dotfiles/scripts/npm_completion
 source ~/dotfiles/scripts/git_completion
 source ~/dotfiles/scripts/others
+
+export PATH="$HOME/.cargo/bin:$PATH"
