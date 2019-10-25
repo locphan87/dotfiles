@@ -6,3 +6,7 @@ setxkbmap -layout us -option caps:escape,ctrl:swap_rwin_rctl
 export LD_LIBRARY_PATH=/opt/oracle/instantclient_12_2
 export ORACLE_HOME=/opt/oracle/instantclient_12_2
 export PATH=$PATH:$ORACLE_HOME/bin
+
+if [ -f /etc/profile.d/bash_completion.sh ]; then
+  source /etc/profile.d/bash_completion.sh
+fi
