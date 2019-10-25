@@ -6,4 +6,8 @@ setxkbmap -layout us -option caps:escape,ctrl:swap_rwin_rctl
 export LD_LIBRARY_PATH=/opt/oracle/instantclient_12_2
 export ORACLE_HOME=/opt/oracle/instantclient_12_2
 export PATH=$PATH:$ORACLE_HOME/bin
-export NODE_OPTIONS=--max_old_space_size=524288
+export NODE_OPTIONS=--max_old_space_size=4096
+
+if [ -f /etc/profile.d/bash_completion.sh ]; then
+  source /etc/profile.d/bash_completion.sh
+fi
