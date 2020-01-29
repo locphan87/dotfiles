@@ -12,6 +12,7 @@ augroup typescript
   autocmd!
   autocmd BufNewFile,BufRead *.ts set filetype=typescript
   autocmd BufNewFile,BufEnter *.tsx set filetype=typescript
+  autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 augroup END
 
 augroup javascript

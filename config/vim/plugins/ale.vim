@@ -2,12 +2,15 @@
 " Limit linters used for JavaScript.
 let g:ale_linters = {
 \  'javascript': ['eslint'],
-\  'typescript': ['tslint'],
-\  'clojure': ['joker'],
+\  'typescript': ['tsserver', 'tslint'],
+\  'vue': ['eslint'],
 \}
 let g:ale_fixers = {
-\  'javascript': ['eslint', 'prettier'],
-\  'typescript': ['tslint', 'prettier'],
+\  'javascript': ['eslint'],
+\  'typescript': ['prettier'],
+\  'vue': ['eslint'],
+\  'scss': ['prettier'],
+\  'html': ['prettier'],
 \}
 let g:ale_sign_column_always = 1
 highlight clear ALEErrorSign " otherwise uses error bg color (typically red)

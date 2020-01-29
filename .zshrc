@@ -68,7 +68,25 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git
+  command-not-found
+  common-aliases
+  copyfile
+  docker
+  encode64
+  extract
+  git-extras
+  httpie
+  lein
+  node
+  npm
+  tmux
+  tmuxinator
+  yarn
+  web-search
+  wd
+)
 
 source ~/.bash_profile
 source $ZSH/oh-my-zsh.sh
@@ -105,3 +123,4 @@ alias ..2="cd ../.."
 alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
+alias mux="tmuxinator"

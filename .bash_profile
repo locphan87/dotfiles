@@ -19,7 +19,5 @@ if [[ "$(uname)" == "Linux" ]]; then
   setxkbmap -layout us -option caps:escape
 fi
 
-# source ~/dotfiles/scripts/tmuxinator.bash
-
 # Utilities
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
