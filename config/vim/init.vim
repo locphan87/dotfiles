@@ -47,6 +47,8 @@ Plug 'guns/vim-clojure-static'
 " Plug 'guns/vim-sexp'
 Plug 'tpope/vim-classpath'
 Plug 'vim-scripts/paredit.vim'
+" vue
+Plug 'posva/vim-vue'
 " coffeescript
 Plug 'kchmck/vim-coffee-script'
 " svelte

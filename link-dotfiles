@@ -5,18 +5,28 @@ ln -s ~/dotfiles/.vimrc ~
 mkdir .vim
 ln -s ~/dotfiles/config/vim/autoload ~/.vim
 ln -s ~/dotfiles/config/vim/colors ~/.vim
+
 # emacs
 ln -s ~/dotfiles/config/.emacs.d ~
+
 # npm
 ln -s ~/dotfiles/.npmrc ~
+
 # tmux
 ln -s ~/dotfiles/.tmux.conf ~
+
 # bash
 ln -s ~/dotfiles/.bash_profile ~
+
+# zsh
+ln -s ~/dotfiles/.zshrc ~
+
 # git
 ln -s ~/dotfiles/.gitignore_global ~
 ln -s ~/dotfiles/.gitconfig ~
+
 # tern js
 ln -s ~/dotfiles/.tern-config ~
+
 # ack
 ln -s ~/dotfiles/.ackrc ~

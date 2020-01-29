@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# $0 - indicates the name of script
-# $LINENO - displays the current line number within the script
-export PS4="$0.$LINENO+ "

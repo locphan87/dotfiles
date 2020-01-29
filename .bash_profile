@@ -1,26 +1,25 @@
-echo '.bash_profile'
-
+# General settings
 export CLICOLOR=1
-export GREP_COLOR=33
-export LSCOLORS=ExFxBxDxCxegedabagacad
-export EDITOR='vim'
 export CDPATH=.
 export NODE_OPTIONS=--max_old_space_size=8192 # 8GB
 
+# Java
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/"
+export PATH=$PATH:$JAVA_HOME/bin
+
+# Android SDK
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 set -o vi
 
-if [ "$(uname)" == "Linux" ]; then
-  source ~/dotfiles/.profile_linux
-elif [ "$(uname)" == "Darwin" ]; then
-  source ~/dotfiles/.profile_macos
+if [[ "$(uname)" == "Linux" ]]; then
+  setxkbmap -layout us -option
+  setxkbmap -layout us -option caps:escape
 fi
 
-source ~/dotfiles/scripts/aliases
-source ~/dotfiles/scripts/ps1
-source ~/dotfiles/scripts/ps4
-source ~/dotfiles/scripts/tmuxinator.bash
-source ~/dotfiles/scripts/npm_completion
-source ~/dotfiles/scripts/git_completion
-source ~/dotfiles/scripts/others
+# source ~/dotfiles/scripts/tmuxinator.bash
 
-export PATH="$HOME/.cargo/bin:$PATH"
+# Utilities
+function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
