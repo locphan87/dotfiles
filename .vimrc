@@ -4,6 +4,7 @@ set nocompatible
 let maplocalleader="\\"
 let mapleader=","
 
+" quit the insert mode
 inoremap jk <esc>
 
 " select the current word
@@ -18,10 +19,10 @@ cnoremap <c-p> <up>
 cnoremap <c-n> <down>
 
 " navigate between windows
-nnoremap <C-j> <C-W>j
-nnoremap <C-k> <C-W>k
-nnoremap <C-h> <C-W>h
-nnoremap <C-l> <C-W>l
+nnoremap <c-j> <C-W>j
+nnoremap <c-k> <C-W>k
+nnoremap <c-h> <C-W>h
+nnoremap <c-l> <C-W>l
 
 " smart indentation
 vnoremap < <gv
@@ -30,6 +31,7 @@ vnoremap > >gv
 " Reload vim config
 nnoremap <leader>ww :so $MYVIMRC<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
 " Fast saving of a buffer
 nnoremap <leader>w :up!<cr>
 
@@ -52,7 +54,7 @@ inoremap $t <><esc>i
 vnoremap $1 <esc>`>a)<esc>`<i(<esc>
 vnoremap $2 <esc>`>a]<esc>`<i[<esc>
 vnoremap $3 <esc>`>a}<esc>`<i{<esc>
-vnoremap $$ <esc>`>a"<esc>`<i"<esc>
+vnoremap $t <esc>`>a><esc>`<i<<esc>
 vnoremap $q <esc>`>a'<esc>`<i'<esc>
 vnoremap $e <esc>`>a"<esc>`<i"<esc>
 
@@ -79,19 +81,10 @@ nnoremap <leader>tm :tabmove
 " toggle spell checking
 nnoremap <leader>ss :setlocal spell!<cr>
 
-" moving lines up and down
-nnoremap ∆ :m .+1<CR>==
-nnoremap ˚ :m .-2<CR>==
-inoremap ∆ <Esc>:m .+1<CR>==gi
-inoremap ˚ <Esc>:m .-2<CR>==gi
-vnoremap ∆ :m '>+1<CR>gv=gv
-vnoremap ˚ :m '<-2<CR>gv=gv
-
 " # PLUGINS
 call plug#begin()
 
-" general
-Plug 'tpope/vim-sensible' 
+Plug 'tpope/vim-sensible'
 
 Plug 'beloglazov/vim-online-thesaurus'
 let g:online_thesaurus_map_keys = 0
@@ -99,17 +92,11 @@ nnoremap <leader>xk :OnlineThesaurusCurrentWord<CR>
 
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-apathy'
-
-" editing
 Plug 'tpope/vim-commentary'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'godlygeek/tabular' 
+Plug 'godlygeek/tabular'
 Plug 'AndrewRadev/splitjoin.vim'
-
-" mapping
 Plug 'tpope/vim-unimpaired'
-
-" search and replace
 Plug 'tpope/vim-abolish'
 
 Plug 'scrooloose/nerdtree'
@@ -123,7 +110,18 @@ nnoremap <leader>nj :NERDTree-C-J<CR>
 nnoremap <leader>nk :NERDTree-C-K<CR>
 
 Plug 'ctrlpvim/ctrlp.vim'
-so ~/dotfiles/config/vim/plugins/ctrlp.vim
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+nnoremap <leader>. :CtrlPTag<cr>
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ }
+let g:ctrlp_user_command = 'find %s -type f'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_extensions = ['tag']
 
 " Vim motions on speed!
 Plug 'easymotion/vim-easymotion'
@@ -143,7 +141,7 @@ map <Leader>k <Plug>(easymotion-k)
 Plug 'kshenoy/vim-signature'
 Plug 'wellle/targets.vim'
 
-" Disables the arrow keys, the hjkl keys, the page up/down keys, 
+" Disables the arrow keys, the hjkl keys, the page up/down keys,
 " and a handful of other keys which allow one to rely on character-wise navigation
 Plug 'wikitopian/hardmode'
 " enable hard mode by default
@@ -161,13 +159,12 @@ Plug 'yggdroot/indentline'
 let g:indentLine_enabled = 0
 map <F10> :IndentLinesToggle<CR>
 
-" language
 Plug 'elzr/vim-json'
 Plug 'moll/vim-node'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'jparise/vim-graphql'
 
-" Tsuquyomi works as a client for TSServer 
+" Tsuquyomi works as a client for TSServer
 " (which is an editor service bundled into TypeScript)
 Plug 'Quramy/tsuquyomi'
 " Rename symbols
@@ -179,10 +176,6 @@ autocmd FileType typescript nmap <buffer> <Leader>E <Plug>(TsuquyomiRenameSymbol
 autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
 
 Plug 'leafgarland/typescript-vim'
-" svelte
-Plug 'evanleck/vim-svelte'
-
-" javascript
 Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
 
@@ -190,17 +183,56 @@ Plug 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
 highlight link xmlEndTag xmlTag
 
-" commands
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 
-" source code
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 
-" Syntax checking
 Plug 'w0rp/ale'
-so ~/dotfiles/config/vim/plugins/ale.vim
+" Asynchronous Lint Engine (ALE)
+" Limit linters used for JavaScript.
+let g:ale_linters = {
+\  'javascript': ['eslint'],
+\  'typescript': ['tsserver', 'tslint'],
+\  'vue': ['eslint'],
+\}
+let g:ale_fixers = {
+\  'javascript': ['eslint'],
+\  'typescript': ['prettier'],
+\  'vue': ['eslint'],
+\  'scss': ['prettier'],
+\  'html': ['prettier'],
+\}
+let g:ale_sign_column_always = 1
+highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
+highlight clear ALEWarningSign " otherwise uses error bg color (typically red)
+let g:ale_sign_error = 'X' " could use emoji
+let g:ale_sign_warning = '?' " could use emoji
+let g:ale_statusline_format = ['X %d', '? %d', '']
+" %linter% is the name of the linter that provided the message
+" %s is the error or warning message
+let g:ale_echo_msg_format = '[%linter%] %s'
+let g:ale_open_list = 1
+
+" This can be useful if you are combining ALE with
+" some other plugin which sets quickfix errors, etc.
+" let g:ale_keep_list_window_open = 1
+
+let g:ale_set_loclist = 1
+let g:ale_set_quickfix = 0
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_use_local_config = 1
+" Map keys to navigate between lines with errors and warnings.
+nnoremap <leader>an :ALENextWrap<cr>
+nnoremap <leader>ap :ALEPreviousWrap<cr>
+" Enable completion where available.
+let g:ale_completion_enabled = 1
+nmap <F7> <Plug>(ale_fix)
+nnoremap <leader>l :ALELint<cr>
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_list_window_size = 10
 
 Plug 'chiel92/vim-autoformat'
 Plug 'prettier/vim-prettier', {
@@ -209,14 +241,13 @@ Plug 'prettier/vim-prettier', {
 
 Plug 'mileszs/ack.vim'
 
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
-" enable keyboard shortcuts
-let g:tern_map_prefix='<leader>'
-let g:tern_map_keys=1
-" show argument hints
-let g:tern_show_argument_hints='on_hold'
+" Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+" " enable keyboard shortcuts
+" let g:tern_map_prefix='<leader>'
+" let g:tern_map_keys=1
+" " show argument hints
+" let g:tern_show_argument_hints='on_hold'
 
-" completion
 Plug 'Valloric/YouCompleteMe'
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
@@ -239,40 +270,33 @@ Plug 'Raimondi/delimitMate'
 call plug#end()
 
 " # GENERAL
-" INTERFACE
-" colorscheme distinguished
 colorscheme termschool
 set background=dark
 set t_Co=256
 
-" SYNTAX HIGHLIGHT
-syntax on
+syntax on " syntax highlight
 
-" ENABLE FILETYPE PLUGINS
+" enable filetype plugins
 filetype plugin on
 filetype indent on
 
-" GENERAL
 set pastetoggle=<f5>
 set encoding=utf-8
-" Use Unix as the standard file type
-set ffs=unix,dos,mac
-" navigate away from a modified file without first saving it
-set hidden
-" Set to auto read when a file is changed from the outside
-set autoread
 
-" LINE NUMBER
-set number
+set ffs=unix,dos,mac " use Unix as the standard file type
+set hidden " navigate away from a modified file without first saving it
+set autoread " set to auto read when a file is changed from the outside
+set number " line number
 
 " ## INDENTATION
-set ai " Auto indent
-set si " Smart indent
-set wrap " Wrap lines
+set ai " auto indent
+set si " smart indent
+set wrap " wrap lines
 set expandtab " Use spaces instead of tabs
 set smarttab
 set shiftwidth=2
 set tabstop=2
+
 " ## FOLDING
 set foldlevel=99
 set foldmethod=indent
@@ -286,21 +310,14 @@ let ruby_fold=1               " Ruby
 let sh_fold_enabled=1         " sh
 let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
-Terms
+
 " ## SEARCH
-" Makes search act like search in modern browsers
-set incsearch
+set incsearch " Makes search act like search in modern browsers
+set hls " Highlight search results
+set ignorecase " Ignore case when searching
+set smartcase " When searching try to be smart about cases
 
-" Highlight search results
-set hls
-
-" Ignore case when searching
-set ignorecase
-
-" When searching try to be smart about cases
-set smartcase
 " ## AUTOCOMMANDS
-" EDITTING
 augroup editting
   autocmd!
   " automatically removing all trailing whitespace
@@ -322,7 +339,6 @@ augroup javascript
   autocmd BufEnter *.js set ft=javascript
 augroup END
 
-" CHECKTIME
 augroup checktime
   autocmd!
   " check file change every 4 seconds ('CursorHold') and reload the buffer upon detecting change
@@ -332,21 +348,17 @@ augroup checktime
   autocmd VimEnter *.js au BufWritePost *.js checktime
 augroup END
 
-" MARKDOWN
 augroup filetype_markdown
   autocmd!
   autocmd BufNewFile,BufRead *.md setlocal spell
   autocmd filetype markdown nnoremap <buffer> <localleader>h I#<space>
 augroup END
-" ## ABRV
-" enable dictionary completion source
-set complete+=k
 
-" add a dictionary
-set dictionary+=/usr/share/dict/words
-Terms
+" ## ABRV
+set complete+=k " enable dictionary completion source
+set dictionary+=/usr/share/dict/words " add a dictionary
+
 " ## OTHERS
-" Turn backup off
 set nobackup
 set nowb
 set noswapfile
@@ -367,7 +379,6 @@ set title titlestring=%<%F%=%l/%L-%P titlelen=70
 
 set list!
 set listchars=tab:>·,trail:~,extends:>,precedes:<
-
 set wildmode=longest,list
 
 " treat all numerals as decimal, regardless of whether they are padded with zeros.
