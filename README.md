@@ -20,34 +20,11 @@ $ git clone git@github.com:phanhoangloc/dotfiles.git
 
 ## Usage
 
-### Copy
-
-Copy any parts or the whole configuration file to overwrite its local version on your machine
+### Link dotfiles
 
 ```bash
-$ cd ~
-$ cp ./dotfiles/.gitconfig .
-$ cp ./dotfiles/.bash_profile .
-$ ...
-```
-
-### Manual Link dotfiles
-
-Create a symbolic link to the target file, so it can get new updates from the repository
-
-```
-$ cd ~
-$ ln -s ./dotfiles/.ackrc .
-$ ln -s ./dotfiles/.vimrc .
-$ ln -s ./dotfiles/.tern-config .
-$ ln -s ./dotfiles/.tmux.conf .
-$ ...
-```
-
-### Auto link dotfiles
-
-```bash
-$ ~/dotfiles/bin/link-dotfiles
+$ cd dotfiles
+$ ./link-dotfiles
 ```
 
 Please note that it would fail on an existing file/directory.
