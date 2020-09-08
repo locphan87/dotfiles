@@ -2,29 +2,20 @@
 
 Various configuration files
 
-- vim
-- emacs
-- tmux
-- tern
-- git
-- bash
-- ack
-- ...
-
 ## Install
 
-```bash
+```sh
 $ cd ~
 $ git clone git@github.com:phanhoangloc/dotfiles.git
 ```
 
 ## Usage
 
-### Link dotfiles
+### Link files
 
-```bash
+```sh
 $ cd dotfiles
-$ ./link-dotfiles
+$ ./link-files
 ```
 
 Please note that it would fail on an existing file/directory.

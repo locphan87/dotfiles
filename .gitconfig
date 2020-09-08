@@ -26,7 +26,6 @@
   changed = green
   untracked = cyan
 
-# ALIASES
 [alias]
   # basic
   st = status -sb

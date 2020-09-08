@@ -1,5 +1,0 @@
-#!/bin/bash
-
-shopt -s cdspell
-
-function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }

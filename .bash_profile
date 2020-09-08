@@ -19,5 +19,15 @@ if [[ "$(uname)" == "Linux" ]]; then
   setxkbmap -layout us -option caps:escape
 fi
 
+# Aliases
+alias ls="ls -larth"
+alias ..="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
+alias mux="tmuxinator"
+export PATH="/usr/local/opt/ncurses/bin:$PATH"
+
 # Utilities
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
