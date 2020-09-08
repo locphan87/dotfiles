@@ -1,7 +1,16 @@
 # General settings
 export CLICOLOR=1
 export CDPATH=.
-export NODE_OPTIONS=--max_old_space_size=8192 # 8GB
+
+# Personal settings
+export DOTFILES="$HOME/dotfiles"
+
+# NPM packages in homedir
+export NPM_PACKAGES="$HOME/.npm-packages"
+export PATH="$NPM_PACKAGES/bin:$PATH"
+export NODE_OPTIONS=--max_old_space_size=4096 # 4GB
+# Tell Node about these packages
+export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
 # Java
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/"
@@ -20,13 +29,6 @@ if [[ "$(uname)" == "Linux" ]]; then
   setxkbmap -layout us -option
   setxkbmap -layout us -option caps:escape
 fi
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-source $DOTFILES/config/shell/alias.sh
 
 # Utilities
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
