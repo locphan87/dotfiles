@@ -12,6 +12,8 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+# Preferred editor for local and remote sessions
+export EDITOR='vim'
 set -o vi
 
 if [[ "$(uname)" == "Linux" ]]; then
@@ -19,15 +21,12 @@ if [[ "$(uname)" == "Linux" ]]; then
   setxkbmap -layout us -option caps:escape
 fi
 
-# Aliases
-alias ls="ls -larth"
-alias ..="cd .."
-alias ..2="cd ../.."
-alias ..3="cd ../../.."
-alias ..4="cd ../../../.."
-alias ..5="cd ../../../../.."
-alias mux="tmuxinator"
-export PATH="/usr/local/opt/ncurses/bin:$PATH"
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+source $DOTFILES/config/shell/alias.sh
 
 # Utilities
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
