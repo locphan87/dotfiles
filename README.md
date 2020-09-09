@@ -15,7 +15,7 @@ $ git clone git@github.com:phanhoangloc/dotfiles.git
 
 ```sh
 $ cd dotfiles
-$ ./link-files
+$ ./link-files.sh
 ```
 
 Please note that it would fail on an existing file/directory.

@@ -1,6 +1,6 @@
---ignore-dir=node_modules/
---ignore-dir=public/
---ignore-dir=build/
---ignore-dir=dist/
---ignore-dir=.cache/
---ignore-file=ext:css,log,json,c,lock,html
+--ignore-directory=is:.cache
+--ignore-directory=is:dist
+--ignore-directory=is:build
+--ignore-file=ext:css,log,c,lock,html
+--sort-files
+--color
