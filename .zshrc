@@ -138,6 +138,9 @@ source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
+# A Ruby gem that beautifies the terminal's ls command, with color and font-awesome icons
+source $(dirname $(gem which colorls))/tab_complete.sh
+
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
 zinit light-mode for \
@@ -157,4 +160,12 @@ zinit light sei40kr/zsh-fast-alias-tips
 # print a hacker quote randomly when you open a terminal
 zinit light oldratlee/hacker-quotes
 
+# provides syntax highlighting for the shell zsh
+# make the command green if typed right,
+# red if doesn't, and underline existent folders/files
+zinit light zsh-users/zsh-syntax-highlighting 
+
 ### End of Zinit's installer chunk
+
+# fuzzy fidner
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
