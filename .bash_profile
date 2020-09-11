@@ -4,6 +4,7 @@ export CDPATH=.
 
 # Personal settings
 export DOTFILES="$HOME/dotfiles"
+export PATH="$HOME/homebrew/bin:$PATH" 
 
 # NPM packages in homedir
 export NPM_PACKAGES="$HOME/.npm-packages"
