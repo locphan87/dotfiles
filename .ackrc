@@ -1,6 +1,8 @@
 --ignore-directory=is:.cache
 --ignore-directory=is:dist
 --ignore-directory=is:build
+--ignore-directory=is:public
+--ignore-directory=is:coverage
 --ignore-file=ext:css,log,c,lock,html
 --sort-files
 --color
