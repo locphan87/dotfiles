@@ -185,5 +185,8 @@ autocmd FileType html,css,scss,javascript.jsx,typescript EmmetInstall
 " others
 Plug 'Raimondi/delimitMate'
 
+" fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
 call plug#end()
 
