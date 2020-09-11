@@ -3,8 +3,8 @@
 # vim
 ln -s ~/dotfiles/.vimrc ~
 mkdir .vim
-ln -s ~/dotfiles/config/vim/autoload ~/.vim
-ln -s ~/dotfiles/config/vim/colors ~/.vim
+cp -r ~/dotfiles/config/vim/autoload ~/.vim
+cp -r ~/dotfiles/config/vim/colors ~/.vim
 
 # tmux
 ln -s ~/dotfiles/.tmux.conf ~
