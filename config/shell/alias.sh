@@ -8,3 +8,4 @@ alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
 alias mux="tmuxinator"
 alias gd="git-icdiff"
+alias lc='colorls -lA --sd'
