@@ -12,6 +12,7 @@ filetype indent on
 set pastetoggle=<f5>
 set encoding=utf-8
 
+set conceallevel=0 " always show quotes in JSON files
 set ffs=unix,dos,mac " use Unix as the standard file type
 set hidden " navigate away from a modified file without first saving it
 set autoread " set to auto read when a file is changed from the outside

@@ -76,19 +76,18 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  alias-finder
   aws
   colored-man-pages
   common-aliases
-  copydir
-  copyfile
   docker
+  dotenv
   encode64
   extract
   git
   git-extras
   httpie
   lein
+  rand-quote
   node
   npm
   osx
@@ -163,7 +162,7 @@ zinit light oldratlee/hacker-quotes
 # provides syntax highlighting for the shell zsh
 # make the command green if typed right,
 # red if doesn't, and underline existent folders/files
-zinit light zsh-users/zsh-syntax-highlighting 
+zinit light zsh-users/zsh-syntax-highlighting
 
 ### End of Zinit's installer chunk
 

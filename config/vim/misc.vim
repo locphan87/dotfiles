@@ -1,3 +1,7 @@
+" ## ABRV
+set complete+=k " enable dictionary completion source
+set dictionary+=/usr/share/dict/words " add a dictionary
+
 set nobackup
 set nowb
 set noswapfile

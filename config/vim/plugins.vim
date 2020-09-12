@@ -77,7 +77,11 @@ Plug 'yggdroot/indentline'
 let g:indentLine_enabled = 0
 map <F10> :IndentLinesToggle<CR>
 
+" A better JSON for Vim: distinct highlighting of keywords vs values,
+" JSON-specific (non-JS) warnings, quote concealing
+" https://github.com/elzr/vim-json
 Plug 'elzr/vim-json'
+
 Plug 'moll/vim-node'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'jparise/vim-graphql'

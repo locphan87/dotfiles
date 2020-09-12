@@ -4,7 +4,7 @@ export CDPATH=.
 
 # Personal settings
 export DOTFILES="$HOME/dotfiles"
-export PATH="$HOME/homebrew/bin:$PATH" 
+export PATH="$HOME/homebrew/bin:$PATH"
 
 # NPM packages in homedir
 export NPM_PACKAGES="$HOME/.npm-packages"
@@ -30,6 +30,13 @@ if [[ "$(uname)" == "Linux" ]]; then
   setxkbmap -layout us -option
   setxkbmap -layout us -option caps:escape
 fi
+
+# Custom search engines
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search
+export ZSH_WEB_SEARCH_ENGINES=(
+  reddit "https://www.reddit.com/search/?q="
+  eshell "https://explainshell.com/explain?cmd="
+)
 
 # Utilities
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
