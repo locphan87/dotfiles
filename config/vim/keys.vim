@@ -48,6 +48,7 @@ inoremap $4 {<esc>o}<esc>O
 inoremap $q ''<esc>i
 inoremap $e ""<esc>i
 inoremap $t <><esc>i
+inoremap $b ``<esc>i
 
 " surround the visual selection in parenthesis/brackets/etc.
 vnoremap $1 <esc>`>a)<esc>`<i(<esc>
@@ -56,6 +57,7 @@ vnoremap $3 <esc>`>a}<esc>`<i{<esc>
 vnoremap $t <esc>`>a><esc>`<i<<esc>
 vnoremap $q <esc>`>a'<esc>`<i'<esc>
 vnoremap $e <esc>`>a"<esc>`<i"<esc>
+vnoremap $b <esc>`>a`<esc>`<i`<esc>
 
 " selecting your pasted text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
