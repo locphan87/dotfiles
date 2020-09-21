@@ -10,4 +10,4 @@ let g:mkdp_refresh_slow = 1
 
 " use a custom markdown style must be absolute path
 " like '/Users/username/markdown.css' or expand('~/markdown.css')
-let g:mkdp_markdown_css = '/Users/locphan/github-markdown.css'
+let g:mkdp_markdown_css = '~/github-markdown.css'
