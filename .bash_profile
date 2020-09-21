@@ -6,6 +6,10 @@ export CDPATH=.
 export DOTFILES="$HOME/dotfiles"
 export PATH="$HOME/homebrew/bin:$PATH"
 
+# use ripgrep for fzf 
+# https://github.com/BurntSushi/ripgrep
+export FZF_CTRL_T_COMMAND="rg --files"
+
 # NPM packages in homedir
 export NPM_PACKAGES="$HOME/.npm-packages"
 export PATH="$NPM_PACKAGES/bin:$PATH"
