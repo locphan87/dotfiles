@@ -20,6 +20,10 @@ Plug 'tpope/vim-abolish'
 Plug 'plasticboy/vim-markdown'
 so $DOTFILES/config/vim/plugins/vim-markdown.vim
 
+" enables Jenkins DSL job syntax coloring + indentation
+" https://github.com/martinda/Jenkinsfile-vim-syntax
+Plug 'martinda/Jenkinsfile-vim-syntax'
+
 " Hyperfocus-writing in Vim.
 " https://github.com/junegunn/limelight.vim
 Plug 'junegunn/limelight.vim'
