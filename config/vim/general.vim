@@ -1,13 +1,5 @@
 " ## BASICS
 colorscheme termschool
-set background=dark
-set t_Co=256
-
-syntax on " syntax highlight
-
-" enable filetype plugins
-filetype plugin on
-filetype indent on
 
 set pastetoggle=<f5>
 set encoding=utf-8

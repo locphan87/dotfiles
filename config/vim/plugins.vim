@@ -3,11 +3,6 @@
 call plug#begin()
 
 Plug 'tpope/vim-sensible'
-
-Plug 'beloglazov/vim-online-thesaurus'
-let g:online_thesaurus_map_keys = 0
-nnoremap <leader>xk :OnlineThesaurusCurrentWord<CR>
-
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-commentary'
@@ -17,82 +12,106 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-abolish'
 
+" BEGIN MARKDOWN
+" [M] Syntax highlighting, matching rules and mappings for Markdown files
+" https://github.com/plasticboy/vim-markdown
 Plug 'plasticboy/vim-markdown'
 so $DOTFILES/config/vim/plugins/vim-markdown.vim
 
-" enables Jenkins DSL job syntax coloring + indentation
-" https://github.com/martinda/Jenkinsfile-vim-syntax
-Plug 'martinda/Jenkinsfile-vim-syntax'
-
-" Hyperfocus-writing in Vim.
-" https://github.com/junegunn/limelight.vim
-Plug 'junegunn/limelight.vim'
-
-" Distraction-free writing in Vim
-" https://github.com/junegunn/goyo.vim
-Plug 'junegunn/goyo.vim'
-
-" Markdown Preview for (Neo)vim
+" [S] Markdown Preview for (Neo)vim
 " https://github.com/iamcco/markdown-preview.nvim
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 so $DOTFILES/config/vim/plugins/markdown-preview.vim
 
+" [C] Hyperfocus-writing in Vim.
+" https://github.com/junegunn/limelight.vim
+Plug 'junegunn/limelight.vim'
+" Goyo.vim integration
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+" [C] Distraction-free writing in Vim
+" https://github.com/junegunn/goyo.vim
+Plug 'junegunn/goyo.vim'
+" END MARKDOWN
+
+" [S] Enables Jenkins DSL job syntax coloring + indentation
+" https://github.com/martinda/Jenkinsfile-vim-syntax
+Plug 'martinda/Jenkinsfile-vim-syntax'
+
+" [C] A tree explorer plugin for vim
+" https://github.com/preservim/nerdtree
 Plug 'scrooloose/nerdtree'
 so $DOTFILES/config/vim/plugins/nerdtree.vim
 
-Plug 'ctrlpvim/ctrlp.vim'
-so $DOTFILES/config/vim/plugins/ctrlp.vim
-
+" [M] Vim motions on speed!
+" https://github.com/easymotion/vim-easymotion
 Plug 'easymotion/vim-easymotion'
 so $DOTFILES/config/vim/plugins/easymotion.vim
 
+" [M] Plugin to toggle, display and navigate marks
+" https://github.com/kshenoy/vim-signature
 Plug 'kshenoy/vim-signature'
+
+" [S] Vim plugin that provides additional text objects
+" Pair text objects
+" Quote text objects
+" Separator text objects
+" Argument text objects
+" Tag text objects
+" https://github.com/wellle/targets.vim
 Plug 'wellle/targets.vim'
 
-" Disables the arrow keys, the hjkl keys, the page up/down keys,
+" [S] Disables the arrow keys, the hjkl keys, the page up/down keys,
 " and a handful of other keys which allow one to rely on character-wise navigation
 Plug 'wikitopian/hardmode'
 " enable hard mode by default
 let g:HardMode_level = 'wannabe'
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
-Plug 'majutsushi/tagbar'
-nnoremap <f8> :TagbarToggle<cr>
-
+" [S] lean & mean status/tabline for vim that's light as air
+" https://github.com/vim-airline/vim-airline
 Plug 'bling/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#ale#enabled = 1
 
-Plug 'yggdroot/indentline'
-let g:indentLine_enabled = 0
-map <F10> :IndentLinesToggle<CR>
-
-" A better JSON for Vim: distinct highlighting of keywords vs values,
+" [M] A better JSON for Vim: distinct highlighting of keywords vs values,
 " JSON-specific (non-JS) warnings, quote concealing
 " https://github.com/elzr/vim-json
 Plug 'elzr/vim-json'
 
+" [M] Tools and environment to make Vim superb for developing with Node.js
+" https://github.com/moll/vim-node
 Plug 'moll/vim-node'
-Plug 'HerringtonDarkholme/yats.vim'
+
+" [S] A Vim plugin that provides GraphQL file detection, syntax highlighting, and indentation.
+" https://github.com/jparise/vim-graphql
 Plug 'jparise/vim-graphql'
 
+" [M] Tsuquyomi works as a client for TSServer
+" (which is an editor service bundled into TypeScript)
+" https://github.com/Quramy/tsuquyomi
 Plug 'Quramy/tsuquyomi'
 so $DOTFILES/config/vim/plugins/tsuquyomi.vim
 
+" [S] Typescript syntax files for Vim
+" https://github.com/leafgarland/typescript-vim
 Plug 'leafgarland/typescript-vim'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'pangloss/vim-javascript'
 
-Plug 'mxw/vim-jsx'
-let g:jsx_ext_required = 0
-highlight link xmlEndTag xmlTag
+" [M] Vastly improved Javascript indentation and syntax support in Vim.
+" https://github.com/pangloss/vim-javascript
+Plug 'pangloss/vim-javascript'
+" Enables syntax highlighting for JSDocs
+let g:javascript_plugin_jsdoc = 1
 
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 
+" Asynchronous Lint Engine (ALE)
+" Limit linters used for JavaScript.
 Plug 'w0rp/ale'
 so $DOTFILES/config/vim/plugins/ale.vim
 
@@ -101,15 +120,17 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'json', 'typescript'] }
 
+" [S] Run your favorite search tool from Vim, with an enhanced results list.
+" https://github.com/mileszs/ack.vim
+" Usage: :Ack [options] {pattern} [{directories}]
 Plug 'mileszs/ack.vim'
+" use Ag with ack.vim
+let g:ackprg = 'ag --nogroup --nocolor --column'
+" or
+" let g:ackprg = 'ag --vimgrep'
 
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
-" enable keyboard shortcuts
-let g:tern_map_prefix='<leader>'
-let g:tern_map_keys=1
-" show argument hints
-let g:tern_show_argument_hints='on_hold'
-
+" [M] A code-completion engine for Vim
+" https://github.com/ycm-core/YouCompleteMe
 Plug 'Valloric/YouCompleteMe'
 so $DOTFILES/config/vim/plugins/ycm.vim
 
@@ -117,11 +138,13 @@ Plug 'mattn/emmet-vim'
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,scss,javascript.jsx,typescript EmmetInstall
 
-" others
-Plug 'Raimondi/delimitMate'
-
-" fuzzy finder
+" [M] A command-line fuzzy finder
+" https://github.com/junegunn/fzf
+" https://github.com/junegunn/fzf.vim
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+" Map Ctrl-P as CtrlP plugin
+nnoremap <c-p> :FZF<CR>
 
 call plug#end()
 
