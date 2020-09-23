@@ -1,6 +1,3 @@
-" Tsuquyomi works as a client for TSServer
-" (which is an editor service bundled into TypeScript)
-
 " Rename symbols
 " You can rename the identifier under the cursor to a new name
 autocmd FileType typescript nmap <buffer> <Leader>e <Plug>(TsuquyomiRenameSymbol)

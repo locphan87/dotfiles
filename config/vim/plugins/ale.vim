@@ -1,6 +1,3 @@
-" Asynchronous Lint Engine (ALE)
-" Limit linters used for JavaScript.
-
 let g:ale_linters = {
 \  'javascript': ['eslint'],
 \  'typescript': ['tsserver', 'tslint'],
