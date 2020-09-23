@@ -1,8 +1,16 @@
+" Tells the NERDTree whether to display hidden files on startup
 let NERDTreeShowHidden=1
-autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" If a NERDTree already exists for this tab, it is reopened and rendered
+" again. If <start-directory> or <bookmark> is given, the root of NERDTree
+" is set to that path. If no NERDTree exists for this tab then this command
+" acts the same as the |:NERDTree| command.
 nnoremap <leader>nn :NERDTreeToggle<CR>
-nnoremap <leader>nb :NERDTreeFromBookmark
+
+" Without the optional argument, find and reveal the file for the active
+" buffer in the NERDTree window.  With the <path> argument, find and
+" reveal the specified path.
+" Focus will be shifted to the NERDTree window, and the cursor will be
+" placed on the tree node for the determined path.  If a NERDTree for the
+" current tab does not exist, a new one will be initialized.
 nnoremap <leader>nf :NERDTreeFind<CR>
-nnoremap <leader>nj :NERDTree-C-J<CR>
-nnoremap <leader>nk :NERDTree-C-K<CR>
