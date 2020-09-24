@@ -7,7 +7,12 @@ Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-commentary'
 Plug 'editorconfig/editorconfig-vim'
+
+" [S] Vim script for text filtering and alignment
+" https://github.com/godlygeek/tabular
+" Usaage: :Tabularize /{exp}
 Plug 'godlygeek/tabular'
+
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-abolish'
@@ -120,15 +125,6 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'json', 'typescript'] }
 
-" [S] Run your favorite search tool from Vim, with an enhanced results list.
-" https://github.com/mileszs/ack.vim
-" Usage: :Ack [options] {pattern} [{directories}]
-Plug 'mileszs/ack.vim'
-" use Ag with ack.vim
-let g:ackprg = 'ag --nogroup --nocolor --column'
-" or
-" let g:ackprg = 'ag --vimgrep'
-
 " [M] A code-completion engine for Vim
 " https://github.com/ycm-core/YouCompleteMe
 Plug 'Valloric/YouCompleteMe'
@@ -139,12 +135,9 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css,scss,javascript.jsx,typescript EmmetInstall
 
 " [M] A command-line fuzzy finder
-" https://github.com/junegunn/fzf
-" https://github.com/junegunn/fzf.vim
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" Map Ctrl-P as CtrlP plugin
-nnoremap <c-p> :FZF<CR>
+so $DOTFILES/config/vim/plugins/fzf.vim
 
 call plug#end()
 

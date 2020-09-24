@@ -6,9 +6,9 @@ export CDPATH=.
 export DOTFILES="$HOME/dotfiles"
 export PATH="$HOME/homebrew/bin:$PATH"
 
-# use ripgrep for fzf 
+# use ripgrep for fzf
 # https://github.com/BurntSushi/ripgrep
-export FZF_DEFAULT_COMMAND="rg --files --smart-case" 
+export FZF_DEFAULT_COMMAND="rg --files --smart-case --no-ignore-vcs --hidden"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # NPM packages in homedir
@@ -39,6 +39,7 @@ fi
 # Custom search engines
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search
 export ZSH_WEB_SEARCH_ENGINES=(
+  imdb  "https://www.imdb.com/find?q="
   reddit "https://www.reddit.com/search/?q="
   eshell "https://explainshell.com/explain?cmd="
 )
