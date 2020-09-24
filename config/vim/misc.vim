@@ -2,9 +2,14 @@
 set complete+=k " enable dictionary completion source
 set dictionary+=/usr/share/dict/words " add a dictionary
 
+" Disable backups and swap files
 set nobackup
 set nowb
 set noswapfile
+
+" Set default encoding to utf-8
+set encoding=utf-8
+set termencoding=utf-8
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
