@@ -224,22 +224,12 @@ Plug 'mhinz/vim-signify'
 " default updatetime 4000ms is not good for async update
 set updatetime=100
 
-" Asynchronous Lint Engine (ALE)
-" Limit linters used for JavaScript.
-Plug 'w0rp/ale'
-so $DOTFILES/config/vim/plugins/ale.vim
-
 " [C] A Vim plugin for Prettier
 " https://github.com/prettier/vim-prettier
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 " Usage: :Prettier
-
-" [M] A code-completion engine for Vim
-" https://github.com/ycm-core/YouCompleteMe
-Plug 'Valloric/YouCompleteMe'
-so $DOTFILES/config/vim/plugins/ycm.vim
 
 " [C] emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to emmet.
 " https://github.com/mattn/emmet-vim
