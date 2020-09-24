@@ -20,3 +20,6 @@
 
 " open files as CtrlP plugin
 nnoremap <c-p> :Files<CR>
+
+" map ripgrep search
+nnoremap <c-g> :Rg<CR>
