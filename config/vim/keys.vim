@@ -9,6 +9,9 @@ inoremap jk <esc>
 " select the current word
 nnoremap <space> viw
 
+" clear last search highlighting
+nnoremap <silent> <leader><cr> :noh<cr>
+
 " uppercase the current word
 inoremap <c-u> <esc>viwUea
 nnoremap <c-u> viwU
@@ -69,9 +72,6 @@ nnoremap <F3> :source ~/vim_session <cr>
 " treat long lines as break lines
 nnoremap k gk
 nnoremap j gj
-
-" Disable highlight
-nnoremap <silent> <leader><cr> :noh<cr>
 
 " managing tabs
 nnoremap <leader>tn :tabnew<cr>
