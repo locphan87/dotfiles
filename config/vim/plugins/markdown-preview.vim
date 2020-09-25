@@ -18,10 +18,5 @@ let g:mkdp_refresh_slow = 1
 let g:mkdp_markdown_css = '~/github-markdown.css'
 
 " MAPPINGS
-" Start the preview
-nmap <C-s> <Plug>MarkdownPreview
-" Stop the preview
-" :MarkdownPreviewStop
-nmap <M-s> <Plug>MarkdownPreviewStop
-" Toggle the preview
-" :MarkdownPreviewToggle
+nmap <C-m> <Plug>MarkdownPreview
+nmap <M-m> <Plug>MarkdownPreviewStop
