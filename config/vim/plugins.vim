@@ -188,7 +188,7 @@ Plug 'leafgarland/typescript-vim'
 
 " Intellisense engine for Vim8 & Neovim, full language server protocol support as VSCode
 " https://github.com/neoclide/coc.nvim
-Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 so $DOTFILES/config/vim/plugins/coc.vim
 
 " [M] Vastly improved Javascript indentation and syntax support in Vim.

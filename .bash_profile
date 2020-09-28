@@ -8,7 +8,7 @@ export PATH="$HOME/homebrew/bin:$PATH"
 
 # use ripgrep for fzf
 # https://github.com/BurntSushi/ripgrep
-export FZF_DEFAULT_COMMAND="rg --files --smart-case --no-ignore-vcs --hidden"
+export FZF_DEFAULT_COMMAND="rg --files --smart-case --hidden"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # NPM packages in homedir

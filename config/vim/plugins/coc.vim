@@ -3,6 +3,7 @@ let g:coc_global_extensions = [ 'coc-tsserver', 'coc-json' ]
 " Add CoC Prettier if prettier is installed
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
   let g:coc_global_extensions += ['coc-prettier']
+  command! -nargs=0 Prettier :CocCommand prettier.formatFile
 endif
 
 " Add CoC ESLint if ESLint is installed
