@@ -247,5 +247,17 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 so $DOTFILES/config/vim/plugins/fzf.vim
 
+" Global search and replace for VI
+" https://github.com/skwp/greplace.vim
+Plug 'skwp/greplace.vim'
+" customize command used for :Gsearch
+" Usage:
+" - Use `:Gsearch {searchTerm} ./` to get a buffer window of your search results
+" - then you can make the replacements inside the buffer window using traditional tools (%s/foo/bar/)
+" - Invoke :Greplace to make your changes across all files. It will ask you interatively y/n/a - you can hit 'a' to do all.
+" - Save changes to all files with :wall (write all)
+set grepprg=ag
+let g:grep_cmd_opts = '--line-numbers --noheading'
+
 call plug#end()
 
