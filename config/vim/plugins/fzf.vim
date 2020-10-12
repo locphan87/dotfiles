@@ -23,3 +23,9 @@ nnoremap <c-p> :Files<CR>
 
 " map ripgrep search
 nnoremap <c-g> :Rg<CR>
+
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit',
+  \ 'ctrl-y': {lines -> setreg('*', join(lines, "\n"))}}

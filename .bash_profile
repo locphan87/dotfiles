@@ -39,9 +39,13 @@ fi
 # Custom search engines
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search
 export ZSH_WEB_SEARCH_ENGINES=(
-  imdb  "https://www.imdb.com/find?q="
-  reddit "https://www.reddit.com/search/?q="
-  eshell "https://explainshell.com/explain?cmd="
+  imdb       "https://www.imdb.com/find?q="
+  reddit     "https://www.reddit.com/search/?q="
+  eshell     "https://explainshell.com/explain?cmd="
+  trans-en   "https://translate.google.com/?hl=vi&tab=TT#view=home&op=translate&sl=en&tl=vi&text="
+  trans-vi   "https://translate.google.com/?hl=vi&tab=TT#view=home&op=translate&sl=vi&tl=en&text="
+  dict       "https://www.dictionary.com/browse/"
+  thesaurus  "https://www.thesaurus.com/browse/"
 )
 
 # Utilities
