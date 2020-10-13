@@ -46,6 +46,8 @@ export ZSH_WEB_SEARCH_ENGINES=(
   trans-vi   "https://translate.google.com/?hl=vi&tab=TT#view=home&op=translate&sl=vi&tl=en&text="
   dict       "https://www.dictionary.com/browse/"
   thesaurus  "https://www.thesaurus.com/browse/"
+  cambridge  "https://dictionary.cambridge.org/dictionary/english/"
+  learnx     "https://learnxinyminutes.com/docs/"
 )
 
 # Utilities
