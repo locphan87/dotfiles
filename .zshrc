@@ -156,9 +156,6 @@ zinit ice from'gh-r' as'program'
 zinit light sei40kr/fast-alias-tips-bin
 zinit light sei40kr/zsh-fast-alias-tips
 
-# print a hacker quote randomly when you open a terminal
-zinit light oldratlee/hacker-quotes
-
 # provides syntax highlighting for the shell zsh
 # make the command green if typed right,
 # red if doesn't, and underline existent folders/files
