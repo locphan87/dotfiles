@@ -48,6 +48,7 @@ export ZSH_WEB_SEARCH_ENGINES=(
   thesaurus  "https://www.thesaurus.com/browse/"
   cambridge  "https://dictionary.cambridge.org/dictionary/english/"
   learnx     "https://learnxinyminutes.com/docs/"
+  ramda      "https://ramdajs.com/docs/#"
 )
 
 # Utilities
