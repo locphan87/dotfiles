@@ -21,9 +21,6 @@
 " open files as CtrlP plugin
 nnoremap <c-p> :Files<CR>
 
-" map ripgrep search
-nnoremap <c-g> :Rg<CR>
-
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',

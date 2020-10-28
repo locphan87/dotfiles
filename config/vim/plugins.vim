@@ -259,5 +259,28 @@ Plug 'skwp/greplace.vim'
 set grepprg=ag
 let g:grep_cmd_opts = '--line-numbers --noheading'
 
+" Track the engine.
+" Plug 'SirVer/ultisnips'
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
+
+" https://github.com/neoclide/coc-snippets
+" Make <tab> used for trigger completion, completion confirm,
+" snippet expand and jump like VSCode
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? coc#_select_confirm() :
+  \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+let g:coc_snippet_next = '<tab>'
+let g:coc_snippet_prev = '<s-tab>'
+" Use :CocList snippets to open snippets list.
+" Use :CocCommand snippets.editSnippets to edit user snippet of current filetype.
+" Use :CocCommand snippets.openSnippetFiles to open snippet files of current filetype.
+
 call plug#end()
 

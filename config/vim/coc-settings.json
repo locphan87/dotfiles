@@ -1,0 +1,13 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "typescript",
+    "javascript"
+  ],
+  "snippets.extends": {
+    "javascriptreact": ["javascript"],
+    "typescript": ["javascript"]
+  },
+  "snippets.ultisnips.enable": false,
+  "snippets.userSnippetsDirectory": "$DOTFILES/config/vim/snippets"
+}
