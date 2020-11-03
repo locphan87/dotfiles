@@ -6,6 +6,12 @@ let mapleader=","
 " quit the insert mode
 inoremap jk <esc>
 
+" Remap , for repeating latest search in opposite direction
+nnoremap \ ,
+
+" Remap <c-a> for adding a number
+nnoremap <C-i> <C-a>
+
 " select the current word
 nnoremap <space> viw
 
@@ -13,8 +19,8 @@ nnoremap <space> viw
 nnoremap <silent> <leader><cr> :noh<cr>
 
 " uppercase the current word
-inoremap <c-u> <esc>viwUea
-nnoremap <c-u> viwU
+" inoremap <c-u> <esc>viwUea
+" nnoremap <c-u> viwU
 
 " avoid the cursor keys when recalling commands from history
 cnoremap <c-p> <up>
