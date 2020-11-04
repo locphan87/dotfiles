@@ -12,6 +12,7 @@ export FZF_DEFAULT_COMMAND="rg --files --smart-case"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # NPM packages in homedir
+export NODE_TLS_REJECT_UNAUTHORIZED=0
 export NPM_PACKAGES="$HOME/.npm-packages"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 export NODE_OPTIONS=--max_old_space_size=4096 # 4GB
