@@ -123,6 +123,10 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'scrooloose/nerdtree'
 so $DOTFILES/config/vim/plugins/nerdtree.vim
 
+" [C] Extra syntax and highlight for nerdtree files
+" https://github.com/tiagofumo/vim-nerdtree-syntax-highlight
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
 " [M] Vim motions on speed!
 " https://github.com/easymotion/vim-easymotion
 Plug 'easymotion/vim-easymotion'
@@ -186,16 +190,29 @@ Plug 'jparise/vim-graphql'
 " https://github.com/leafgarland/typescript-vim
 Plug 'leafgarland/typescript-vim'
 
-" Intellisense engine for Vim8 & Neovim, full language server protocol support as VSCode
+" [M] Intellisense engine for Vim8 & Neovim, full language server protocol support as VSCode
 " https://github.com/neoclide/coc.nvim
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 so $DOTFILES/config/vim/plugins/coc.vim
+" `:CocList commands` to open the command list and choose one you need.
+" Use `:CocCommand` with <tab> for command line completion
+" Use <Plug>(coc-refactor) for create a refactor window of current symbol
+" For rename variable across files in current cwd, use :CocSearch
+" Use command :CocCommand document.renameCurrentWord to start cursors session
+" with ranges contain current word.
+" Use :CocList snippets to open snippets list.
+" Use :CocCommand snippets.editSnippets to edit user snippet of current filetype.
+" Use :CocCommand snippets.openSnippetFiles to open snippet files of current filetype.
 
 " [M] Vastly improved Javascript indentation and syntax support in Vim.
 " https://github.com/pangloss/vim-javascript
 Plug 'pangloss/vim-javascript'
 " Enables syntax highlighting for JSDocs
 let g:javascript_plugin_jsdoc = 1
+
+" [S] Seamless navigation between tmux panes and vim splits
+" https://github.com/christoomey/vim-tmux-navigator
+Plug 'christoomey/vim-tmux-navigator'
 
 " [M] quoting/parenthesizing made simple
 " https://github.com/tpope/vim-surround
@@ -247,7 +264,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 so $DOTFILES/config/vim/plugins/fzf.vim
 
-" Global search and replace for VI
+" [S] Global search and replace for VI
 " https://github.com/skwp/greplace.vim
 Plug 'skwp/greplace.vim'
 " customize command used for :Gsearch
@@ -259,28 +276,14 @@ Plug 'skwp/greplace.vim'
 set grepprg=ag
 let g:grep_cmd_opts = '--line-numbers --noheading'
 
-" Track the engine.
+" [S] Track the engine.
 " Plug 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
 
-" https://github.com/neoclide/coc-snippets
-" Make <tab> used for trigger completion, completion confirm,
-" snippet expand and jump like VSCode
-inoremap <silent><expr> <TAB>
-  \ pumvisible() ? coc#_select_confirm() :
-  \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-  \ <SID>check_back_space() ? "\<TAB>" :
-  \ coc#refresh()
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-let g:coc_snippet_next = '<tab>'
-let g:coc_snippet_prev = '<s-tab>'
-" Use :CocList snippets to open snippets list.
-" Use :CocCommand snippets.editSnippets to edit user snippet of current filetype.
-" Use :CocCommand snippets.openSnippetFiles to open snippet files of current filetype.
+" [C] Adds file type icons to Vim plugins
+" https://github.com/ryanoasis/vim-devicons
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 

@@ -37,6 +37,8 @@ set listchars=tab:>·,trail:~,extends:>,precedes:<
 set wildmode=longest,list,full
 
 " treat all numerals as decimal, regardless of whether they are padded with zeros.
+" As of version 8.0 of Vim, the 'nrformats' setting excludes the octal option
+" by default, which avoids this whole area of confusion.
 set nrformats=
 
 " Disable beep and flash

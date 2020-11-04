@@ -18,8 +18,9 @@
 " :Commits  - Git commits
 " :BCommits - Git commits for the current buffer
 
-" open files as CtrlP plugin
 nnoremap <c-p> :Files<CR>
+nnoremap <c-b> :Buffers<CR>
+nnoremap <leader>h :History<CR>
 
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
