@@ -19,7 +19,6 @@
 " :BCommits - Git commits for the current buffer
 
 nnoremap <c-p> :Files<CR>
-nnoremap <c-b> :Buffers<CR>
 nnoremap <leader>h :History<CR>
 
 let g:fzf_action = {
