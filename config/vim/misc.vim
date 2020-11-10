@@ -6,6 +6,9 @@ set nobackup
 set nowb
 set noswapfile
 
+" Set the maximum commands recorded in history
+set history=200
+
 " Set default encoding to utf-8
 set encoding=utf-8
 set termencoding=utf-8
@@ -34,7 +37,13 @@ set mat=2
 
 set list!
 set listchars=tab:>·,trail:~,extends:>,precedes:<
-set wildmode=longest,list,full
+
+" With the ‘wildmenu’ option enabled,
+" Vim provides a navigable list of suggestions
+set wildmenu
+" Choosing from multiple matches
+" Similar to the autocomplete menu in zsh)
+set wildmode=full
 
 " treat all numerals as decimal, regardless of whether they are padded with zeros.
 " As of version 8.0 of Vim, the 'nrformats' setting excludes the octal option
