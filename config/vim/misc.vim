@@ -1,5 +1,6 @@
 " ## ABRV
-set complete+=k " enable dictionary completion source
+set complete+=kspell " enable dictionary completion source
+set spellfile=~/.vim/spell/en.utf-8.add
 
 " Disable backups and swap files
 set nobackup

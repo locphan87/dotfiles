@@ -9,6 +9,7 @@
     "javascriptreact": ["javascript"],
     "typescript": ["javascript"]
   },
+  "suggest.noselect": false,
   "snippets.ultisnips.enable": false,
   "snippets.userSnippetsDirectory": "$DOTFILES/config/vim/snippets"
 }
