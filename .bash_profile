@@ -12,10 +12,10 @@ export FZF_DEFAULT_COMMAND="rg --files --smart-case"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # NPM packages in homedir
-export NODE_TLS_REJECT_UNAUTHORIZED=0
+# export NODE_TLS_REJECT_UNAUTHORIZED=0
 export NPM_PACKAGES="$HOME/.npm-packages"
 export PATH="$NPM_PACKAGES/bin:$PATH"
-export NODE_OPTIONS=--max_old_space_size=4096 # 4GB
+# export NODE_OPTIONS=--max_old_space_size=4096 # 4GB
 # Tell Node about these packages
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
@@ -40,16 +40,19 @@ fi
 # Custom search engines
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search
 export ZSH_WEB_SEARCH_ENGINES=(
-  imdb       "https://www.imdb.com/find?q="
-  reddit     "https://www.reddit.com/search/?q="
-  eshell     "https://explainshell.com/explain?cmd="
-  trans-en   "https://translate.google.com/?hl=vi&tab=TT#view=home&op=translate&sl=en&tl=vi&text="
-  trans-vi   "https://translate.google.com/?hl=vi&tab=TT#view=home&op=translate&sl=vi&tl=en&text="
-  dict       "https://www.dictionary.com/browse/"
-  thesaurus  "https://www.thesaurus.com/browse/"
-  cambridge  "https://dictionary.cambridge.org/dictionary/english/"
-  learnx     "https://learnxinyminutes.com/docs/"
-  ramda      "https://ramdajs.com/docs/#"
+  imdb        "https://www.imdb.com/find?q="
+  reddit      "https://www.reddit.com/search/?q="
+  eshell      "https://explainshell.com/explain?cmd="
+  trans-en    "https://translate.google.com/?hl=vi&tab=TT#view=home&op=translate&sl=en&tl=vi&text="
+  trans-vi    "https://translate.google.com/?hl=vi&tab=TT#view=home&op=translate&sl=vi&tl=en&text="
+  dict        "https://www.dictionary.com/browse/"
+  thesaurus   "https://www.thesaurus.com/browse/"
+  cambridge   "https://dictionary.cambridge.org/dictionary/english/"
+  learnx      "https://learnxinyminutes.com/docs/"
+  ramda       "https://ramdajs.com/docs/#"
+  aws-site    "https://aws.amazon.com/"
+  aws-docs    "https://docs.aws.amazon.com/"
+  aws-console "https://console.aws.amazon.com/"
 )
 
 # Utilities

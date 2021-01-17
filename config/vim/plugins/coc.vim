@@ -1,4 +1,4 @@
-let g:coc_global_extensions = [ 'coc-tsserver', 'coc-json' ]
+let g:coc_global_extensions = [ 'coc-tsserver', 'coc-json', 'coc-yaml', 'coc-tailwindcss' ]
 
 " Add CoC Prettier if prettier is installed
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
@@ -9,6 +9,11 @@ endif
 " Add CoC ESLint if ESLint is installed
 if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
   let g:coc_global_extensions += ['coc-eslint']
+endif
+
+" Add CoC styled-components
+if isdirectory('./node_modules') && isdirectory('./node_modules/styled-components')
+  let g:coc_global_extensions += ['coc-styled-components']
 endif
 
 " Remap keys for applying codeAction to the current line.
@@ -24,6 +29,13 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap keys for range format
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 " [S] https://github.com/neoclide/coc-snippets
 " Make <tab> used for trigger completion, completion confirm,

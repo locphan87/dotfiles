@@ -133,10 +133,10 @@ Plug 'tpope/vim-fugitive'
 
 " [S] Show a diff using Vim its sign column.
 " https://github.com/mhinz/vim-signify
-Plug 'mhinz/vim-signify'
+" Plug 'mhinz/vim-signify'
 " Configuration for async update
 " default updatetime 4000ms is not good for async update
-set updatetime=100
+" set updatetime=100
 
 " [C] A Vim plugin for Prettier
 " https://github.com/prettier/vim-prettier
@@ -180,7 +180,7 @@ Plug 'honza/vim-snippets'
 
 " [C] Adds file type icons to Vim plugins
 " https://github.com/ryanoasis/vim-devicons
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 

@@ -137,9 +137,6 @@ source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-# A Ruby gem that beautifies the terminal's ls command, with color and font-awesome icons
-source $(dirname $(gem which colorls))/tab_complete.sh
-
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
 zinit light-mode for \
