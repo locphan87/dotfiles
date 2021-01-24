@@ -1,4 +1,4 @@
-" ## ABRV
+" Dictionary
 set complete+=kspell " enable dictionary completion source
 set spellfile=~/.vim/spell/en.utf-8.add
 
@@ -59,4 +59,6 @@ set noerrorbells novisualbell t_vb= tm=500
 function! ZT()
   return system('date +%Y%m%d.%H%M%S')
 endfunction
+
+" ABRV
 iab zt <C-R>=ZT()<CR>

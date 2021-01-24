@@ -153,8 +153,8 @@ Plug 'mattn/emmet-vim'
 " Redefine trigger key <C-y>
 let g:user_emmet_leader_key='<C-y>'
 " Enable just for file types below
-let g:user_emmet_install_global = 0
-autocmd FileType html,css,scss,javascript,typescript EmmetInstall
+let g:user_emmet_install_global = 1
+" autocmd FileType html,css,scss,javascript,typescript EmmetInstall
 
 " [M] A command-line fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
