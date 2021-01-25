@@ -1,5 +1,6 @@
 alias zshconfig="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
+alias chrome="open -a 'Google Chrome'"
 alias ls="ls -larth"
 alias ..="cd .."
 alias ..2="cd ../.."

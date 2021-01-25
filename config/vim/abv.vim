@@ -5,24 +5,23 @@ iab b4 before
 iab bk. book
 iab cp. compare
 iab def. definition
-iab diff. different, difference
+iab diff. different
 iab ea. each
 iab e.g. for example
 iab fr. from
 iab etc. and so on
-iab i.e. that is, that means, in other words
+iab i.e. that means
 iab impt. important
-iab nb important, notice this, note well
+iab nb notice this
 iab nec. necessary
-iab re. regarding, about
+iab re. regarding
 iab sim. similar
 iab st something
-iab t. theory, theoretical
+iab t. theory
 iab tho though
 iab thro through
 iab w with
 iab wo without
-iab viz. namely, that is to say
 iab v. very
 iab vv. extremely
 iab vs. against
@@ -48,7 +47,7 @@ iab instit institution
 iab justific justification
 iab nt nothing
 iab lrg large
-iab soc. social or society
+iab soc. society
 iab stats statistics
 iab amt amount
 iab educatl educational
@@ -84,54 +83,51 @@ iab app. appendix
 iab assoc. association
 iab biol. biology
 iab bibliog. bibliography
-iab bot. botanical, botany
-iab cap. capital, capitalise
+iab cap. capitalise
 iab chap. chapter
 iab chem. chemical
 iab co. company
-iab colloq. colloquial, colloquialism
-iab conf. conference, confer
-iab cont. containing, content, continental, continue, continued
-iab com. commercial, commission, common, communication, community
+iab conf. conference
+iab cont. continue
+iab com. communication
 iab cr. credit
 iab crit. criticism
 iab diag. diagram
 iab disc. discovered
 iab dist. distinguished
 iab div. dividend, division
-iab distr. distribution, distributed
-iab econ. economics, economy
+iab distr. distribution
+iab econ. economy
 iab esp. especially
-iab est. established, estimate
-iab ex. examined, example
+iab est. estimate
+iab ex. example
 iab excl. excluding
-iab f. feminine, feminism, frequency
-iab gen. gender, general
+iab f. frequency
+iab gen. general
 iab govt. government
-iab hist. historian, historical, history
+iab hist. history
 iab illus. illustrated
 iab inc. including
 iab info. information
 iab lang. language
-iab m. male
-iab orig. original, originated
+iab orig. original
 iab p. page
 iab pp. pages
 iab para. paragraph
-iab poss. possible, possibly
+iab poss. possibly
 iab prin. principal
-iab prob. problem, probable, probably
+iab prob. problem
 iab probs problems
-iab prob. produced by, producer, production
+iab prod. production
 iab q. question
-iab ref. refer, reference
-iab reg. region, registered, regular, regulation
-iab rev. review, revision
-iab sci. science, scientific
+iab ref. reference
+iab reg. region
+iab rev. review
+iab sci. science
 iab sect. section
-iab sp. special, species, specific
-iab st. study, student
-iab univ. universal, university
+iab sp. specific
+iab st. study
+iab univ. universal
 iab usu. usually
 iab vers. version
 iab yr. year
