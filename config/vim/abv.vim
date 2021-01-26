@@ -1,7 +1,9 @@
 iab a. answer
 iab abbr abbreviation
+iab todo // TODO
 iab acad academic
 iab adj adjective
+iab repo repository
 iab adm administration
 iab aka also known as
 iab am. morning
