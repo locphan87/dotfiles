@@ -1,133 +1,127 @@
-" abbreviations for note taking
-iab approx. approximately
-iab bc because
-iab b4 before
-iab bk. book
-iab cp. compare
-iab def. definition
-iab diff. different
-iab ea. each
-iab e.g. for example
-iab fr. from
-iab etc. and so on
-iab i.e. that means
-iab impt. important
-iab nb notice this
-iab nec. necessary
-iab re. regarding
-iab sim. similar
-iab st something
-iab t. theory
-iab tho though
-iab thro through
-iab w with
-iab wo without
-iab v. very
-iab vv. extremely
-iab vs. against
-iab ppl people
-iab res research
-iab natl national
-iab eqn equation
-iab ed education
-iab dep department
-iab esp especially
-iab ustand understand
+iab a. answer
+iab abbr abbreviation
+iab acad academic
+iab adj adjective
+iab adm administration
+iab aka also known as
 iab am. morning
-iab pm. afternoon
-iab asap as soon as possible
-iab wrt with respect to
-iab eryt everything
-iab infl influence
-iab devel development
-iab expl explanation
-iab trad traditional
-iab cult cultural
-iab instit institution
-iab justific justification
-iab nt nothing
-iab lrg large
-iab soc. society
-iab stats statistics
 iab amt amount
-iab educatl educational
-iab subj subject
-iab cons conservative
-iab ind individual
+iab app application
+iab app. appendix
+iab approx approximately
+iab asap as soon as possible
+iab assoc association
+iab au. Australia
+iab didnt did not
+iab dont do not
+iab havent have not
+iab hasnt has not
+iab cant can not
+iab me. Loc Phan
+iab doesnt does not
+iab i I
+iab ill. I will
+iab id. I would
+iab idl. I would like to
+iab b4 before
+iab bc because
+iab bg background
+iab biblio bibliography
+iab bio biology
+iab bk book
+iab cap capitalise
+iab chap chapter
 iab ckg checking
-iab estg establishing
-iab expting experimenting
-iab bkgd background
-iab ppd prepared
-iab prblm problem
-iab c19 nineteenth century
-iab 1990s 1990-1999
+iab co. company
+iab com communication
+iab conf conference
+iab cont continue
+iab cp compare
+iab cr credit
+iab pr pull request
+iab crit criticism
+iab cult cultural
+iab def definition
+iab dep department
+iab dev developer
+iab devt development
+iab diag diagram
+iab diff different
+iab disc discover
+iab dist distinguish
+iab distr distribution
+iab ea each
+iab econ economy
+iab ed education
+iab edl educational
+iab eg. for example
+iab eng English
+iab ert everything
+iab esp especially
+iab esp especially
+iab est estimate
+iab etc and so on
+iab ex. example
+iab excl. excluding
+iab expl explanation
+iab fr. from
+iab fre frequency
+iab gen general
+iab govt government
+iab hist history
+iab ie. that means
+iab impt important
+iab inc. including
+iab ind individual
+iab infl influence
+iab info information
+iab instit institution
+iab lang language
+iab lrg large
 iab ltd limited
 iab max. maximum
 iab min. minimum
-iab gb. great britain
-iab uk. united kingdom
-iab eng. english
-iab brit. british
-iab sts students
-
-" less frequently used abbreviations
-iab a answer
-iab adm. administration
-iab adj. adjective
-iab abr. abridged
-iab abbr. abbreviation
-iab acad. academic
-iab aka. also known as
-iab app. appendix
-iab assoc. association
-iab biol. biology
-iab bibliog. bibliography
-iab cap. capitalise
-iab chap. chapter
-iab chem. chemical
-iab co. company
-iab conf. conference
-iab cont. continue
-iab com. communication
-iab cr. credit
-iab crit. criticism
-iab diag. diagram
-iab disc. discovered
-iab dist. distinguished
-iab div. dividend, division
-iab distr. distribution
-iab econ. economy
-iab esp. especially
-iab est. estimate
-iab ex. example
-iab excl. excluding
-iab f. frequency
-iab gen. general
-iab govt. government
-iab hist. history
-iab illus. illustrated
-iab inc. including
-iab info. information
-iab lang. language
-iab orig. original
+iab natl national
+iab nb notice this
+iab nec necessary
+iab nt nothing
+iab orig original
 iab p. page
+iab para paragraph
+iab pm. afternoon
+iab poss possibly
 iab pp. pages
-iab para. paragraph
-iab poss. possibly
-iab prin. principal
-iab prob. problem
+iab ppl people
+iab prin principal
+iab prob problem
 iab probs problems
-iab prod. production
+iab prod production
 iab q. question
 iab ref. reference
-iab reg. region
-iab rev. review
+iab reg regarding
+iab res research
+iab rev review
 iab sci. science
-iab sect. section
+iab sect section
+iab sim similar
+iab soc society
 iab sp. specific
-iab st. study
-iab univ. universal
-iab usu. usually
-iab vers. version
-iab yr. year
+iab stats statistics
+iab stg something
+iab subj subject
+iab tho though
+iab thro through
+iab trad traditional
+iab uk. United Kingdom
+iab univ universal
+iab us. United States
+iab ustand understand
+iab usu usually
+iab v very
+iab vers version
+iab vn. Vietnam
+iab vs against
+iab vv extremely
+iab w with
+iab wo without
+iab yr year
