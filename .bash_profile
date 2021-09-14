@@ -51,6 +51,7 @@ export ZSH_WEB_SEARCH_ENGINES=(
   learnx      "https://learnxinyminutes.com/docs/"
   ramda       "https://ramdajs.com/docs/#"
   aws-site    "https://aws.amazon.com/"
+  aws-search  "https://aws.amazon.com/search/?searchQuery="
   aws-docs    "https://docs.aws.amazon.com/"
   aws-console "https://console.aws.amazon.com/"
 )
