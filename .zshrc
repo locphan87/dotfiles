@@ -91,8 +91,9 @@ plugins=(
   node
   npm
   osx
-  tmux
-  tmuxinator
+  rally
+  # tmux
+  # tmuxinator
   vi-mode
   wd
   web-search
@@ -100,6 +101,7 @@ plugins=(
   z
 )
 
+source $HOME/.bashrc
 source $HOME/.bash_profile
 source $ZSH/oh-my-zsh.sh
 
@@ -161,4 +163,11 @@ zinit light zsh-users/zsh-syntax-highlighting
 ### End of Zinit's installer chunk
 
 # fuzzy fidner
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH=$HOME/self-serve/p7zip_16.02/bin:$PATH

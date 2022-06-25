@@ -2,9 +2,6 @@
   excludesfile = ~/.gitignore_global
   editor = vim
 
-[user]
-  name = Loc Phan
-
 [color]
   branch = auto
   diff = auto
@@ -98,8 +95,3 @@
   autocorrect = 1
 [http]
   sslVerify = false
-
-# replicate colorful, GitHub-style, split diffs in a two column view
-# https://github.com/jeffkaufman/icdiff
-[icdiff]
-  options = --line-numbers

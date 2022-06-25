@@ -4,38 +4,31 @@ export CDPATH=.
 
 # Personal settings
 export DOTFILES="$HOME/dotfiles"
-export PATH="$HOME/homebrew/bin:$PATH"
 
 # use ripgrep for fzf
 # https://github.com/BurntSushi/ripgrep
 export FZF_DEFAULT_COMMAND="rg --files --smart-case"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-# NPM packages in homedir
-# export NODE_TLS_REJECT_UNAUTHORIZED=0
-export NPM_PACKAGES="$HOME/.npm-packages"
-export PATH="$NPM_PACKAGES/bin:$PATH"
-# export NODE_OPTIONS=--max_old_space_size=4096 # 4GB
-# Tell Node about these packages
-export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
-
-# Java
-export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/"
-export PATH=$PATH:$JAVA_HOME/bin
-
-# Android SDK
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
 set -o vi
 
-if [[ "$(uname)" == "Linux" ]]; then
-  setxkbmap -layout us -option
-  setxkbmap -layout us -option caps:escape
-fi
+# Aliases
+alias zshrc="vim ~/.zshrc"
+alias vimrc="vim ~/.vimrc"
+alias chrome="open -a 'Google Chrome'"
+alias ls="ls -larth"
+alias ..="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
+alias mux="tmuxinator"
+alias gd="git-icdiff"
+alias lc="colorls -lA --sd"
+alias agrep="alias | grep"
+alias code=~/bin/code
 
 # Custom search engines
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search
@@ -57,3 +50,6 @@ export ZSH_WEB_SEARCH_ENGINES=(
 
 # Utilities
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+function notif() {
+  osascript -e "display notification \"$2\" with title \"$1\""
+}
