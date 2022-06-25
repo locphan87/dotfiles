@@ -80,20 +80,19 @@ plugins=(
   colored-man-pages
   common-aliases
   docker
-  dotenv
+  # dotenv
   encode64
   extract
   git
   git-extras
-  httpie
   lein
   rand-quote
   node
   npm
-  osx
+  # macos
   rally
-  # tmux
-  # tmuxinator
+  tmux
+  tmuxinator
   vi-mode
   wd
   web-search
@@ -161,9 +160,6 @@ zinit light sei40kr/zsh-fast-alias-tips
 zinit light zsh-users/zsh-syntax-highlighting
 
 ### End of Zinit's installer chunk
-
-# fuzzy fidner
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
