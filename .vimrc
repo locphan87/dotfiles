@@ -1,6 +1,7 @@
 set nocompatible
 
-" # KEY BINDINGS
+" # KEY BINDINGS #
+
 let maplocalleader="\\"
 let mapleader=","
 
@@ -18,10 +19,6 @@ nnoremap <space> viw
 
 " clear last search highlighting
 nnoremap <silent> <leader><cr> :noh<cr>
-
-" uppercase the current word
-" inoremap <c-u> <esc>viwUea
-" nnoremap <c-u> viwU
 
 " avoid the cursor keys when recalling commands from history
 cnoremap <c-p> <up>
@@ -89,7 +86,7 @@ nnoremap <leader>tm :tabmove
 " toggle spell checking
 nnoremap <leader>ss :setlocal spell!<cr>
 
-" [M] Fixing meta-keys in Vim via Mac OS X Terminal
+" Fixing meta-keys in Vim via Mac OS X Terminal
 " https://www.progclub.org/blog/2014/12/06/fixing-meta-keys-in-vim-via-mac-os-x-terminal-app/
 let c='a'
 while c <= 'z'
@@ -98,7 +95,8 @@ exec "set <M-".tolower(c).">=\e".c
   let c = nr2char(1+char2nr(c))
 endw
 
-" # PLUGINS
+" # PLUGINS #
+
 call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'flazz/vim-colorschemes'
@@ -109,12 +107,8 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-abolish'
 
-" BEGIN MARKDOWN
-" [M] Syntax highlighting, matching rules and mappings for Markdown files
-" https://github.com/plasticboy/vim-markdown
 " Plug 'plasticboy/vim-markdown'
 " Syntax highlighting, matching rules and mappings for Markdown files
-" https://github.com/plasticboy/vim-markdown#options
 
 " Set header folding level
 let g:vim_markdown_folding_level = 6
@@ -133,8 +127,7 @@ let g:vim_markdown_autowrite = 1
 " go to parent header (Up)
 map asdf <Plug>Markdown_MoveToParentHeader
 
-" [S] Markdown Preview for (Neo)vim
-" https://github.com/iamcco/markdown-preview.nvim
+" Markdown Preview for (Neo)vim
 " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
@@ -159,24 +152,19 @@ let g:mkdp_markdown_css = '~/github-markdown.css'
 nmap <C-m> <Plug>MarkdownPreview
 nmap <M-m> <Plug>MarkdownPreviewStop
 
-" [C] Hyperfocus-writing in Vim.
-" https://github.com/junegunn/limelight.vim
+" Hyperfocus-writing in Vim.
 " Plug 'junegunn/limelight.vim'
 " Goyo.vim integration
 " autocmd! User GoyoEnter Limelight
 " autocmd! User GoyoLeave Limelight!
 
-" [C] Distraction-free writing in Vim
-" https://github.com/junegunn/goyo.vim
+" Distraction-free writing in Vim
 " Plug 'junegunn/goyo.vim'
-" END MARKDOWN
 
-" [S] Enables Jenkins DSL job syntax coloring + indentation
-" https://github.com/martinda/Jenkinsfile-vim-syntax
+" Enables Jenkins DSL job syntax coloring + indentation
 Plug 'martinda/Jenkinsfile-vim-syntax'
 
-" [C] A tree explorer plugin for vim
-" https://github.com/preservim/nerdtree
+" A tree explorer plugin for vim
 Plug 'scrooloose/nerdtree'
 " Tells the NERDTree whether to display hidden files on startup
 let NERDTreeShowHidden=1
@@ -195,12 +183,10 @@ nnoremap <leader>nn :NERDTreeToggle<CR>
 " current tab does not exist, a new one will be initialized.
 nnoremap <leader>nf :NERDTreeFind<CR>
 
-" [C] Extra syntax and highlight for nerdtree files
-" https://github.com/tiagofumo/vim-nerdtree-syntax-highlight
+" Extra syntax and highlight for nerdtree files
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-" [M] Vim motions on speed!
-" https://github.com/easymotion/vim-easymotion
+" Vim motions on speed!
 Plug 'easymotion/vim-easymotion'
 " Change the default leader <leader><leader>
 map <Leader> <Plug>(easymotion-prefix)
@@ -216,45 +202,31 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions
 let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
-" [M] Plugin to toggle, display and navigate marks
-" https://github.com/kshenoy/vim-signature
+" Plugin to toggle, display and navigate marks
 Plug 'kshenoy/vim-signature'
 
 Plug 'wellle/targets.vim'
 
-" [S] Disables the arrow keys, the hjkl keys, the page up/down keys,
-" and a handful of other keys which allow one to rely on character-wise navigation
-" Plug 'wikitopian/hardmode'
-" enable hard mode by default
-" let g:HardMode_level = 'wannabe'
-" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-
-" [S] lean & mean status/tabline for vim that's light as air
-" https://github.com/vim-airline/vim-airline
+" lean & mean status/tabline for vim that's light as air
 Plug 'bling/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#ale#enabled = 1
 
-" [M] A better JSON for Vim: distinct highlighting of keywords vs values,
+" A better JSON for Vim: distinct highlighting of keywords vs values,
 " JSON-specific (non-JS) warnings, quote concealing
-" https://github.com/elzr/vim-json
 Plug 'elzr/vim-json'
 
-" [M] Tools and environment to make Vim superb for developing with Node.js
-" https://github.com/moll/vim-node
+" Tools and environment to make Vim superb for developing with Node.js
 Plug 'moll/vim-node'
 
-" [S] A Vim plugin that provides GraphQL file detection, syntax highlighting, and indentation.
-" https://github.com/jparise/vim-graphql
+" A Vim plugin that provides GraphQL file detection, syntax highlighting, and indentation.
 Plug 'jparise/vim-graphql'
 
-" [S] Typescript syntax files for Vim
-" https://github.com/leafgarland/typescript-vim
+" Typescript syntax files for Vim
 Plug 'leafgarland/typescript-vim'
 
-" [M] Intellisense engine for Vim8 & Neovim, full language server protocol support as VSCode
-" https://github.com/neoclide/coc.nvim
+" Intellisense engine for Vim8 & Neovim, full language server protocol support as VSCode
 " Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 let g:coc_global_extensions = [ 'coc-tsserver', 'coc-json', 'coc-yaml', 'coc-tailwindcss' ]
 
@@ -295,7 +267,7 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
-" [S] https://github.com/neoclide/coc-snippets
+" https://github.com/neoclide/coc-snippets
 " Make <tab> used for trigger completion, completion confirm,
 " snippet expand and jump like VSCode
 function! s:check_back_space() abort
@@ -319,18 +291,15 @@ let g:coc_snippet_prev = '<s-tab>'
 " Use :CocCommand snippets.editSnippets to edit user snippet of current filetype.
 " Use :CocCommand snippets.openSnippetFiles to open snippet files of current filetype.
 
-" [M] Vastly improved Javascript indentation and syntax support in Vim.
-" https://github.com/pangloss/vim-javascript
+" Vastly improved Javascript indentation and syntax support in Vim.
 Plug 'pangloss/vim-javascript'
 " Enables syntax highlighting for JSDocs
 let g:javascript_plugin_jsdoc = 1
 
-" [S] Seamless navigation between tmux panes and vim splits
-" https://github.com/christoomey/vim-tmux-navigator
+" Seamless navigation between tmux panes and vim splits
 Plug 'christoomey/vim-tmux-navigator'
 
-" [M] quoting/parenthesizing made simple
-" https://github.com/tpope/vim-surround
+" quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
 " Usage:
 " Change surroundings: cs{x}{y}
@@ -340,96 +309,52 @@ Plug 'tpope/vim-surround'
 " Wrap the entire line in parentheses: yss)
 " Visual mode: S{<tag>}
 
-" [S] enable repeating supported plugin maps with "."
-" https://github.com/tpope/vim-repeat
+" Enable repeating supported plugin maps with "."
 Plug 'tpope/vim-repeat'
 
-" [C] a Git wrapper
-" https://github.com/tpope/vim-fugitive
+" A Git wrapper
 Plug 'tpope/vim-fugitive'
-" Usage: :Git calls any arbitrary Git command
 
-" [S] Show a diff using Vim its sign column.
-" https://github.com/mhinz/vim-signify
+" Show a diff using Vim its sign column.
 " Plug 'mhinz/vim-signify'
 " Configuration for async update
 " default updatetime 4000ms is not good for async update
 " set updatetime=100
 
-" [C] A Vim plugin for Prettier
-" https://github.com/prettier/vim-prettier
+" A Vim plugin for Prettier
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-" Usage: :Prettier
 
-" [C] emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to emmet.
-" https://github.com/mattn/emmet-vim
-" https://emmet.io/
+" emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to emmet.
 Plug 'mattn/emmet-vim'
-" Usage: <leader>,
-" Redefine trigger key <C-y>
 let g:user_emmet_leader_key='<C-y>'
 " Enable just for file types below
 let g:user_emmet_install_global = 1
 " autocmd FileType html,css,scss,javascript,typescript EmmetInstall
 
-" [M] A command-line fuzzy finder
+" A command-line fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" It is a command line application that filters each line
-" from given input with a query that the user types.
-" When the query changes, the results update in realtime
-" https://github.com/junegunn/fzf
-" https://github.com/junegunn/fzf.vim
-" https://medium.com/@sidneyliebrand/how-fzf-and-ripgrep-improved-my-workflow-61c7ca212861
-
-" Common Usages:
-" :Files    - Open files in the current directory
-" :Buffers  - Open buffers
-" :Rg       - rg search result (ALT - A to select all, ALT - D to deselect all)
-" :Maps     - Normal mode mappings
-" :Marks    - Marks
-" :Windows  - Windows
-" :Commits  - Git commits
-" :History  - v:oldfiles and open buffers
-" :History/ - Search history
-" :Commits  - Git commits
-" :BCommits - Git commits for the current buffer
-
 nnoremap <c-p> :Files<CR>
 nnoremap <leader>h :History<CR>
-
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit',
   \ 'ctrl-y': {lines -> setreg('*', join(lines, "\n"))}}
 
-" [S] Global search and replace for VI
-" https://github.com/skwp/greplace.vim
+" Global search and replace for VI
 Plug 'skwp/greplace.vim'
-" customize command used for :Gsearch
-" Usage:
-" - Use `:Gsearch {searchTerm} ./` to get a buffer window of your search results
-" - then you can make the replacements inside the buffer window using traditional tools (%s/foo/bar/)
-" - Invoke :Greplace to make your changes across all files. It will ask you interatively y/n/a - you can hit 'a' to do all.
-" - Save changes to all files with :wall (write all)
 set grepprg=ag
 let g:grep_cmd_opts = '--line-numbers --noheading'
 
-" [S] Track the engine.
-" Plug 'SirVer/ultisnips'
-" Snippets are separated from the engine. Add this if you want them:
-Plug 'honza/vim-snippets'
-
-" [C] Adds file type icons to Vim plugins
-" https://github.com/ryanoasis/vim-devicons
+" Adds file type icons to Vim plugins
 " Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
-" # GENERAL
-" ## BASICS
+" # GENERAL #
+
 colorscheme termschool
 set mouse=a
 
@@ -439,14 +364,12 @@ set ffs=unix,dos,mac " use Unix as the standard file type
 set hidden " navigate away from a modified file without first saving it
 set number " line number
 
-" ## INDENTATION
 set si " smart indent
 set wrap " wrap lines
 set expandtab " Use spaces instead of tabs
 set shiftwidth=2
 set tabstop=2
 
-" ## FOLDING
 set foldlevel=99
 set foldmethod=indent
 set foldcolumn=1
@@ -460,12 +383,12 @@ let sh_fold_enabled=1         " sh
 let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
 
-" ## SEARCH
 set hls " Highlight search results
 set ignorecase " Ignore case when searching
 set smartcase " When searching try to be smart about cases
 
-" # AUTOCMD
+" # AUTOCMD #
+
 augroup editting
   autocmd!
   " automatically removing all trailing whitespace
@@ -484,7 +407,8 @@ augroup END
 " Replace a series of dash bullet points with a numbered list
 command! -range=% NumberedLists let [c,d]=[0,0] | <line1>,<line2>g/^- /let [c,d]=[line('.')==d+1 ? c+1 : 1, line('.')] | s//\=c.'. '
 
-" # FUNCTIONS
+" # FUNCTIONS #
+
 " Capture ex command output and paste to a new tab
 function! TabMessage(cmd)
   redir => message
@@ -506,8 +430,7 @@ function! Remove200b()
   %s/\%u200b//g
 endfunction
 
-" # ABV
-" abbreviations for note taking
+" # ABV #
 iab approx. approximately
 iab bc. because
 iab def. definition
@@ -517,7 +440,8 @@ iab e.g. for example
 iab etc. and so on
 iab i.e. that means
 
-" # MISC
+" # MISC #
+
 " Dictionary
 set complete+=kspell " enable dictionary completion source
 set spellfile=~/.vim/spell/en.utf-8.add
@@ -559,7 +483,7 @@ set mat=2
 set list!
 set listchars=tab:>·,trail:~,extends:>,precedes:<
 
-" With the ‘wildmenu’ option enabled,
+" With the 'wildmenu' option enabled,
 " Vim provides a navigable list of suggestions
 set wildmenu
 " Choosing from multiple matches
@@ -580,5 +504,4 @@ function! ZT()
   return system('date +%Y%m%d.%H%M%S')
 endfunction
 
-" ABRV
 iab zt <C-R>=ZT()<CR>
