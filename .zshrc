@@ -90,7 +90,6 @@ plugins=(
   node
   npm
   # macos
-  rally
   tmux
   tmuxinator
   vi-mode
@@ -100,7 +99,6 @@ plugins=(
   z
 )
 
-source $HOME/.bashrc
 source $HOME/.bash_profile
 source $ZSH/oh-my-zsh.sh
 
@@ -111,13 +109,6 @@ source $HOME/.profile
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-source $DOTFILES/config/shell/alias.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -167,3 +158,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH=$HOME/self-serve/p7zip_16.02/bin:$PATH
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
