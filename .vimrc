@@ -107,9 +107,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-abolish'
 
-" Plug 'plasticboy/vim-markdown'
-" Syntax highlighting, matching rules and mappings for Markdown files
-
+Plug 'preservim/vim-markdown'
 " Set header folding level
 let g:vim_markdown_folding_level = 6
 " https://github.com/plasticboy/vim-markdown#syntax-concealing
@@ -128,7 +126,24 @@ let g:vim_markdown_autowrite = 1
 map asdf <Plug>Markdown_MoveToParentHeader
 
 " Markdown Preview for (Neo)vim
-" Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+let g:mkdp_theme = 'light'
+let g:mkdp_page_title = '${name}'
+let g:mkdp_preview_options = {
+  \ 'mkit': {},
+  \ 'katex': {},
+  \ 'uml': {},
+  \ 'maid': {},
+  \ 'disable_sync_scroll': 0,
+  \ 'sync_scroll_type': 'middle',
+  \ 'hide_yaml_meta': 1,
+  \ 'sequence_diagrams': {},
+  \ 'flowchart_diagrams': {},
+  \ 'content_editable': v:false,
+  \ 'disable_filename': 0,
+  \ 'toc': {}
+  \ }
+
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
 let g:mkdp_auto_start = 0
@@ -152,14 +167,17 @@ let g:mkdp_markdown_css = '~/github-markdown.css'
 nmap <C-m> <Plug>MarkdownPreview
 nmap <M-m> <Plug>MarkdownPreviewStop
 
-" Hyperfocus-writing in Vim.
-" Plug 'junegunn/limelight.vim'
+" Hyperfocus-writing in Vim
+Plug 'junegunn/limelight.vim'
 " Goyo.vim integration
-" autocmd! User GoyoEnter Limelight
-" autocmd! User GoyoLeave Limelight!
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 " Distraction-free writing in Vim
-" Plug 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim'
+
+" Simplify navigation in large markdown files.
+Plug 'Scuilion/markdown-drawer'
 
 " Enables Jenkins DSL job syntax coloring + indentation
 Plug 'martinda/Jenkinsfile-vim-syntax'
@@ -168,13 +186,11 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'scrooloose/nerdtree'
 " Tells the NERDTree whether to display hidden files on startup
 let NERDTreeShowHidden=1
-
 " If a NERDTree already exists for this tab, it is reopened and rendered
 " again. If <start-directory> or <bookmark> is given, the root of NERDTree
 " is set to that path. If no NERDTree exists for this tab then this command
 " acts the same as the |:NERDTree| command.
 nnoremap <leader>nn :NERDTreeToggle<CR>
-
 " Without the optional argument, find and reveal the file for the active
 " buffer in the NERDTree window.  With the <path> argument, find and
 " reveal the specified path.
@@ -182,7 +198,6 @@ nnoremap <leader>nn :NERDTreeToggle<CR>
 " placed on the tree node for the determined path.  If a NERDTree for the
 " current tab does not exist, a new one will be initialized.
 nnoremap <leader>nf :NERDTreeFind<CR>
-
 " Extra syntax and highlight for nerdtree files
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
@@ -202,7 +217,7 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions
 let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
-" Plugin to toggle, display and navigate marks
+" Toggle, display and navigate marks
 Plug 'kshenoy/vim-signature'
 
 Plug 'wellle/targets.vim'
@@ -386,6 +401,11 @@ let xml_syntax_folding=1      " XML
 set hls " Highlight search results
 set ignorecase " Ignore case when searching
 set smartcase " When searching try to be smart about cases
+
+" Markdown highlight frontmatter yaml
+unlet b:current_syntax
+syntax include @Yaml syntax/yaml.vim
+syntax region yamlFrontmatter start=/\%^---$/ end=/^---$/ keepend contains=@Yaml
 
 " # AUTOCMD #
 
