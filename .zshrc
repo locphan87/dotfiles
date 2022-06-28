@@ -15,6 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
@@ -89,18 +90,17 @@ plugins=(
   rand-quote
   node
   npm
-  # macos
-  tmux
-  tmuxinator
   vi-mode
   wd
   web-search
   yarn
   z
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
-source $HOME/.bash_profile
 source $ZSH/oh-my-zsh.sh
+source $HOME/.bash_profile
 
 # User configuration
 source $HOME/.profile
@@ -151,12 +151,5 @@ zinit light sei40kr/zsh-fast-alias-tips
 zinit light zsh-users/zsh-syntax-highlighting
 
 ### End of Zinit's installer chunk
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH=$HOME/self-serve/p7zip_16.02/bin:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
