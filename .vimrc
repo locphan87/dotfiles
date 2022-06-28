@@ -178,6 +178,10 @@ Plug 'junegunn/goyo.vim'
 
 " Simplify navigation in large markdown files.
 Plug 'Scuilion/markdown-drawer'
+let g:markdrawer_prefix = " "
+let g:markdrawer_drawer_max_levels = 4 " max levels to display
+let g:markdrawer_toc = 'index' " displays as a TOC
+nnoremap <Leader>md :MarkDrawer<cr>
 
 " Enables Jenkins DSL job syntax coloring + indentation
 Plug 'martinda/Jenkinsfile-vim-syntax'
@@ -402,11 +406,6 @@ set hls " Highlight search results
 set ignorecase " Ignore case when searching
 set smartcase " When searching try to be smart about cases
 
-" Markdown highlight frontmatter yaml
-unlet b:current_syntax
-syntax include @Yaml syntax/yaml.vim
-syntax region yamlFrontmatter start=/\%^---$/ end=/^---$/ keepend contains=@Yaml
-
 " # AUTOCMD #
 
 augroup editting
@@ -426,6 +425,11 @@ augroup markdown_kb
   autocmd BufRead,BufNewFile $KB_PATH* setlocal path+=$KB_PATH/**
   set suffixesadd+=.md
 augroup END
+
+" Markdown highlight frontmatter yaml
+unlet! b:current_syntax
+syntax include @Yaml syntax/yaml.vim
+syntax region yamlFrontmatter start=/\%^---$/ end=/^---$/ keepend contains=@Yaml
 
 " Replace a series of dash bullet points with a numbered list
 command! -range=% NumberedLists let [c,d]=[0,0] | <line1>,<line2>g/^- /let [c,d]=[line('.')==d+1 ? c+1 : 1, line('.')] | s//\=c.'. '
