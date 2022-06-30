@@ -10,6 +10,7 @@
     "typescript": ["javascript"]
   },
   "suggest.noselect": false,
+  "http.proxyStrictSSL": false,
   "snippets.ultisnips.enable": false,
   "snippets.userSnippetsDirectory": "$DOTFILES/config/vim/snippets"
 }

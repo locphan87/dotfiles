@@ -246,7 +246,7 @@ Plug 'jparise/vim-graphql'
 Plug 'leafgarland/typescript-vim'
 
 " Intellisense engine for Vim8 & Neovim, full language server protocol support as VSCode
-Plug 'neoclide/coc.nvim', {'branch': 'release' }
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 let g:coc_global_extensions = [ 'coc-tsserver', 'coc-java', 'coc-json', 'coc-yaml', 'coc-xml',  'coc-tailwindcss', 'coc-calc' ]
 
 " Add CoC Prettier if prettier is installed
@@ -263,6 +263,15 @@ endif
 " Add CoC styled-components
 if isdirectory('./node_modules') && isdirectory('./node_modules/styled-components')
   let g:coc_global_extensions += ['coc-styled-components']
+endif
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
 endif
 
 " Remap keys for applying codeAction to the current line.
@@ -288,6 +297,9 @@ nmap <silent> gr <Plug>(coc-references)
 " Remap keys for range format
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
