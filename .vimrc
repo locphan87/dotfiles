@@ -246,8 +246,8 @@ Plug 'jparise/vim-graphql'
 Plug 'leafgarland/typescript-vim'
 
 " Intellisense engine for Vim8 & Neovim, full language server protocol support as VSCode
-" Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-let g:coc_global_extensions = [ 'coc-tsserver', 'coc-json', 'coc-yaml', 'coc-tailwindcss' ]
+Plug 'neoclide/coc.nvim', {'branch': 'release' }
+let g:coc_global_extensions = [ 'coc-tsserver', 'coc-java', 'coc-json', 'coc-yaml', 'coc-xml',  'coc-tailwindcss', 'coc-calc' ]
 
 " Add CoC Prettier if prettier is installed
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
@@ -273,18 +273,72 @@ nmap <leader>qf  <Plug>(coc-fix-current)
 " Show autocomplete when Tab is pressed
 inoremap <silent><expr> <Tab> coc#refresh()
 
+" coc-calc
+" append result on current expression
+nmap <Leader>ca <Plug>(coc-calc-result-append)
+" replace result on current expression
+nmap <Leader>cr <Plug>(coc-calc-result-replace)
+
 " GoTo code navigation
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-
 " Remap keys for range format
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocActionAsync('format')
+" Add `:Fold` command to fold current buffer.
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+" Add `:OR` command for organize imports of the current buffer.
+command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
+
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Mappings for CoCList
+" Show all diagnostics.
+nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions.
+nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+" Show commands.
+nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document.
+nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols.
+nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list.
+nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
 
 " https://github.com/neoclide/coc-snippets
 " Make <tab> used for trigger completion, completion confirm,
@@ -304,8 +358,7 @@ let g:coc_snippet_prev = '<s-tab>'
 " Use `:CocCommand` with <tab> for command line completion
 " Use <Plug>(coc-refactor) for create a refactor window of current symbol
 " For rename variable across files in current cwd, use :CocSearch
-" Use command :CocCommand document.renameCurrentWord to start cursors session
-" with ranges contain current word.
+" Use command :CocCommand document.renameCurrentWord to start cursors session with ranges contain current word.
 " Use :CocList snippets to open snippets list.
 " Use :CocCommand snippets.editSnippets to edit user snippet of current filetype.
 " Use :CocCommand snippets.openSnippetFiles to open snippet files of current filetype.
@@ -336,14 +389,10 @@ Plug 'tpope/vim-fugitive'
 
 " Show a diff using Vim its sign column.
 " Plug 'mhinz/vim-signify'
+
 " Configuration for async update
 " default updatetime 4000ms is not good for async update
-" set updatetime=100
-
-" A Vim plugin for Prettier
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+set updatetime=300
 
 " emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to emmet.
 Plug 'mattn/emmet-vim'
@@ -478,6 +527,9 @@ set nobackup
 set nowb
 set noswapfile
 
+" Give more space for displaying messages.
+set cmdheight=2
+
 " Set the maximum commands recorded in history
 set history=200
 
@@ -525,6 +577,8 @@ set nrformats=
 " Disable beep and flash
 " No annoying sound on errors
 set noerrorbells novisualbell t_vb= tm=500
+autocmd GUIEnter * set visualbell t_vb=
+set belloff=all
 
 " return the current time in format YMD.HMS
 function! ZT()
