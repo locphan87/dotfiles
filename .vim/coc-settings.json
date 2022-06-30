@@ -12,5 +12,6 @@
   "suggest.noselect": false,
   "http.proxyStrictSSL": false,
   "snippets.ultisnips.enable": false,
-  "snippets.userSnippetsDirectory": "$DOTFILES/config/vim/snippets"
+  "snippets.userSnippetsDirectory": "$DOTFILES/.vim/snippets",
+  "cSpell.enabled": false
 }

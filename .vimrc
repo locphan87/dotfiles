@@ -106,6 +106,18 @@ Plug 'godlygeek/tabular'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-abolish'
+Plug 'jiangmiao/auto-pairs'
+Plug 'mileszs/ack.vim'
+
+Plug '907th/vim-auto-save'
+" AutoSave is disabled by default, run :AutoSaveToggle to enable/disable it
+let g:auto_save = 0
+" write all open buffers as if you would use :wa
+let g:auto_save_write_all_buffers = 0
+augroup ft_markdown
+  au!
+  au FileType markdown let b:auto_save = 1
+augroup END
 
 Plug 'preservim/vim-markdown'
 " Set header folding level
@@ -239,6 +251,9 @@ Plug 'elzr/vim-json'
 " Tools and environment to make Vim superb for developing with Node.js
 Plug 'moll/vim-node'
 
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'hashivim/vim-terraform'
+
 " A Vim plugin that provides GraphQL file detection, syntax highlighting, and indentation.
 Plug 'jparise/vim-graphql'
 
@@ -309,10 +324,12 @@ nmap <leader>rn <Plug>(coc-rename)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
+" Applying codeAction to the selected region
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
+" Then positioning the cursor in the word, any of the following should display the list of suggestions:
+" <leader>aap for current paragraph
+" <leader>aw for current word
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocActionAsync('format')
@@ -396,8 +413,20 @@ Plug 'tpope/vim-surround'
 " Enable repeating supported plugin maps with "."
 Plug 'tpope/vim-repeat'
 
+Plug 'voldikss/vim-floaterm'
+let g:floaterm_width = 0.9
+let g:floaterm_height = 0.8
+" let g:floaterm_keymap_new = '<Leader>ft'
+let g:floaterm_keymap_new    = '<F7>'
+let g:floaterm_keymap_prev   = '<F8>'
+let g:floaterm_keymap_next   = '<F9>'
+" let g:floaterm_keymap_kill   = '<F10>'
+let g:floaterm_keymap_toggle = '<F12>'
+nnoremap   <silent>   <F10>    :FloatermNext!<CR>
+
 " A Git wrapper
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " Show a diff using Vim its sign column.
 " Plug 'mhinz/vim-signify'
@@ -487,11 +516,6 @@ augroup markdown_kb
   set suffixesadd+=.md
 augroup END
 
-" Markdown highlight frontmatter yaml
-unlet! b:current_syntax
-syntax include @Yaml syntax/yaml.vim
-syntax region yamlFrontmatter start=/\%^---$/ end=/^---$/ keepend contains=@Yaml
-
 " Replace a series of dash bullet points with a numbered list
 command! -range=% NumberedLists let [c,d]=[0,0] | <line1>,<line2>g/^- /let [c,d]=[line('.')==d+1 ? c+1 : 1, line('.')] | s//\=c.'. '
 
@@ -522,7 +546,6 @@ endfunction
 iab approx. approximately
 iab bc. because
 iab def. definition
-iab diff. different
 iab ea. each
 iab e.g. for example
 iab etc. and so on
