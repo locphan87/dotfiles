@@ -109,6 +109,11 @@ Plug 'tpope/vim-abolish'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mileszs/ack.vim'
 Plug 'christoomey/vim-system-copy'
+Plug 'mhinz/vim-startify'
+
+" open the link of current line on github
+Plug 'ruanyl/vim-gh-line'
+let g:gh_github_domain = 'https://github.aus.thenational.com'
 
 Plug '907th/vim-auto-save'
 " AutoSave is disabled by default, run :AutoSaveToggle to enable/disable it
@@ -338,6 +343,9 @@ command! -nargs=0 Format :call CocActionAsync('format')
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
+
+" Open Swagger UI
+command -nargs=0 Swagger :CocCommand swagger.render
 
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
