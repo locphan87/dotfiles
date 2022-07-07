@@ -108,6 +108,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-abolish'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mileszs/ack.vim'
+Plug 'christoomey/vim-system-copy'
 
 Plug '907th/vim-auto-save'
 " AutoSave is disabled by default, run :AutoSaveToggle to enable/disable it
@@ -433,7 +434,7 @@ Plug 'airblade/vim-gitgutter'
 
 " Configuration for async update
 " default updatetime 4000ms is not good for async update
-set updatetime=300
+set updatetime=1000
 
 " emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to emmet.
 Plug 'mattn/emmet-vim'
