@@ -109,8 +109,92 @@ Plug 'tpope/vim-abolish'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mileszs/ack.vim'
 Plug 'christoomey/vim-system-copy'
-Plug 'mhinz/vim-startify'
 
+Plug 'MattesGroeger/vim-bookmarks'
+let g:bookmark_save_per_working_dir = 1
+let g:bookmark_auto_save = 1
+let g:bookmark_center = 1
+" Finds the Git super-project directory
+function! g:BMWorkDirFileLocation()
+  let filename = 'bookmarks'
+  let location = ''
+  if isdirectory('.git')
+    " Current work dir is git's work tree
+    let location = getcwd().'/.git'
+  else
+    " Look upwards (at parents) for a directory named '.git'
+    let location = finddir('.git', '.;')
+  endif
+  if len(location) > 0
+    return location.'/'.filename
+  else
+    return getcwd().'/.'.filename
+  endif
+endfunction
+" avoid keybinding conflicts with the Nerdtree plugin
+let g:bookmark_no_default_key_mappings = 1
+function! BookmarkMapKeys()
+  nmap mm :BookmarkToggle<CR>
+  nmap mi :BookmarkAnnotate<CR>
+  nmap mn :BookmarkNext<CR>
+  nmap mp :BookmarkPrev<CR>
+  nmap ma :BookmarkShowAll<CR>
+  nmap mc :BookmarkClear<CR>
+  nmap mx :BookmarkClearAll<CR>
+  nmap mkk :BookmarkMoveUp
+  nmap mjj :BookmarkMoveDown
+endfunction
+function! BookmarkUnmapKeys()
+  unmap mm
+  unmap mi
+  unmap mn
+  unmap mp
+  unmap ma
+  unmap mc
+  unmap mx
+  unmap mkk
+  unmap mjj
+endfunction
+autocmd BufEnter * :call BookmarkMapKeys()
+autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
+
+Plug 'mhinz/vim-startify'
+function! s:list_commits()
+  let git = 'git'
+  let commits = systemlist(git .' log --oneline | head -n10')
+  let git = 'G'. git[1:]
+  return map(commits, '{"line": matchstr(v:val, "\\s\\zs.*"), "cmd": "'. git .' show ". matchstr(v:val, "^\\x\\+") }')
+endfunction
+let g:startify_lists = [
+  \ { 'type': 'files',     'header': ['   MRU']            },
+  \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+  \ { 'type': 'sessions',  'header': ['   Sessions']       },
+  \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+  \ { 'type': function('s:list_commits'), 'header': ['Commits']},
+  \ { 'type': 'commands',  'header': ['   Commands']       },
+  \ ]
+let g:startify_commands = [
+  \ ['Vim Reference', 'h ref'],
+  \ {'h': 'h startify'}
+  \ ]
+" \ {'m': ['pwd', 'call pwd()']},
+let g:startify_bookmarks = [
+  \ { 'notes': '~/projects/zkn' },
+  \ { 'fp': '~/projects/financial-profile' },
+  \ { 'bt': '~/projects/nabone-banker-tools' },
+  \ { 'bff': '~/projects/bff' },
+  \ { 'cohomelend': '~/projects/cohomelend' },
+  \ { 'bp': '~/projects/bp-web' },
+  \ { 'shl': '~/projects/shl' },
+  \ { 'dotfiles': '~/projects/dotfiles' },
+  \ ]
+let g:startify_custom_footer = [
+  \ '',
+  \ "\t\tFirst, solve the problem.",
+  \ "\t\tThen, weite the code.",
+  \ "\t\t- John Johnson",
+  \ ''
+  \ ]
 " open the link of current line on github
 Plug 'ruanyl/vim-gh-line'
 let g:gh_github_domain = 'https://github.aus.thenational.com'
@@ -128,8 +212,9 @@ augroup END
 Plug 'preservim/vim-markdown'
 " Set header folding level
 let g:vim_markdown_folding_level = 6
-" https://github.com/plasticboy/vim-markdown#syntax-concealing
 set conceallevel=2
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_frontmatter = 1
 " Enable TOC window auto-fit
 let g:vim_markdown_toc_autofit = 1
 " Strikethrough uses two tildes. ~~Scratch this.~~
@@ -195,11 +280,11 @@ autocmd! User GoyoLeave Limelight!
 Plug 'junegunn/goyo.vim'
 
 " Simplify navigation in large markdown files.
-Plug 'Scuilion/markdown-drawer'
-let g:markdrawer_prefix = " "
-let g:markdrawer_drawer_max_levels = 4 " max levels to display
-let g:markdrawer_toc = 'index' " displays as a TOC
-nnoremap <Leader>md :MarkDrawer<cr>
+" Plug 'Scuilion/markdown-drawer'
+" let g:markdrawer_prefix = " "
+" let g:markdrawer_drawer_max_levels = 4 " max levels to display
+" let g:markdrawer_toc = 'index' " displays as a TOC
+" nnoremap <Leader>md :MarkDrawer<cr>
 
 " Enables Jenkins DSL job syntax coloring + indentation
 Plug 'martinda/Jenkinsfile-vim-syntax'
@@ -220,8 +305,22 @@ nnoremap <leader>nn :NERDTreeToggle<CR>
 " placed on the tree node for the determined path.  If a NERDTree for the
 " current tab does not exist, a new one will be initialized.
 nnoremap <leader>nf :NERDTreeFind<CR>
+" Start Startify and NERDTree at startup
+" NERDTree | wincmd p
+autocmd VimEnter *
+  \ if !argc()
+  \ |   Startify
+  \ |   NERDTree
+  \ |   wincmd w
+  \ | endif
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" Open the existing NERDTree on each new tab.
+" autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 " Extra syntax and highlight for nerdtree files
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Vim motions on speed!
 Plug 'easymotion/vim-easymotion'
@@ -316,8 +415,8 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Remap keys for range format
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" vmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -461,6 +560,19 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit',
   \ 'ctrl-y': {lines -> setreg('*', join(lines, "\n"))}}
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   {'options': '--delimiter : --nth 4..'}, <bang>0)
+nnoremap <silent> <Leader>f :Rg<CR>
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 " Global search and replace for VI
 Plug 'skwp/greplace.vim'
@@ -468,7 +580,7 @@ set grepprg=ag
 let g:grep_cmd_opts = '--line-numbers --noheading'
 
 " Adds file type icons to Vim plugins
-" Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " # GENERAL #
