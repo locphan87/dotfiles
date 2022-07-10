@@ -191,7 +191,7 @@ let g:startify_custom_footer = [
   \ "\t\t- John Johnson",
   \ ''
   \ ]
-" open the link of current line on github
+
 Plug 'ruanyl/vim-gh-line'
 let g:gh_github_domain = 'https://github.aus.thenational.com'
 
@@ -517,8 +517,8 @@ let g:floaterm_keymap_toggle = '<leader>ft'
 nnoremap <silent> <leader>fk :FloatermKill!<CR> \| :echom "Closed all terminals"<CR>
 nnoremap <silent> <leader>fs :FloatermSend<CR>
 
-" A Git wrapper
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 
 " Show a diff using Vim its sign column.
