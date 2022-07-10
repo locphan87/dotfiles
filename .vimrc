@@ -17,6 +17,9 @@ nnoremap <C-i> <C-a>
 " select the current word
 nnoremap <space> viw
 
+" open filename under cursor in a vertical split
+nnoremap <leader>gf :vertical wincmd f<CR>
+
 " clear last search highlighting
 nnoremap <silent> <leader><cr> :noh<cr>
 
@@ -84,7 +87,7 @@ nnoremap <leader>tc :tabclose<cr>
 nnoremap <leader>tm :tabmove
 
 " toggle spell checking
-nnoremap <leader>ss :setlocal spell!<cr>
+" nnoremap <leader>ss :setlocal spell!<cr>
 
 " Fixing meta-keys in Vim via Mac OS X Terminal
 " https://www.progclub.org/blog/2014/12/06/fixing-meta-keys-in-vim-via-mac-os-x-terminal-app/
@@ -107,8 +110,8 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-abolish'
 Plug 'jiangmiao/auto-pairs'
-Plug 'mileszs/ack.vim'
 Plug 'christoomey/vim-system-copy'
+Plug 'digitaltoad/vim-pug'
 
 Plug 'MattesGroeger/vim-bookmarks'
 let g:bookmark_save_per_working_dir = 1
@@ -180,18 +183,11 @@ let g:startify_commands = [
 " \ {'m': ['pwd', 'call pwd()']},
 let g:startify_bookmarks = [
   \ { 'notes': '~/projects/zkn' },
-  \ { 'fp': '~/projects/financial-profile' },
-  \ { 'bt': '~/projects/nabone-banker-tools' },
-  \ { 'bff': '~/projects/bff' },
-  \ { 'cohomelend': '~/projects/cohomelend' },
-  \ { 'bp': '~/projects/bp-web' },
-  \ { 'shl': '~/projects/shl' },
   \ { 'dotfiles': '~/projects/dotfiles' },
   \ ]
 let g:startify_custom_footer = [
   \ '',
-  \ "\t\tFirst, solve the problem.",
-  \ "\t\tThen, weite the code.",
+  \ "\t\tFirst, solve the problem. Then, write the code",
   \ "\t\t- John Johnson",
   \ ''
   \ ]
@@ -322,50 +318,46 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 " Extra syntax and highlight for nerdtree files
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-" Vim motions on speed!
 Plug 'easymotion/vim-easymotion'
 " Change the default leader <leader><leader>
-map <Leader> <Plug>(easymotion-prefix)
-
-" 2-character search motion
-" `s<CR>` repeat last find motion.
+" map <Leader> <Plug>(easymotion-prefix)
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+" s{char}{char} to move to {char}{char}
 nmap s <Plug>(easymotion-s2)
-
+nmap t <Plug>(easymotion-t2)
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
 " Turn on case insensitive feature
 " This setting makes EasyMotion work similarly to Vim's smartcase option for global searches.
 let g:EasyMotion_smartcase = 1
-
 " JK motions: Line motions
 let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
-" Toggle, display and navigate marks
-Plug 'kshenoy/vim-signature'
-
+" Plug 'kshenoy/vim-signature'
 Plug 'wellle/targets.vim'
 
-" lean & mean status/tabline for vim that's light as air
 Plug 'bling/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'default'
-let g:airline#extensions#ale#enabled = 1
 
-" A better JSON for Vim: distinct highlighting of keywords vs values,
-" JSON-specific (non-JS) warnings, quote concealing
 Plug 'elzr/vim-json'
-
-" Tools and environment to make Vim superb for developing with Node.js
 Plug 'moll/vim-node'
-
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'hashivim/vim-terraform'
-
-" A Vim plugin that provides GraphQL file detection, syntax highlighting, and indentation.
 Plug 'jparise/vim-graphql'
-
-" Typescript syntax files for Vim
 Plug 'leafgarland/typescript-vim'
 
-" Intellisense engine for Vim8 & Neovim, full language server protocol support as VSCode
+Plug 'SirVer/ultisnips'
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+Plug 'honza/vim-snippets'
+
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 let g:coc_global_extensions = [ 'coc-tsserver', 'coc-java', 'coc-json', 'coc-yaml', 'coc-xml',  'coc-tailwindcss', 'coc-calc' ]
 
@@ -491,22 +483,13 @@ inoremap <silent><expr> <TAB>
   \ coc#refresh()
 let g:coc_snippet_next = '<tab>'
 let g:coc_snippet_prev = '<s-tab>'
-" `:CocList commands` to open the command list and choose one you need.
-" Use `:CocCommand` with <tab> for command line completion
 " Use <Plug>(coc-refactor) for create a refactor window of current symbol
-" For rename variable across files in current cwd, use :CocSearch
-" Use command :CocCommand document.renameCurrentWord to start cursors session with ranges contain current word.
-" Use :CocList snippets to open snippets list.
-" Use :CocCommand snippets.editSnippets to edit user snippet of current filetype.
-" Use :CocCommand snippets.openSnippetFiles to open snippet files of current filetype.
 
-" Vastly improved Javascript indentation and syntax support in Vim.
 Plug 'pangloss/vim-javascript'
 " Enables syntax highlighting for JSDocs
 let g:javascript_plugin_jsdoc = 1
 
-" Seamless navigation between tmux panes and vim splits
-Plug 'christoomey/vim-tmux-navigator'
+" Plug 'christoomey/vim-tmux-navigator'
 
 " quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
@@ -522,15 +505,17 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 
 Plug 'voldikss/vim-floaterm'
+" back to normal mode: use <esc> instead of <c-\><c-n>
+tnoremap <leader><Esc> <C-\><C-n>
+" let g:floaterm_wintype = 'split'
+let g:floaterm_title = 'Terminal $1/$2'
 let g:floaterm_width = 0.9
 let g:floaterm_height = 0.8
-" let g:floaterm_keymap_new = '<Leader>ft'
-let g:floaterm_keymap_new    = '<F7>'
-let g:floaterm_keymap_prev   = '<F8>'
-let g:floaterm_keymap_next   = '<F9>'
-" let g:floaterm_keymap_kill   = '<F10>'
-let g:floaterm_keymap_toggle = '<F12>'
-nnoremap   <silent>   <F10>    :FloatermNext!<CR>
+let g:floaterm_keymap_prev   = '<leader>fp'
+let g:floaterm_keymap_next   = '<leader>fn'
+let g:floaterm_keymap_toggle = '<leader>ft'
+nnoremap <silent> <leader>fk :FloatermKill!<CR> \| :echom "Closed all terminals"<CR>
+nnoremap <silent> <leader>fs :FloatermSend<CR>
 
 " A Git wrapper
 Plug 'tpope/vim-fugitive'
@@ -539,16 +524,11 @@ Plug 'airblade/vim-gitgutter'
 " Show a diff using Vim its sign column.
 " Plug 'mhinz/vim-signify'
 
-" Configuration for async update
-" default updatetime 4000ms is not good for async update
-set updatetime=1000
-
-" emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to emmet.
 Plug 'mattn/emmet-vim'
 let g:user_emmet_leader_key='<C-y>'
 " Enable just for file types below
-let g:user_emmet_install_global = 1
-" autocmd FileType html,css,scss,javascript,typescript EmmetInstall
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,javascript,javascriptreact,typescript,typescriptreact EmmetInstall
 
 " A command-line fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -564,7 +544,8 @@ command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
   \   {'options': '--delimiter : --nth 4..'}, <bang>0)
-nnoremap <silent> <Leader>f :Rg<CR>
+" Find content in Rg
+nnoremap <silent> <Leader>fd :Rg<CR>
 function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
   let initial_command = printf(command_fmt, shellescape(a:query))
@@ -617,6 +598,10 @@ set hls " Highlight search results
 set ignorecase " Ignore case when searching
 set smartcase " When searching try to be smart about cases
 
+" Configuration for async update
+" default updatetime 4000ms is not good for async update
+set updatetime=1000
+
 " # AUTOCMD #
 
 augroup editting
@@ -665,12 +650,12 @@ endfunction
 
 " # ABV #
 iab approx. approximately
-iab bc. because
-iab def. definition
-iab ea. each
 iab e.g. for example
 iab etc. and so on
 iab i.e. that means
+iab dokcer docker
+iab kibectl kubectl
+iab teh the
 
 " # MISC #
 
