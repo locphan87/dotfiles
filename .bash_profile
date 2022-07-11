@@ -54,3 +54,9 @@ function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 function notif() {
   osascript -e "display notification \"$2\" with title \"$1\""
 }
+function project() {
+  echo "Starting $1"
+  project="$HOME/projects/$1"
+  cd $project
+  vim
+}
