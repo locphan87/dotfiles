@@ -100,6 +100,10 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+
 source $HOME/.bash_profile
 
 # User configuration
@@ -151,5 +155,3 @@ zinit light sei40kr/zsh-fast-alias-tips
 zinit light zsh-users/zsh-syntax-highlighting
 
 ### End of Zinit's installer chunk
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

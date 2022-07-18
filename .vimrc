@@ -117,6 +117,7 @@ Plug 'MattesGroeger/vim-bookmarks'
 let g:bookmark_save_per_working_dir = 1
 let g:bookmark_auto_save = 1
 let g:bookmark_center = 1
+let g:bookmark_highlight_lines = 1
 " Finds the Git super-project directory
 function! g:BMWorkDirFileLocation()
   let filename = 'bookmarks'
@@ -338,10 +339,12 @@ let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
 " Plug 'kshenoy/vim-signature'
 Plug 'wellle/targets.vim'
+Plug 'Shougo/unite.vim'
 
 Plug 'bling/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'default'
+let g:airline#extensions#unite#enabled = 1
 
 Plug 'elzr/vim-json'
 Plug 'moll/vim-node'
@@ -520,6 +523,10 @@ nnoremap <silent> <leader>fs :FloatermSend<CR>
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
+
+Plug 'andrewstuart/vim-kubernetes'
+au FileType yaml nmap <leader>ka :KubeApply<CR>
+
 
 " Show a diff using Vim its sign column.
 " Plug 'mhinz/vim-signify'

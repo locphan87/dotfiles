@@ -1,8 +1,15 @@
 [core]
   excludesfile = ~/.gitignore_global
   editor = vim
+  pager = diff-so-fancy | less --tabs=4 -RFX
+  # Don't consider trailing space change as a cause for merge conflicts
+  whitespace = -trailing-space
+
+[user]
+  name = Loc Phan
 
 [color]
+  ui = auto
   branch = auto
   diff = auto
   status = auto
@@ -11,21 +18,25 @@
   local = blue
   remote = green
 [color "diff"]
-  meta = yellow
-  frag = magenta
+  meta = 11
+  frag = magenta bold
+  func = 146 bold
+  commit = yellow bold
   old = red bold
-  new = green
+  new = green bold
+  whitespace = red reverse
   plain = white
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
 [color "status"]
   added = yellow
   changed = green
   untracked = cyan
 
 [alias]
-  prune = fetch --prune
-  # Prune deletes any local branch which has been deleted from the remote
-  # https://git-scm.com/docs/git-fetch#git-fetch--p
-
   stash-all = stash save --include-untracked
   # ensures that when you stash,
   # you catch the new files you haven't caught with a git add yet
@@ -53,17 +64,64 @@
   # list all aliases
   la = "!git config -l | grep alias | cut -c 7-"
 
+  # Command shortcuts
+  ci = commit
+  co = checkout
+  st = status
+  # Display tree-like log, because default log is a pain…
+  lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+  # Useful when you have to update your last commit
+  # with staged files without editing the commit message.
+  oops = commit --amend --no-edit
+  # Ensure that force-pushing won't lose someone else's work (only mine).
+  push-with-lease = push --force-with-lease
+  # Rebase won’t trigger hooks on each "replayed" commit.
+  # This is an ugly hack that will replay each commit during rebase with the
+  # standard `commit` command which will trigger hooks.
+  rebase-with-hooks = rebase -x 'git reset --soft HEAD~1 && git commit -C HEAD@{1}'
+  # List local commits that were not pushed to remote repository
+  review-local = "!git lg @{push}.."
+  # Edit last commit message
+  reword = commit --amend
+  # Undo last commit but keep changed files in stage
+  uncommit = reset --soft HEAD~1
+  # Remove file(s) from Git but not from disk
+  untrack = rm --cache --
+
   hub = !hub
 
 [push]
-  default = simple
-  # push the current branch back to the branch whose changes are usually integrated into the current branch
-  # refuse to push if the upstream branch’s name is different from the local one
-  # https://git-scm.com/docs/git-config#git-config-pushdefault
-
-  followTags = true
+  # Default push should only push the current branch to its push target, regardless of its remote name
+  default = upstream
   # Because I get sick of telling git to do it manually
   # https://git-scm.com/docs/git-config#git-config-pushfollowTags
+  followTags = true
+[pull]
+  default = current
+  rebase = true
+[fetch]
+  prune = true
+[rebase]
+  # Automatically stash current WD and stage when running rebase
+  # then you won't have to manually `git stash push` and `git stash pop`
+  # after and before your rebase.
+  autoStash = true
+  # Automagically reorder and prefix your commands while doing an interactive rebase.
+  autoSquash = true
+
+[grep]
+  lineNumber = true
+[log]
+  # Use abbrev SHAs whenever possible/relevant instead of full 40 chars
+  abbrevCommit = true
+  # Automatically --follow when given a single path
+  follow = true
+  # Disable decorate for reflog
+  # (because there is no dedicated `reflog` section available)
+  decorate = false
+[tag]
+  # Sort tags as version numbers whenever applicable, so 1.10.2 is AFTER 1.2.0.
+  sort = version:refname
 
 [commit]
   gpgSign = false
@@ -76,15 +134,21 @@
   # Sometimes a newly-added folder, since it's only one line in git status, can slip under the radar.
   # https://git-scm.com/docs/git-config#git-config-statusshowUntrackedFiles
 
-[pull]
-  default = current
 [diff]
+  # Use icdiff as default diff tool when running `git diff-tool`
   tool = icdiff
-  mnemonicprefix = true
+  # Use better, descriptive initials (c, i, w) instead of a/b.
+  mnemonicPrefix = true
+  # Show renames/moves as such
+  renames = true
+  colorMoved = zebra
 [difftool]
   prompt = false
 [difftool "icdiff"]
-  cmd = icdiff $LOCAL $REMOTE
+  cmd = icdiff $LOCAL $REMOTE --highlight --line-numbers
+[interactive]
+  diffFilter = diff-so-fancy --patch
+
 [apply]
   whitespace = nowarn
 

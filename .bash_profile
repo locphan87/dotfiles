@@ -29,6 +29,7 @@ alias gd="git-icdiff"
 alias lc="colorls -lA --sd"
 alias agrep="alias | grep"
 alias code=~/bin/code
+alias k=kubectl
 
 # Custom search engines
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search
