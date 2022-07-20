@@ -1,9 +1,7 @@
 - [icdiff](https://github.com/jeffkaufman/icdiff)
 - [diff-so-fancy](https://github.com/jeffkaufman/icdiff)
 - zsh
+- antigen
 - [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
 - [powerlevel10k](https://github.com/romkatv/powerlevel10k)
-- zsh-autosuggestions
-- zsh-syntax-highlighting
 - [fzf](https://github.com/junegunn/fzf)
-- [zinit](https://github.com/zdharma-continuum/zinit)

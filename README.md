@@ -35,6 +35,7 @@ ln -s $DOTFILES/.tmux.conf ~
 ```bash
 ln -s $DOTFILES/.bash_profile ~
 ln -s $DOTFILES/.zshrc ~
+ln -s $DOTFILES/.antigenrc ~
 ```
 
 ### git

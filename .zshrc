@@ -77,28 +77,45 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  aliases
   aws
   colored-man-pages
   common-aliases
+  dotenv
   docker
-  # dotenv
+  docker-compose
+  kubectl
+  microk8s
+  minikube
+  nomad
+  react-native
+  redis-cli
+  ripgrep
+  rsync
+  systemadmin
+  tmux
+  tmuxinator
+  terraform
   encode64
   extract
   git
-  git-extras
-  lein
   rand-quote
+  macos
   node
   npm
+  pip
+  python
+  isodate
+  jsontools
   vi-mode
   wd
+  frontend-search
   web-search
   yarn
   z
-  zsh-autosuggestions
-  zsh-syntax-highlighting
 )
 
+source $DOTFILES/scripts/web_search.sh
 source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -106,10 +123,14 @@ source $ZSH/oh-my-zsh.sh
 
 source $HOME/.bash_profile
 
-# User configuration
+# user configuration
 source $HOME/.profile
 
-# export MANPATH="/usr/local/man:$MANPATH"
+# custom plugins
+source $HOME/antigen.zsh
+antigen init $DOTFILES/.antigenrc
+
+export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -119,39 +140,3 @@ source $HOME/.profile
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-### Added by Zinit's installer
-if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
-        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
-        print -P "%F{160}▓▒░ The clone has failed.%f%b"
-fi
-
-source "$HOME/.zinit/bin/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
-# Load a few important annexes, without Turbo
-# (this is currently required for annexes)
-zinit light-mode for \
-    zinit-zsh/z-a-rust \
-    zinit-zsh/z-a-as-monitor \
-    zinit-zsh/z-a-patch-dl \
-    zinit-zsh/z-a-bin-gem-node
-
-# It suggests commands as you type based on history and completions
-zinit light zsh-users/zsh-autosuggestions
-
-# Help remembering the aliases you defined once
-zinit ice from'gh-r' as'program'
-zinit light sei40kr/fast-alias-tips-bin
-zinit light sei40kr/zsh-fast-alias-tips
-
-# provides syntax highlighting for the shell zsh
-# make the command green if typed right,
-# red if doesn't, and underline existent folders/files
-zinit light zsh-users/zsh-syntax-highlighting
-
-### End of Zinit's installer chunk
