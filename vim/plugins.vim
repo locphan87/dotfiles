@@ -48,6 +48,7 @@ Plug 'wellle/targets.vim'
 Plug 'Shougo/unite.vim'
 
 Plug 'bling/vim-airline'
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#unite#enabled = 1
@@ -59,8 +60,8 @@ Plug 'hashivim/vim-terraform'
 Plug 'jparise/vim-graphql'
 Plug 'leafgarland/typescript-vim'
 
-Plug 'SirVer/ultisnips'
-source $DOTFILES/vim/plugins/ultisnips.vim
+" Plug 'SirVer/ultisnips'
+" source $DOTFILES/vim/plugins/ultisnips.vim
 Plug 'honza/vim-snippets'
 
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}

@@ -93,8 +93,8 @@ plugins=(
   ripgrep
   rsync
   systemadmin
-  tmux
-  tmuxinator
+  # tmux
+  # tmuxinator
   terraform
   encode64
   extract

@@ -18,7 +18,7 @@ set -o vi
 alias zshrc="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 alias chrome="open -a 'Google Chrome'"
-alias ls="ls -larth"
+alias ls="colorls -larth"
 alias .1="cd .."
 alias .2="cd ../.."
 alias .3="cd ../../.."
