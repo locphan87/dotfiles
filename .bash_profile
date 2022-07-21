@@ -2,9 +2,6 @@
 export CLICOLOR=1
 export CDPATH=.
 
-# Personal settings
-export DOTFILES="$HOME/dotfiles"
-
 # use ripgrep for fzf
 # https://github.com/BurntSushi/ripgrep
 export FZF_DEFAULT_COMMAND="rg --files --smart-case"
@@ -18,6 +15,7 @@ set -o vi
 alias zshrc="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 alias chrome="open -a 'Google Chrome'"
+alias fp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
 alias ls="colorls -larth"
 alias .1="cd .."
 alias .2="cd ../.."
@@ -35,4 +33,7 @@ function project() {
   project="$HOME/projects/$1"
   cd $project
   vim
+}
+function iterm2\_print\_user\_vars() {
+  iterm2\_set\_user\_var gitProject $(basename $(git rev-parse --show-toplevel 2> /dev/null) 2> /dev/null)
 }

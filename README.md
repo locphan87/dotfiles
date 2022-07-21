@@ -8,13 +8,6 @@ cd $HOME
 git clone git@github.com:locphan87/dotfiles.git
 ```
 
-Set up $DOTFILES variable
-
-```bash
-echo 'export $DOTFILES="$HOME/dotfiles"' >> ~/.bash_profile
-source ~/.bash_profile
-```
-
 ## Link dot files
 ### vimrc
 
@@ -41,8 +34,8 @@ ln -s $DOTFILES/.antigenrc ~
 ### git
 
 ```bash
-ln -s $DOTFILES/.gitignore_global ~
 ln -s $DOTFILES/.gitconfig ~
+ln -s $DOTFILES/.gitignore_global ~
 ```
 
 ### other files

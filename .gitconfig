@@ -5,9 +5,6 @@
   # Don't consider trailing space change as a cause for merge conflicts
   whitespace = -trailing-space
 
-[user]
-  name = Loc Phan
-
 [color]
   ui = auto
   branch = auto

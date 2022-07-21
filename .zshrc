@@ -85,6 +85,7 @@ plugins=(
   docker
   docker-compose
   kubectl
+  asdf
   microk8s
   minikube
   nomad
@@ -115,6 +116,7 @@ plugins=(
   z
 )
 
+export DOTFILES="$HOME/dotfiles"
 source $DOTFILES/scripts/web_search.sh
 source $ZSH/oh-my-zsh.sh
 
@@ -140,3 +142,6 @@ export MANPATH="/usr/local/man:$MANPATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
