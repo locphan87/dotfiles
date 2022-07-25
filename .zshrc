@@ -81,11 +81,9 @@ plugins=(
   aws
   colored-man-pages
   common-aliases
-  dotenv
   docker
   docker-compose
   kubectl
-  asdf
   microk8s
   minikube
   nomad
@@ -94,8 +92,8 @@ plugins=(
   ripgrep
   rsync
   systemadmin
-  # tmux
-  # tmuxinator
+  tmux
+  tmuxinator
   terraform
   encode64
   extract
@@ -144,4 +142,3 @@ export MANPATH="/usr/local/man:$MANPATH"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-

@@ -95,7 +95,7 @@
   followTags = true
 [pull]
   default = current
-  rebase = true
+  # rebase = true
 [fetch]
   prune = true
 [rebase]

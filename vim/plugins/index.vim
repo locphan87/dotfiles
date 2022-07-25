@@ -94,6 +94,8 @@ Plug 'skwp/greplace.vim'
 set grepprg=ag
 let g:grep_cmd_opts = '--line-numbers --noheading'
 
+Plug 'christoomey/vim-tmux-navigator'
+
 source $DOTFILES/vim/plugins/disabled.vim
 Plug 'ryanoasis/vim-devicons'
 
