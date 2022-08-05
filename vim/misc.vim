@@ -59,12 +59,3 @@ set nrformats=
 set noerrorbells novisualbell t_vb= tm=500
 autocmd GUIEnter * set visualbell t_vb=
 set belloff=all
-
-" Fixing meta-keys in Vim via Mac OS X Terminal
-" https://www.progclub.org/blog/2014/12/06/fixing-meta-keys-in-vim-via-mac-os-x-terminal-app/
-let c='a'
-while c <= 'z'
-exec "set <M-".tolower(c).">=\e".c
-  exec "imap \e".c." <M-".tolower(c).">"
-  let c = nr2char(1+char2nr(c))
-endw

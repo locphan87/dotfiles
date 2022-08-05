@@ -116,6 +116,7 @@ plugins=(
 
 export DOTFILES="$HOME/dotfiles"
 source $DOTFILES/scripts/web_search.sh
+export PATH="$HOME/local/bin:$PATH"
 source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

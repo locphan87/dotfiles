@@ -23,6 +23,7 @@ alias .3="cd ../../.."
 alias mux="tmuxinator"
 alias agrep="alias | grep"
 alias code=~/bin/code
+alias python=python3
 
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 function notif() {

@@ -39,6 +39,7 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 
 Plug 'scrooloose/nerdtree'
 source $DOTFILES/vim/plugins/nerdtree.vim
+Plug 'PhilRunninger/nerdtree-visual-selection'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 Plug 'easymotion/vim-easymotion'
