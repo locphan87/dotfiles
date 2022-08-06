@@ -9,7 +9,7 @@ inoremap jk <esc>
 nnoremap \ ,
 
 " Remap <c-a> for adding a number
-nnoremap <C-i> <C-a>
+" nnoremap <C-i> <C-a>
 
 " select the current word
 nnoremap <space> viw
