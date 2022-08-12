@@ -32,4 +32,4 @@ set smartcase " When searching try to be smart about cases
 
 " Configuration for async update
 " default updatetime 4000ms is not good for async update
-set updatetime=400
+set updatetime=100

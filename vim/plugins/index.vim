@@ -14,6 +14,8 @@ Plug 'digitaltoad/vim-pug'
 Plug 'MattesGroeger/vim-bookmarks'
 source $DOTFILES/vim/plugins/vim-bookmarks.vim
 
+Plug 'kshenoy/vim-signature'
+
 Plug 'mhinz/vim-startify'
 source $DOTFILES/vim/plugins/startify.vim
 
@@ -61,8 +63,8 @@ Plug 'hashivim/vim-terraform'
 Plug 'jparise/vim-graphql'
 Plug 'leafgarland/typescript-vim'
 
-" Plug 'SirVer/ultisnips'
-" source $DOTFILES/vim/plugins/ultisnips.vim
+Plug 'SirVer/ultisnips'
+source $DOTFILES/vim/plugins/ultisnips.vim
 Plug 'honza/vim-snippets'
 
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
@@ -80,6 +82,8 @@ source $DOTFILES/vim/plugins/floaterm.vim
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
+let g:gitgutter_set_sign_backgrounds = 1
+let g:gitgutter_highlight_lines = 1
 
 Plug 'andrewstuart/vim-kubernetes'
 au FileType yaml nmap <leader>ka :KubeApply<CR>

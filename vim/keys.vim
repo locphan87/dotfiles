@@ -14,6 +14,9 @@ nnoremap \ ,
 " select the current word
 nnoremap <space> viw
 
+" open wikilink
+nnoremap <c-g> vi]gf
+
 " open filename under cursor in a vertical split
 nnoremap <leader>gf :vertical wincmd f<CR>
 
