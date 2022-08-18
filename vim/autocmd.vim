@@ -16,3 +16,6 @@ augroup markdown_kb
   set suffixesadd+=.md
 augroup END
 
+" Pretty format XML in Vim
+" ref: https://coderwall.com/p/pupilw/pretty-format-xml-in-vim
+au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null

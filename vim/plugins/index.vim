@@ -82,8 +82,6 @@ source $DOTFILES/vim/plugins/floaterm.vim
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
-let g:gitgutter_set_sign_backgrounds = 1
-let g:gitgutter_highlight_lines = 1
 
 Plug 'andrewstuart/vim-kubernetes'
 au FileType yaml nmap <leader>ka :KubeApply<CR>
