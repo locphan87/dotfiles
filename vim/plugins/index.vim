@@ -51,10 +51,7 @@ Plug 'wellle/targets.vim'
 Plug 'Shougo/unite.vim'
 
 Plug 'bling/vim-airline'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'default'
-let g:airline#extensions#unite#enabled = 1
+source $DOTFILES/vim/plugins/airline.vim
 
 Plug 'elzr/vim-json'
 Plug 'moll/vim-node'
@@ -89,13 +86,16 @@ au FileType yaml nmap <leader>ka :KubeApply<CR>
 Plug 'mattn/emmet-vim'
 source $DOTFILES/vim/plugins/emmet.vim
 
+Plug 'mileszs/ack.vim'
+nnoremap <Leader>ck :Ack!<Space>
+
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 source $DOTFILES/vim/plugins/fzf.vim
 
 Plug 'skwp/greplace.vim'
-set grepprg=ag
-let g:grep_cmd_opts = '--line-numbers --noheading'
+set grepprg=rg\ --vimgrep\ --smart-case\ --follow
+let g:grep_cmd_opts = '--no-heading'
 
 Plug 'christoomey/vim-tmux-navigator'
 

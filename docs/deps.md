@@ -1,3 +1,4 @@
+# Dependencies
 ## Required tools
 - zsh
 - [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)

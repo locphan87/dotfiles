@@ -1,6 +1,8 @@
 colorscheme termschool
 set mouse=a
 
+" toggle between paste mode
+" turn off auto-indent when pasting text
 set pastetoggle=<f5>
 
 set ffs=unix,dos,mac " use Unix as the standard file type

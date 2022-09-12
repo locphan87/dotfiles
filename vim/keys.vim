@@ -6,7 +6,7 @@ let mapleader=","
 inoremap jk <esc>
 
 " Remap , for repeating latest search in opposite direction
-nnoremap \ ,
+" nnoremap \ ,
 
 " Remap <c-a> for adding a number
 " nnoremap <C-i> <C-a>

@@ -1,7 +1,8 @@
-# Plugins
+# Vim Plugins
 
 | Name                   | Description                                                | Links                                                         |
 | ---------------------- | ---------------------------------------------------------- | ------------------------------------------------------------- |
+ack | Run your favorite search tool from Vim, with an enhanced results list | :h ack.txt
 auto-pairs | Insert, delete brackets, parens, quotes in pair | :h autopairs.txt
 emmet-vim | provides support for expanding abbreviations | :h emmet
 fzf.vim | fuzzy finder | :h fzf

@@ -3,6 +3,7 @@
 --ignore-directory=is:build
 --ignore-directory=is:public
 --ignore-directory=is:coverage
+--ignore-directory=is:node_modules
 --ignore-file=ext:css,log,c,lock,html
 --sort-files
 --color

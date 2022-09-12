@@ -8,4 +8,4 @@ let g:floaterm_keymap_prev   = '<leader>fp'
 let g:floaterm_keymap_next   = '<leader>fn'
 let g:floaterm_keymap_toggle = '<leader>ft'
 nnoremap <silent> <leader>fk :FloatermKill!<CR> \| :echom "Closed all terminals"<CR>
-nnoremap <silent> <leader>fs :FloatermSend<CR>
+nnoremap <silent> <leader>fs :FloatermSend<CR> \| :FloatermToggle<CR>
