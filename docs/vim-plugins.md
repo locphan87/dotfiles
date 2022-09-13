@@ -9,6 +9,7 @@ fzf.vim | fuzzy finder | :h fzf
 greplace.vim | Global search and replace | :h greplace
 markdown-preview.nvim | Preview markdown on your modern browser with synchronised scrolling and flexible configuration | [config](https://github.com/iamcco/markdown-preview.nvim#markdownpreview-config)
 nerdtree | A tree explorer for vim | :h NERDTree
+registers.nvim | Neovim plugin to preview the contents of the registers | [usage](https://github.com/tversteeg/registers.nvim#use)
 splitjoin.vim | Switch between single-line and multiline forms of code | :h splitjoin
 tabular | Text filtering and aligment | :h tabular
 targets.vim | provides additional text objects | :h targets

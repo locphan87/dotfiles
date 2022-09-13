@@ -98,6 +98,8 @@ set grepprg=rg\ --vimgrep\ --smart-case\ --follow
 let g:grep_cmd_opts = '--no-heading'
 
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'tversteeg/registers.nvim'
+let g:registers_paste_in_normal_mode = 1
 
 source $DOTFILES/vim/plugins/disabled.vim
 Plug 'ryanoasis/vim-devicons'

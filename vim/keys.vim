@@ -38,11 +38,11 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Reload vim config
-nnoremap <leader>ww :so $MYVIMRC<cr>
+nnoremap <leader>rl :so $MYVIMRC<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 
 " Fast saving of a buffer
-nnoremap <leader>w :up!<cr>
+nnoremap <leader><space> :up!<cr>
 
 " remap 0 to first non-blank character
 nnoremap 0 ^

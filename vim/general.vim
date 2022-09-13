@@ -15,6 +15,11 @@ set expandtab " Use spaces instead of tabs
 set shiftwidth=2
 set tabstop=2
 
+" Open new stbelowplit panes to right and bottom,
+" which feels more natural than Vim’s default:
+set splitbelow
+set splitright
+
 set foldlevel=99
 set foldmethod=indent
 set foldcolumn=1
