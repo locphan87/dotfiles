@@ -3,7 +3,7 @@ let maplocalleader="\\"
 let mapleader=","
 
 " quit the insert mode
-inoremap jk <esc>
+inoremap jj <esc>
 
 " Remap , for repeating latest search in opposite direction
 " nnoremap \ ,

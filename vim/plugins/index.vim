@@ -7,14 +7,15 @@ Plug 'godlygeek/tabular'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-abolish'
-Plug 'jiangmiao/auto-pairs'
 Plug 'christoomey/vim-system-copy'
 Plug 'digitaltoad/vim-pug'
+Plug 'kshenoy/vim-signature'
+
+Plug 'jiangmiao/auto-pairs'
+let g:AutoPairsMapCR = 0
 
 Plug 'MattesGroeger/vim-bookmarks'
 source $DOTFILES/vim/plugins/vim-bookmarks.vim
-
-Plug 'kshenoy/vim-signature'
 
 Plug 'mhinz/vim-startify'
 source $DOTFILES/vim/plugins/startify.vim
@@ -43,16 +44,16 @@ Plug 'scrooloose/nerdtree'
 source $DOTFILES/vim/plugins/nerdtree.vim
 Plug 'PhilRunninger/nerdtree-visual-selection'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'alvan/vim-closetag'
 
 Plug 'easymotion/vim-easymotion'
 source $DOTFILES/vim/plugins/easymotion.vim
 
-Plug 'wellle/targets.vim'
-Plug 'Shougo/unite.vim'
-
 Plug 'bling/vim-airline'
 source $DOTFILES/vim/plugins/airline.vim
 
+Plug 'wellle/targets.vim'
+Plug 'Shougo/unite.vim'
 Plug 'elzr/vim-json'
 Plug 'moll/vim-node'
 Plug 'ekalinin/Dockerfile.vim'
@@ -72,13 +73,12 @@ let g:javascript_plugin_jsdoc = 1
 
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-
-Plug 'voldikss/vim-floaterm'
-source $DOTFILES/vim/plugins/floaterm.vim
-
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
+
+Plug 'voldikss/vim-floaterm'
+source $DOTFILES/vim/plugins/floaterm.vim
 
 Plug 'andrewstuart/vim-kubernetes'
 au FileType yaml nmap <leader>ka :KubeApply<CR>
@@ -88,6 +88,9 @@ source $DOTFILES/vim/plugins/emmet.vim
 
 Plug 'mileszs/ack.vim'
 nnoremap <Leader>ck :Ack!<Space>
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -101,7 +104,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'tversteeg/registers.nvim'
 let g:registers_paste_in_normal_mode = 1
 
-source $DOTFILES/vim/plugins/disabled.vim
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
