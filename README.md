@@ -1,4 +1,6 @@
 # dotfiles
+[[toc]]
+
 ## Install
 
 Clone source code

@@ -12,7 +12,7 @@ let g:mkdp_preview_options = {
   \ 'flowchart_diagrams': {},
   \ 'content_editable': v:false,
   \ 'disable_filename': 0,
-  \ 'toc': {}
+  \ 'toc': {'listType': 'ol', 'itemClass': 'item', 'containerClass': 'toc-container'}
   \ }
 
 " set to 1, nvim will open the preview window after entering the markdown buffer
@@ -31,8 +31,8 @@ let g:mkdp_auto_close = 0
 let g:mkdp_refresh_slow = 1
 
 " use a custom markdown style must be absolute path
-" like '/Users/username/markdown.css' or expand('~/markdown.css')
-let g:mkdp_markdown_css = '/Users/locphan/github-markdown.css'
+" like '/Users/username/markdown.css' or expand('~/markdown.css'l
+let g:mkdp_markdown_css = $HOME . '/github-markdown.css'
 
 " MAPPINGS
 nmap <leader>P <Plug>MarkdownPreview

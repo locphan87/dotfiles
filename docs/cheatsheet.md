@@ -2,6 +2,8 @@
 > Note: This cheatsheet is built based on the customized key mappings **in this repository**.
 > It's not the default Vim or pluggin mappings.
 
+[[toc]]
+
 ## Vim
 ### General
 - Leader key: `,`
