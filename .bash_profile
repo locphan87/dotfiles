@@ -29,10 +29,10 @@ alias b='buku --suggest'
 alias bs="b --oa --np -s"
 
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
-function quote {
+function myquote {
   # Set the file path to the quotes file
   quote_file=$HOME/quotes.txt
   # Retrieve a random quote for the file
   sed -n $(awk "END{ print $RANDOM%NR+1}" $quote_file)p $quote_file
 }
-quote
+myquote
