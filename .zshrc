@@ -83,6 +83,7 @@ plugins=(
   common-aliases
   docker
   docker-compose
+  dotenv
   kubectl
   microk8s
   minikube
