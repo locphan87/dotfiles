@@ -5,6 +5,10 @@ let mapleader=","
 " quit the insert mode
 inoremap jj <esc>
 
+" add current date, format DD/MM/YYYY
+nnoremap <f5> "=strftime("%d/%m/%Y")<cr>P
+inoremap <f5> <c-r>=strftime("%d/%m/%Y")<cr>
+
 " Remap , for repeating latest search in opposite direction
 " nnoremap \ ,
 
@@ -58,8 +62,11 @@ nnoremap <F2> :mksession! ~/vim_session <cr>
 nnoremap <F3> :source ~/vim_session <cr>
 
 " treat long lines as break lines
-nnoremap k gk
-nnoremap j gj
+" nnoremap k gk
+" nnoremap j gj
+" https://stackoverflow.com/questions/20975928/moving-the-cursor-through-long-soft-wrapped-lines-in-vim
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
 
 " managing tabs
 nnoremap <leader>tn :tabnew<cr>

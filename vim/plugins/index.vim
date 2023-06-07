@@ -1,7 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible'
-Plug 'flazz/vim-colorschemes'
+" Plug 'flazz/vim-colorschemes'
+Plug 'marcopaganini/termschool-vim-theme'
 Plug 'tpope/vim-commentary'
 Plug 'godlygeek/tabular'
 Plug 'AndrewRadev/splitjoin.vim'
@@ -10,9 +11,7 @@ Plug 'tpope/vim-abolish'
 Plug 'christoomey/vim-system-copy'
 Plug 'digitaltoad/vim-pug'
 Plug 'kshenoy/vim-signature'
-
 Plug 'jiangmiao/auto-pairs'
-let g:AutoPairsMapCR = 0
 
 Plug 'MattesGroeger/vim-bookmarks'
 source $DOTFILES/vim/plugins/vim-bookmarks.vim
@@ -25,6 +24,8 @@ let g:gh_github_domain = 'https://github.aus.thenational.com'
 
 Plug '907th/vim-auto-save'
 source $DOTFILES/vim/plugins/auto-save.vim
+
+Plug 'mzlogin/vim-markdown-toc'
 
 Plug 'preservim/vim-markdown'
 source $DOTFILES/vim/plugins/markdown.vim
@@ -61,9 +62,9 @@ Plug 'hashivim/vim-terraform'
 Plug 'jparise/vim-graphql'
 Plug 'leafgarland/typescript-vim'
 
-Plug 'SirVer/ultisnips'
-source $DOTFILES/vim/plugins/ultisnips.vim
-Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" source $DOTFILES/vim/plugins/ultisnips.vim
+" Plug 'honza/vim-snippets'
 
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 source $DOTFILES/vim/plugins/coc.vim
@@ -92,6 +93,7 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
+set rtp+=/usr/local/opt/fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 source $DOTFILES/vim/plugins/fzf.vim

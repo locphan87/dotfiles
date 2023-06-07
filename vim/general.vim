@@ -1,3 +1,4 @@
+set termguicolors
 colorscheme termschool
 set mouse=a
 
