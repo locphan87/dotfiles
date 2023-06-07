@@ -60,10 +60,10 @@ ln -s -f $DOTFILES/.gitconfig ~
 ln -s -f $DOTFILES/.gitignore_global ~
 ```
 
-### other files
+### tmuxinator
 
 ```shell
-ln -s -f $DOTFILES/<file-name> ~
+ln -s -f $DOTFILES/tmuxinator ~/.config
 ```
 
 ### neovim

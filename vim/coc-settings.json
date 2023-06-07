@@ -1,9 +1,9 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": [
-    "css",
-    "typescript",
-    "javascript"
-  ],
+  "coc.preferences.formatOnSave": true,
+  "prettier.trailingComma": "es5",
+  "prettier.tabWidth": 2,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
   "snippets.extends": {
     "javascriptreact": ["javascript"],
     "typescript": ["javascript"]

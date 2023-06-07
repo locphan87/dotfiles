@@ -1,0 +1,16 @@
+# /Users/locphan/.config/tmuxinator/dot.yml
+
+name: dot
+root: ~/dotfiles
+
+windows:
+  - main:
+      layout: main-horizontal
+      panes:
+        - vim
+        -
+        -
+  - logs:
+      panes:
+        - ggpull
+        - gst

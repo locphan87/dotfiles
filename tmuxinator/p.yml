@@ -1,0 +1,17 @@
+# ~/.config/tmuxinator/p.yml
+
+name: <%= @args[0] %>
+root: ~/projects/<%= @args[0] %>
+
+windows:
+  - editor:
+      layout: main-horizontal
+      panes:
+        - vim
+        -
+        -
+  - server: ls
+  - logs:
+      panes:
+        - git log
+        - ggpull
