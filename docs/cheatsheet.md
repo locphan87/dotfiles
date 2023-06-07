@@ -1,11 +1,12 @@
 # Cheatsheet
+
 > Note: This cheatsheet is built based on the customized key mappings **in this repository**.
 > It's not the default Vim or pluggin mappings.
 
-[[toc]]
-
 ## Vim
+
 ### General
+
 - Leader key: `,`
 - Quit the insert mode: [I] `jk`
 - Select current word: `<space>`
@@ -28,13 +29,17 @@
 - Toggle spell checking: `<leader>ss`
 
 ### Plugins
+
 #### vim-kubernetes
+
 - `<leader>ka`: Apply current YAML file
 
 #### ack.vim
+
 - `<leader>ck`: Search without showing the first result on the current buffer
 
 #### coc.vim
+
 - `gd`: Go to definition
 - `gy`: Go to type definition
 - `gi`: Go to implementation
@@ -56,16 +61,19 @@
 - `<space>p`: Resume latest coc list
 
 #### easymotion
+
 - `<leader>f`{char}: Move to {char}
 - `s`{char}{char}: Move to {char}{char}
 - `t`{char}{char}: Move to one character before {char}{char}
 - `<leader>L`: Move to line
 
 #### emmet
+
 - `<c-y>`: Leader key
 - `<emmet-leader>,`: Expand abbreviations
 
 #### floaterm
+
 - `<leader>ft`: Toggle the window / Create a new one
 - `<leader>fp`: Open previous window
 - `<leader>fn`: Open next window
@@ -73,6 +81,7 @@
 - `<leader>fs`: Send current line as command and open the window
 
 #### fzf
+
 - `<c-p>`: Show files
 - `<leader>h`: Show history
 - `:Rg`: Search content using ripgrep
@@ -81,18 +90,22 @@
 - `<leader>ck`: Call :Ack! with space
 
 #### markdown-preview
+
 - `<leader>P`: Open Preview in browser
 
 #### NERDTree
+
 - `<leader>nn`: Toggle explorer
 - `<leader>nf`: Show current file in explorer
 
 #### UltiSnips
+
 - `<tab>`: Expand trigger
 - `<c-b>`: Jump forward
 - `<c-z>`: Jump backward
 
 ## tmux
+
 - `<c-a>`: Prefix
 - `<prefix>C`: Clear scrollback buffer
 - `M-n`: New window
@@ -113,4 +126,3 @@
 - `<prefix>r`: Reload the config
 - `<prefix>Q`: Kill session
 - `<prefix>p`: Paste buffer
-

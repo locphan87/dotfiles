@@ -1,47 +1,75 @@
 # dotfiles
-[[toc]]
 
 ## Install
 
 Clone source code
 
-```bash
+```shell
 cd $HOME
 git clone git@github.com:locphan87/dotfiles.git
 ```
 
+Install vim-plug
+
+```shell
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+Export DOTFILES
+
+```shell
+DOTFILES=$HOME/dotfiles
+```
+
 ## Link dot files
+
+```shell
+ln -s -f <source> <destination>
+```
+
+-f will overwrite the existing link
+
 ### vimrc
 
-```bash
-ln -s $DOTFILES/.vimrc ~
+```shell
+ln -s -f $DOTFILES/.vimrc ~
 mkdir .vim
-cp -r $DOTFILES/.vim ~/.vim
+ln -s -f $DOTFILES/vim/after ~/.vim
+ln -s -f $DOTFILES/vim/coc-settings.json ~/.vim
 ```
 
 ### tmux
 
-```bash
-ln -s $DOTFILES/.tmux.conf ~
+```shell
+ln -s -f $DOTFILES/.tmux.conf ~
 ```
 
 ### shell
 
-```bash
-ln -s $DOTFILES/.bash_profile ~
-ln -s $DOTFILES/.zshrc ~
-ln -s $DOTFILES/.antigenrc ~
+```shell
+ln -s -f $DOTFILES/.shell_profile ~
+ln -s -f $DOTFILES/.zshrc ~
+ln -s -f $DOTFILES/.antigenrc ~
 ```
 
 ### git
 
-```bash
-ln -s $DOTFILES/.gitconfig ~
-ln -s $DOTFILES/.gitignore_global ~
+```shell
+ln -s -f $DOTFILES/.gitconfig ~
+ln -s -f $DOTFILES/.gitignore_global ~
 ```
 
 ### other files
 
-```bash
-ln -s $DOTFILES/<file-name> ~
+```shell
+ln -s -f $DOTFILES/<file-name> ~
+```
+
+### neovim
+
+```shell
+cd ~/.config/nvim
+ln -s -f $DOTFILES/init.vim .
+ln -s -f $DOTFILES/vim/coc-settings.json .
 ```

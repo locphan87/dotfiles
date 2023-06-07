@@ -1,4 +1,4 @@
-let g:coc_global_extensions = [ 'coc-tsserver', 'coc-java', 'coc-json', 'coc-yaml', 'coc-xml',  'coc-tailwindcss', 'coc-calc', 'coc-swagger', 'coc-markmap' ]
+let g:coc_global_extensions = [ 'coc-tsserver', 'coc-java', 'coc-json', 'coc-yaml', 'coc-xml',  'coc-tailwindcss', 'coc-calc', 'coc-swagger', 'coc-markmap', 'coc-highlight' ]
 
 " Add CoC Prettier if prettier is installed
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')

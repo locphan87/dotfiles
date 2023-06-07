@@ -12,5 +12,8 @@
   "http.proxyStrictSSL": false,
   "snippets.ultisnips.enable": false,
   "snippets.userSnippetsDirectory": "$DOTFILES/.vim/snippets",
-  "cSpell.enabled": false
+  "cSpell.enabled": false,
+  "colors.enable": true,
+  "highlight.colors.enable": true,
+  "highlight.trace": "verbose"
 }
