@@ -72,7 +72,7 @@ nnoremap <expr> k v:count ? 'k' : 'gk'
 nnoremap <leader>tn :tabnew<cr>
 nnoremap <leader>to :tabonly<cr>
 nnoremap <leader>tc :tabclose<cr>
-nnoremap <leader>tm :tabmove
+" nnoremap <leader>tm :tabmove
 
 " toggle spell checking
 nnoremap <leader>ss :setlocal spell!<cr>

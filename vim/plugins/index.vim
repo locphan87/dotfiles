@@ -12,6 +12,7 @@ Plug 'christoomey/vim-system-copy'
 Plug 'digitaltoad/vim-pug'
 Plug 'kshenoy/vim-signature'
 Plug 'jiangmiao/auto-pairs'
+Plug 'dhruvasagar/vim-table-mode'
 
 Plug 'MattesGroeger/vim-bookmarks'
 source $DOTFILES/vim/plugins/vim-bookmarks.vim
