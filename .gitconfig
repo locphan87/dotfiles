@@ -160,3 +160,6 @@
   sslVerify = false
 [hub]
   protocol = ssh
+[user]
+	name = Loc Phan
+	email = phanhoangloc@gmail.com
