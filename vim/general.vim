@@ -1,5 +1,4 @@
-set termguicolors
-colorscheme termschool
+colorscheme onedark
 set mouse=a
 
 " toggle between paste mode

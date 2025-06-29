@@ -8,7 +8,7 @@ export FZF_DEFAULT_COMMAND="rg --files --smart-case"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Preferred editor for local and remote sessions
-export EDITOR='nvim'
+export EDITOR='vim'
 set -o vi
 
 # Aliases
@@ -16,24 +16,21 @@ alias zshrc="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 alias chrome="open -a 'Google Chrome'"
 alias fp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
-alias ls="colorls -larth"
-alias colorls="arch -x86_64 colorls"
+alias ls="ls -larth"
 alias .1="cd .."
 alias .2="cd ../.."
 alias .3="cd ../../.."
 alias mux="tmuxinator"
 alias agrep="alias | grep"
-alias code=~/bin/code
 alias python=python3
-alias vim=nvim
 alias b='buku --suggest'
 alias bs="b --oa --np -s"
 
-function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+function mkdircd() { mkdir -p "$@" && eval cd "\"\$$#\""; }
 function stopwatch {
   start=$(date +%s)
   while true; do
-    time="$(( $(date +%s) - $start))"
+    time="$(($(date +%s) - $start))"
     printf '%s\r' "$(date)"
     sleep 0.1
   done

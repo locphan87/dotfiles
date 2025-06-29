@@ -12,11 +12,9 @@ nnoremap <leader>nn :NERDTreeToggle<CR>
 " placed on the tree node for the determined path.  If a NERDTree for the
 " current tab does not exist, a new one will be initialized.
 nnoremap <leader>nf :NERDTreeFind<CR>
-" Start Startify and NERDTree at startup
 " NERDTree | wincmd p
 autocmd VimEnter *
   \ if !argc()
-  \ |   Startify
   \ |   NERDTree
   \ |   wincmd w
   \ | endif

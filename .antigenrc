@@ -1,7 +1,5 @@
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle Kallahan23/zsh-colorls
-antigen bundle gretzky/auto-color-ls
 antigen bundle xorkevin/code-review-zsh
 
 antigen apply
