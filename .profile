@@ -13,4 +13,3 @@ export LOCAL="$HOME/local"
 export PATH="$PATH:$LOCAL/bin"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
-export GEMINI_API_KEY="AIzaSyAZiHSqjUZx8UFu3Cou5VKYvCRGnpGHXBU"

@@ -1,75 +1,43 @@
 # dotfiles
 
-## Install
+Personal dotfiles.
 
-Clone source code
+## Structure
 
-```shell
-cd $HOME
-git clone git@github.com:locphan87/dotfiles.git
+```
+dotfiles/
+├── nvim/
+│   └── init.lua         # -> ~/AppData/Local/nvim/init.lua  (Windows/Git Bash)
+│                        #    /mnt/c/Users/.../AppData/...   (WSL)
+│                        #    ~/.config/nvim/init.lua         (Linux/macOS)
+├── tmux/
+│   └── .tmux.conf       # -> ~/.tmux.conf
+├── setup.sh
+└── README.md
 ```
 
-Install vim-plug
+## Fresh install
 
-```shell
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```bash
+git clone https://github.com/<you>/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+chmod +x setup.sh
+./setup.sh
 ```
 
-Export DOTFILES
+The script will:
+- Auto-detect OS (Git Bash, WSL, Linux, macOS)
+- Back up any existing config as `.bak` before linking
+- Create symlinks to all the right locations
 
-```shell
-DOTFILES=$HOME/dotfiles
-```
+## Add a new config
 
-## Link dot files
-
-```shell
-ln -s -f <source> <destination>
-```
-
--f will overwrite the existing link
-
-### vimrc
-
-```shell
-ln -s -f $DOTFILES/.vimrc ~
-mkdir .vim
-ln -s -f $DOTFILES/vim/after ~/.vim
-ln -s -f $DOTFILES/vim/coc-settings.json ~/.vim
-```
-
-### tmux
-
-```shell
-ln -s -f $DOTFILES/.tmux.conf ~
-```
-
-### shell
-
-```shell
-ln -s -f $DOTFILES/.shell_profile ~
-ln -s -f $DOTFILES/.zshrc ~
-ln -s -f $DOTFILES/.antigenrc ~
-```
-
-### git
-
-```shell
-ln -s -f $DOTFILES/.gitconfig ~
-ln -s -f $DOTFILES/.gitignore_global ~
-```
-
-### tmuxinator
-
-```shell
-ln -s -f $DOTFILES/tmuxinator ~/.config
-```
-
-### neovim
-
-```shell
-cd ~/.config/nvim
-ln -s -f $DOTFILES/init.vim .
-ln -s -f $DOTFILES/vim/coc-settings.json .
-```
+1. Move the file into the repo:
+   ```bash
+   mv ~/.someconfig ~/dotfiles/tool/.someconfig
+   ```
+2. Add the entry in `setup.sh` under `declare -A CONFIGS`:
+   ```bash
+   ["tool/.someconfig"]="$HOME/.someconfig"
+   ```
+3. Re-run `./setup.sh`
