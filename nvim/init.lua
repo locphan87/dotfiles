@@ -42,6 +42,21 @@ require("lazy").setup({
 		-- Quality of life
 		{ "windwp/nvim-autopairs", event = "InsertEnter", opts = {} },
 		{ "numToStr/Comment.nvim", opts = {} },
+
+    {
+      "folke/snacks.nvim",
+      priority = 1000,
+      lazy = false,
+      opt = {}
+    },
+    {
+      "coder/claudecode.nvim",
+      dependencies = { "folke/snacks.nvim" },
+      opts = {
+        terminal_cmd = "~/.claude/local/claude",
+      },
+      config = true,
+    }
 	},
 
 	install = { colorscheme = { "habamax" } },
@@ -99,6 +114,7 @@ vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
 vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>") -- file explorer toggle
 vim.keymap.set("n", "<leader>tf", "<cmd>NvimTreeFindFile<cr>")
+vim.keymap.set("i", "jj", "<esc>")
 
 -- Window navigation
 vim.keymap.set("n", "<C-j>", "<C-W>j")
