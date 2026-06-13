@@ -42,6 +42,9 @@ require("lazy").setup({
 		-- Markdown preview
 		{ "iamcco/markdown-preview.nvim", build = "cd app && npm install", ft = "markdown" },
 
+		-- Open current line/selection in GitHub
+		{ "linrongbin16/gitlinker.nvim", config = true },
+
 		-- Quality of life
 		{ "windwp/nvim-autopairs", event = "InsertEnter", opts = {} },
 		{ "numToStr/Comment.nvim", opts = {} },
@@ -144,6 +147,13 @@ vim.keymap.set("n", "0", "^")
 -- Markdown preview
 vim.keymap.set("n", "<leader>mp", "<cmd>MarkdownPreview<cr>")
 vim.keymap.set("n", "<leader>ms", "<cmd>MarkdownPreviewStop<cr>")
+
+-- Git link (copy URL / open in browser)
+vim.keymap.set({ "n", "v" }, "<leader>gy", "<cmd>GitLink<cr>")
+vim.keymap.set({ "n", "v" }, "<leader>gY", "<cmd>GitLink!<cr>")
+
+-- Reload config
+vim.keymap.set("n", "<leader>rr", "<cmd>source $MYVIMRC<cr>")
 
 -- Mason UI
 vim.keymap.set("n", "<leader>cm", "<cmd>Mason<cr>", { desc = "Open Mason" })
