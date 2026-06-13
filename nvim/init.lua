@@ -39,6 +39,9 @@ require("lazy").setup({
 			opts = { options = { theme = "onedark" } }, -- fixed: was gruvbox
 		},
 
+		-- Markdown preview
+		{ "iamcco/markdown-preview.nvim", build = "cd app && npm install", ft = "markdown" },
+
 		-- Quality of life
 		{ "windwp/nvim-autopairs", event = "InsertEnter", opts = {} },
 		{ "numToStr/Comment.nvim", opts = {} },
@@ -137,6 +140,10 @@ vim.keymap.set("n", "<leader>tc", ":tabclose<cr>")
 
 -- 0 jumps to first non-blank
 vim.keymap.set("n", "0", "^")
+
+-- Markdown preview
+vim.keymap.set("n", "<leader>mp", "<cmd>MarkdownPreview<cr>")
+vim.keymap.set("n", "<leader>ms", "<cmd>MarkdownPreviewStop<cr>")
 
 -- Mason UI
 vim.keymap.set("n", "<leader>cm", "<cmd>Mason<cr>", { desc = "Open Mason" })

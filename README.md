@@ -16,6 +16,69 @@ dotfiles/
 └── README.md
 ```
 
+## Neovim
+
+Config lives in `nvim/init.lua`, symlinked to the platform-appropriate path by `setup.sh`.
+Plugin manager: [lazy.nvim](https://github.com/folke/lazy.nvim). Leader key: `Space`.
+
+**Plugins:** onedarkpro · telescope · gitsigns · nvim-tree · lualine · nvim-autopairs · Comment.nvim · claudecode.nvim
+
+**Telescope (fuzzy finder)**
+
+| Action | Key |
+|--------|-----|
+| Find files | `<leader>ff` |
+| Live grep | `<leader>fg` |
+| Buffers | `<leader>fb` |
+| Help tags | `<leader>fh` |
+
+**File explorer (nvim-tree)**
+
+| Action | Key |
+|--------|-----|
+| Toggle tree | `<leader>e` |
+| Reveal current file | `<leader>tf` |
+
+**Windows & tabs**
+
+| Action | Key |
+|--------|-----|
+| Navigate windows | `C-h/j/k/l` |
+| New tab | `<leader>tn` |
+| Close tab | `<leader>tc` |
+| Close other tabs | `<leader>to` |
+
+**Editing**
+
+| Action | Key |
+|--------|-----|
+| Save file | `<leader>w` |
+| Edit vimrc | `<leader>v` |
+| Escape (insert mode) | `jj` |
+| Indent (keep selection) | `<` / `>` in visual |
+| Jump to first non-blank | `0` |
+| Open Mason | `<leader>cm` |
+
+## tmux
+
+Config lives in `tmux/.tmux.conf`, symlinked to `~/.tmux.conf`.
+
+**Prefix:** `C-a` (replaces default `C-b`)
+
+| Action | Key |
+|--------|-----|
+| Reload config | `prefix r` |
+| Kill session | `prefix Q` |
+| Split horizontal | `prefix \|` |
+| Split vertical | `prefix -` |
+| Navigate panes | `prefix h/j/k/l` |
+| Previous window | `prefix C-h` |
+| Next window | `prefix C-l` |
+| Resize pane | `prefix H/J/K/L` (repeatable) |
+| Enter copy mode | `prefix Enter` |
+| Begin selection | `v` (vi copy mode) |
+| Copy selection | `y` (vi copy mode) |
+
 ## Fresh install
 
 ```bash
