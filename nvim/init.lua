@@ -118,6 +118,7 @@ vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
 vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>")
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
+vim.keymap.set("n", "<leader>fw", "<cmd>Telescope grep_string<cr>") -- grep word under cursor
 vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>") -- file explorer toggle
 vim.keymap.set("n", "<leader>tf", "<cmd>NvimTreeFindFile<cr>")
 vim.keymap.set("i", "jj", "<esc>")
@@ -151,6 +152,22 @@ vim.keymap.set("n", "<leader>ms", "<cmd>MarkdownPreviewStop<cr>")
 -- Git link (copy URL / open in browser)
 vim.keymap.set({ "n", "v" }, "<leader>gy", "<cmd>GitLink<cr>")
 vim.keymap.set({ "n", "v" }, "<leader>gY", "<cmd>GitLink!<cr>")
+
+-- Project-wide search & replace (Telescope -> quickfix -> cfdo)
+-- Flow: 1) <leader>fg (grep) or <leader>fw (word under cursor) to find.
+--       2) In Telescope, <C-q> sends results to the quickfix list
+--          (<M-q> sends only the <Tab>-selected entries).
+--       3) <leader>cr to replace across every file in the quickfix list.
+-- The replace pattern is a normal Vim regex (independent of the rg search).
+vim.keymap.set("n", "<leader>cr", function()
+	local find = vim.fn.input("Replace in quickfix files > ")
+	if find == "" then return end
+	local repl = vim.fn.input("With > ")
+	find = vim.fn.escape(find, "/")
+	repl = vim.fn.escape(repl, "/")
+	-- %s over each file; e = ignore "no match", update = save only if changed
+	vim.cmd(("cfdo %%s/%s/%s/ge | update"):format(find, repl))
+end, { desc = "Replace across quickfix files" })
 
 -- Reload config
 vim.keymap.set("n", "<leader>rr", "<cmd>source $MYVIMRC<cr>")

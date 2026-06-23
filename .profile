@@ -1,4 +1,5 @@
 export NODE_TLS_REJECT_UNAUTHORIZED=0
+export ANTHROPIC_MODEL=claude-opus-4-8
 
 export PATH="$HOME/npm-packages/bin:$PATH"
 export PROJECTS="$HOME/projects"
