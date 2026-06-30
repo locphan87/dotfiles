@@ -1,0 +1,22 @@
+# ~/.wslconfig — place at  C:\Users\<you>\.wslconfig  (Windows side, NOT inside the distro)
+# Applies to ALL WSL2 distros. Run `wsl --shutdown` in PowerShell after editing.
+
+[wsl2]
+# Cap the VM's resource grab — WSL2 will otherwise balloon to ~50% of host RAM.
+# Tune to your machine; these suit a 16GB laptop.
+memory=12GB
+processors=8
+swap=4GB
+
+# Cleaner localhost / port handling — Windows 11 22H2+. Lets you hit WSL services
+# on 127.0.0.1 from Windows and vice-versa without the old localhostForwarding hacks.
+networkingMode=mirrored
+
+# Honor /etc/wsl.conf [boot] systemd=true and other guest settings.
+guiApplications=true
+
+[experimental]
+# Give RAM back to Windows when WSL goes idle (otherwise it holds the peak).
+autoMemoryReclaim=gradual
+# Reclaim disk from the sparse VHD automatically after shutdown.
+sparseVhd=true

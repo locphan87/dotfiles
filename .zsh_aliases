@@ -1,0 +1,17 @@
+# --- ddgr + w3m CLI web (added by setup) ---
+alias '?'='ddgr --noua'
+alias '??'='claude --model sonnet -p'
+alias bang='ddgr --noua --gb --np'
+alias v="nvim"
+alias vim="nvim"
+alias vimrc="v ~/.vimrc"
+# --- yazi file browser (added by setup) ---
+alias f='yazi'
+# --- aerc mail client (added by setup) ---
+alias mail='aerc'
+# --- ripgrep: faster search with smart-case matching ---
+alias rg='rg --smart-case'
+# --- smug: predefined tmux project layouts (~/.config/smug/*.yml) ---
+alias mux='smug start "$(ls ~/.config/smug | sed "s/\.yml$//" | fzf)"'
+alias muxd='smug start dotfiles'
+alias muxb='smug start second-brain'

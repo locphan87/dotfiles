@@ -15,7 +15,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = " "
+vim.g.mapleader = ","
 vim.g.maplocalleader = "\\"
 
 require("lazy").setup({
@@ -38,9 +38,6 @@ require("lazy").setup({
 			"nvim-lualine/lualine.nvim",
 			opts = { options = { theme = "onedark" } }, -- fixed: was gruvbox
 		},
-
-		-- Markdown preview
-		{ "iamcco/markdown-preview.nvim", build = "cd app && npm install", ft = "markdown" },
 
 		-- Open current line/selection in GitHub
 		{ "linrongbin16/gitlinker.nvim", config = true },
@@ -145,10 +142,6 @@ vim.keymap.set("n", "<leader>tc", ":tabclose<cr>")
 -- 0 jumps to first non-blank
 vim.keymap.set("n", "0", "^")
 
--- Markdown preview
-vim.keymap.set("n", "<leader>mp", "<cmd>MarkdownPreview<cr>")
-vim.keymap.set("n", "<leader>ms", "<cmd>MarkdownPreviewStop<cr>")
-
 -- Git link (copy URL / open in browser)
 vim.keymap.set({ "n", "v" }, "<leader>gy", "<cmd>GitLink<cr>")
 vim.keymap.set({ "n", "v" }, "<leader>gY", "<cmd>GitLink!<cr>")
@@ -170,7 +163,7 @@ vim.keymap.set("n", "<leader>cr", function()
 end, { desc = "Replace across quickfix files" })
 
 -- Reload config
-vim.keymap.set("n", "<leader>rr", "<cmd>source $MYVIMRC<cr>")
+vim.keymap.set("n", "<leader>rl", "<cmd>source $MYVIMRC<cr>")
 
 -- Mason UI
 vim.keymap.set("n", "<leader>cm", "<cmd>Mason<cr>", { desc = "Open Mason" })

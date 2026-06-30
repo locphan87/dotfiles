@@ -1,0 +1,74 @@
+// Windows Terminal settings — MERGE into your existing settings.json.
+// Open: Windows Terminal → Settings (Ctrl+,) → "Open JSON file" (gear, bottom-left).
+// Don't paste wholesale; copy the keys you want. Replace the WSL profile GUID/name to
+// match your installed distro (run `wsl -l -v` to see distro names).
+{
+  // Make your WSL distro the profile that opens on launch and with Ctrl+Shift+T.
+  // Find the GUID under profiles.list for your Ubuntu entry and paste it here.
+  "defaultProfile": "{REPLACE-WITH-UBUNTU-PROFILE-GUID}",
+
+  "copyOnSelect": true,
+  "copyFormatting": "none",
+  "startOnUserLogin": true,
+  "initialCols": 120,
+  "initialRows": 32,
+
+  "profiles": {
+    // Defaults applied to every profile.
+    "defaults": {
+      "font": {
+        "face": "JetBrainsMono Nerd Font", // install via: winget install --id DEVCOM.JetBrainsMonoNerdFont
+        "size": 11
+      },
+      "colorScheme": "Catppuccin Mocha",
+      "padding": "8",
+      "useAcrylic": false,
+      "scrollbarState": "hidden",
+      "cursorShape": "filledBox"
+    },
+    "list": [
+      {
+        // Your WSL distro. Opens straight into a tmux session "sb" rooted at
+        // ~/projects/second-brain. `-A` attaches if "sb" exists, else creates it,
+        // so every new window reattaches to the same persistent session.
+        "name": "Ubuntu",
+        "source": "Windows.Terminal.Wsl",
+        "startingDirectory": "//wsl$/Ubuntu/home/locphan/projects/second-brain",
+        "commandline": "wsl.exe -d Ubuntu --cd ~/projects/second-brain -- tmux new-session -A -s sb"
+      },
+      {
+        // Plain shell, no tmux — for when you want a bare WSL prompt.
+        "name": "Ubuntu (shell)",
+        "source": "Windows.Terminal.Wsl",
+        "startingDirectory": "//wsl$/Ubuntu/home/locphan",
+        "commandline": "wsl.exe ~ -d Ubuntu"
+      }
+    ]
+  },
+
+  // Minimal Catppuccin Mocha scheme so the colorScheme reference above resolves.
+  "schemes": [
+    {
+      "name": "Catppuccin Mocha",
+      "background": "#1E1E2E",
+      "foreground": "#CDD6F4",
+      "cursorColor": "#F5E0DC",
+      "selectionBackground": "#585B70",
+      "black": "#45475A", "red": "#F38BA8", "green": "#A6E3A1", "yellow": "#F9E2AF",
+      "blue": "#89B4FA", "purple": "#F5C2E7", "cyan": "#94E2D5", "white": "#BAC2DE",
+      "brightBlack": "#585B70", "brightRed": "#F38BA8", "brightGreen": "#A6E3A1",
+      "brightYellow": "#F9E2AF", "brightBlue": "#89B4FA", "brightPurple": "#F5C2E7",
+      "brightCyan": "#94E2D5", "brightWhite": "#A6ADC8"
+    }
+  ],
+
+  "keybindings": [
+    // tmux/Vim-friendly pane splits at the terminal level.
+    { "id": "Terminal.SplitPaneRight", "keys": "alt+shift+plus" },
+    { "id": "Terminal.SplitPaneDown",  "keys": "alt+shift+minus" },
+    { "id": "Terminal.MoveFocusLeft",  "keys": "alt+h" },
+    { "id": "Terminal.MoveFocusDown",  "keys": "alt+j" },
+    { "id": "Terminal.MoveFocusUp",    "keys": "alt+k" },
+    { "id": "Terminal.MoveFocusRight", "keys": "alt+l" }
+  ]
+}

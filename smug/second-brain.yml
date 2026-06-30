@@ -1,0 +1,13 @@
+session: second-brain
+root: ~/projects/second-brain
+windows:
+  - name: work
+    # main-vertical: big main pane on the left, others stacked on the right
+    layout: main-vertical
+    commands:
+      - nvim          # left pane (full height)
+    panes:
+      - commands:
+          - claude    # top-right pane
+      - commands:
+          - git status  # bottom-right pane

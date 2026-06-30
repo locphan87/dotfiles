@@ -74,5 +74,3 @@ brew "bat"; brew "eza"; brew "git-delta"; brew "lazygit"; brew "gh"
 brew "neovim"; brew "tmux"; brew "mise"; brew "jq"; brew "btop"; brew "atuin"
 cask "ghostty"; cask "orbstack"; cask "nikitabobko/tap/aerospace"
 
-Want me to take this further — e.g. draft a complete chezmoi-managed dotfiles starter, a tuned starship.toml + zsh config, or capture this as a note in your second brain via /capture?
-Would you also like a one-shot bootstrap script (brew bundle + symlink dotfiles + mise install) so a fresh Mac is dev-ready in one command?

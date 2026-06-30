@@ -1,0 +1,30 @@
+# Brewfile — Homebrew on Linux (WSL2). Install with:  brew bundle --file=wsl/Brewfile
+# GUI/host apps are NOT here — install those on Windows with winget (see bootstrap.sh notes).
+
+# Prompt + navigation
+brew "starship"
+brew "zoxide"
+brew "fzf"
+
+# Modern CLI replacements
+brew "ripgrep"
+brew "fd"
+brew "bat"
+brew "eza"
+brew "dust"
+brew "duf"
+brew "btop"
+brew "git-delta"
+brew "jq"
+
+# Git / GitHub
+brew "lazygit"
+brew "gh"
+
+# Editor + multiplexer
+brew "neovim"
+brew "tmux"
+
+# Dev env management + shell history
+brew "mise"
+brew "atuin"

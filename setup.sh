@@ -34,6 +34,8 @@ NVIM_CONFIG_DIR=$(detect_nvim_path)
 declare -A CONFIGS=(
   ["tmux/.tmux.conf"]="$HOME/.tmux.conf"
   ["nvim/init.lua"]="$NVIM_CONFIG_DIR/init.lua"
+  ["smug/dotfiles.yml"]="$HOME/.config/smug/dotfiles.yml"
+  ["smug/second-brain.yml"]="$HOME/.config/smug/second-brain.yml"
 )
 
 # ── Create one symlink, backing up any existing real file ────────────────────
@@ -57,7 +59,7 @@ make_link() {
 # ── Move real files into repo and init git ────────────────────────────────────
 init_dotfiles() {
   info "Setting up dotfiles at $DOTFILES"
-  mkdir -p "$DOTFILES/tmux" "$DOTFILES/nvim"
+  mkdir -p "$DOTFILES/tmux" "$DOTFILES/nvim" "$DOTFILES/smug"
 
   if [[ -f "$HOME/.tmux.conf" && ! -L "$HOME/.tmux.conf" ]]; then
     info "Moving ~/.tmux.conf -> $DOTFILES/tmux/.tmux.conf"
@@ -74,6 +76,18 @@ init_dotfiles() {
     git -C "$DOTFILES" init
     git -C "$DOTFILES" add .
     git -C "$DOTFILES" commit -m "chore: initial dotfiles"
+  fi
+}
+
+# ── Install smug (tmux session/layout manager) if missing ─────────────────────
+install_smug() {
+  if command -v smug >/dev/null 2>&1; then
+    info "smug already installed"
+  elif command -v brew >/dev/null 2>&1; then
+    info "Installing smug via brew"
+    brew install smug
+  else
+    warn "brew not found — install smug manually: https://github.com/ivaaaan/smug"
   fi
 }
 
@@ -104,6 +118,7 @@ echo -e "\n${BOLD}Dotfiles Setup${RESET}"
 echo "──────────────────────────────"
 
 init_dotfiles
+install_smug
 link_all
 print_status
 
